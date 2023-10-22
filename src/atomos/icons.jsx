@@ -1,11 +1,11 @@
 import React from 'react';
-import { BsFillHouseFill,BsPlusCircleFill,BsGraphUpArrow } from "react-icons/bs";
-import {AiFillTag}from "react-icons/ai";
+import { BsFillHouseFill,BsPlusCircleFill,BsGraphUpArrow,BsCameraFill,BsTrashFill, BsDownload, BsPencilSquare} from "react-icons/bs";
+import {AiFillTag,AiFillCloseCircle}from "react-icons/ai";
 import {BiLogOut}from "react-icons/bi";
-
-
-
-
+import {IoDocumentText} from "react-icons/io5";
+import {FaSave} from "react-icons/fa";
+import Vaca from "../img/vaca.svg";
+import Toro from "../img/toro.svg";
 function Icons(props) {
     const {iconName}=props;
 
@@ -14,7 +14,16 @@ function Icons(props) {
         "tag":<AiFillTag/>,
         "agregar":<BsPlusCircleFill/>,
         "graficas":<BsGraphUpArrow/>,
-        "salir":<BiLogOut/>
+        "salir":<BiLogOut/>,
+        "documentos":<IoDocumentText/>,
+        "camara":<BsCameraFill/>,
+        "cerrar":<AiFillCloseCircle/>,
+        "eliminar":<BsTrashFill/>,
+        "descargar":<BsDownload/>,
+        "guardar":<FaSave/>,
+        "editar":<BsPencilSquare/>,
+        "vaca": <img src={Vaca} alt="vaca" />,
+        "toro": <img src={Toro} alt="toro" />
     }
 
     return(
