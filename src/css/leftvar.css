@@ -1,0 +1,65 @@
+:root {
+    --primary-color: #FFFFFF;
+    --secondary-color: #5AA257;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'Almarai';
+    src: url('./Almarai/Almarai-Bold.ttf') format('truetype'),
+        url('./Almarai/Almarai-ExtraBold.ttf') format('truetype'),
+        url('./Almarai/Almarai-Light.ttf') format('truetype'),
+        url('./Almarai/Almarai-Regular.ttf') format('truetype');
+}
+
+.navContainer {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 230px;
+    position: fixed;
+    gap: 15rem;
+    top: 0;
+    bottom: 0;
+    background-color: var(--primary-color);
+    border-top: 4px var(--secondary-color) solid;
+    border-right: 4px var(--secondary-color) solid;
+    border-bottom: 4px var(--secondary-color) solid;
+}
+
+.Bovinsoft {
+    color: var(--secondary-color);
+    text-align: center;
+    font-family: "Almarai";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+
+}
+
+.Logonuevo2 {
+    width: 74px;
+    height: 62px;
+}
+
+.logoNombre {
+    width: 100%;
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.opciones{
+    margin-top: 10%;
+}
+
+.salir {
+
+}
+
