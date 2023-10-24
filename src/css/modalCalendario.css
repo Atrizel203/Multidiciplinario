@@ -1,0 +1,24 @@
+.button-group {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .btn {
+    background-color: #008000; /* Green background */
+    border: none; /* No border */
+    color: white; /* White text */
+    padding: 15px 32px; /* Some padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* No underline */
+    display: inline-block; /* Make the links appear side-by-side */
+    font-size: 16px; /* Increase font size */
+    margin: 4px 2px; /* Add some margins */
+    cursor: pointer; /* Mouse pointer on hover */
+    border-radius: 12px; /* Rounded corners */
+  }
+  
+  .btn:hover {
+    background-color: #006600; /* Darker green color on hover */
+  }
+  
