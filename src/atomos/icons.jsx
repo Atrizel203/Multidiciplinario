@@ -7,6 +7,8 @@ import {FaSave} from "react-icons/fa";
 import Vaca from "../img/vaca.svg";
 import Toro from "../img/toro.svg";
 import {MdTitle} from "react-icons/md";
+import {BsFill1SquareFill} from "react-icons/bs";
+
 function Icons(props) {
     const {iconName}=props;
 
@@ -26,7 +28,8 @@ function Icons(props) {
         "vaca": <img src={Vaca} alt="vaca" />,
         "toro": <img src={Toro} alt="toro" />,
         "titulo":<MdTitle/>,
-        "calendario":<BsCalendar2EventFill/>
+        "calendario":<BsCalendar2EventFill/>,
+        "icono":<BsFill1SquareFill/>,
     }
 
     return(
