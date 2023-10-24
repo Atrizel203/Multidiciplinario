@@ -2,8 +2,8 @@ import React from 'react';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
-import interactionPlugin from '@fullcalendar/interaction'; // needed for dayClick
-import '../css/modalCalendario.css';
+import interactionPlugin from '@fullcalendar/interaction'; 
+import '../css/modalCalendario.css'; 
 
 function DemoApp() {
   return (
