@@ -1,5 +1,5 @@
 import React from 'react';
-import { BsFillHouseFill,BsPlusCircleFill,BsGraphUpArrow,BsCameraFill,BsTrashFill, BsDownload, BsPencilSquare} from "react-icons/bs";
+import { BsFillHouseFill,BsPlusCircleFill,BsGraphUpArrow,BsCameraFill,BsTrashFill, BsDownload, BsPencilSquare,BsSearch} from "react-icons/bs";
 import {AiFillTag,AiFillCloseCircle}from "react-icons/ai";
 import {BiLogOut}from "react-icons/bi";
 import {IoDocumentText} from "react-icons/io5";
@@ -22,6 +22,7 @@ function Icons(props) {
         "descargar":<BsDownload/>,
         "guardar":<FaSave/>,
         "editar":<BsPencilSquare/>,
+        "buscar":<BsSearch/>,
         "vaca": <img src={Vaca} alt="vaca" />,
         "toro": <img src={Toro} alt="toro" />
     }
