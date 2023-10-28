@@ -8,6 +8,8 @@ import Vaca from "../img/vaca.svg";
 import Toro from "../img/toro.svg";
 import {BsFillBandaidFill} from "react-icons/bs";
 import {BsFillHeartFill} from "react-icons/bs";
+import {MdTitle} from "react-icons/md";
+import {BsFill1SquareFill} from "react-icons/bs";
 
 
 function Icons(props) {
@@ -29,7 +31,10 @@ function Icons(props) {
         "vaca": <img src={Vaca} alt="vaca" />,
         "toro": <img src={Toro} alt="toro" />,
         "benda": <BsFillBandaidFill/>,
-        "heart": <BsFillHeartFill/>
+        "heart": <BsFillHeartFill/>,
+        "titulo":<MdTitle/>,
+        "calendario":<BsCalendar2EventFill/>,
+        "icono":<BsFill1SquareFill/>
     }
 
     return(
