@@ -6,6 +6,10 @@ import {IoDocumentText} from "react-icons/io5";
 import {FaSave} from "react-icons/fa";
 import Vaca from "../img/vaca.svg";
 import Toro from "../img/toro.svg";
+import {BsFillBandaidFill} from "react-icons/bs";
+import {BsFillHeartFill} from "react-icons/bs";
+
+
 function Icons(props) {
     const {iconName}=props;
 
@@ -23,7 +27,9 @@ function Icons(props) {
         "guardar":<FaSave/>,
         "editar":<BsPencilSquare/>,
         "vaca": <img src={Vaca} alt="vaca" />,
-        "toro": <img src={Toro} alt="toro" />
+        "toro": <img src={Toro} alt="toro" />,
+        "benda": <BsFillBandaidFill/>,
+        "heart": <BsFillHeartFill/>
     }
 
     return(
