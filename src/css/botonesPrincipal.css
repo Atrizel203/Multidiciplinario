@@ -1,0 +1,30 @@
+body{
+    background-color: #DFDFDF;
+}
+
+
+.buttonContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.buttonWrapper {
+    position: absolute;
+}
+
+.customButton {
+    background-color: #8FD182;
+    color: white;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+    /* Ajusta estos valores según sea necesario */
+    width: 300px; 
+    height: 200px; 
+    border-radius: 15%;
+}

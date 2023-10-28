@@ -4,6 +4,7 @@ import "../css/modalModificarPerfil.css";
 import Icons from "../atomos/icons.jsx";
 import BotonGuardar from "../atomos/botonGuardar.jsx";
 import ImputImg from "../moleculas/imputImg.jsx";
+
 function ModalModificarPerfil(props) {
     return (
 
