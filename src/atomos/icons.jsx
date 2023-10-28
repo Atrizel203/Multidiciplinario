@@ -6,10 +6,10 @@ import {IoDocumentText} from "react-icons/io5";
 import {FaSave} from "react-icons/fa";
 import Vaca from "../img/vaca.svg";
 import Toro from "../img/toro.svg";
-import {BsFillBandaidFill} from "react-icons/bs";
-import {BsFillHeartFill} from "react-icons/bs";
 import {MdTitle} from "react-icons/md";
 import {BsFill1SquareFill} from "react-icons/bs";
+import {BsFillBandaidFill} from "react-icons/bs";
+import {BsFillHeartFill} from "react-icons/bs";
 
 
 function Icons(props) {
@@ -30,11 +30,11 @@ function Icons(props) {
         "editar":<BsPencilSquare/>,
         "vaca": <img src={Vaca} alt="vaca" />,
         "toro": <img src={Toro} alt="toro" />,
-        "benda": <BsFillBandaidFill/>,
-        "heart": <BsFillHeartFill/>,
         "titulo":<MdTitle/>,
         "calendario":<BsCalendar2EventFill/>,
-        "icono":<BsFill1SquareFill/>
+        "icono":<BsFill1SquareFill/>,
+        "benda": <BsFillBandaidFill/>,
+        "heart": <BsFillHeartFill/>,
     }
 
     return(
