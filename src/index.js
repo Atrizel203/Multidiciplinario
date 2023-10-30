@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals.js';
-import ModalModificarPerfil from './componentes/modalModificarPerfil.jsx';
+import VistaAgregarBovino from './pages/agregerBovinoVista.jsx';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <div>
-      <ModalModificarPerfil />
+      <VistaAgregarBovino />
     </div>
 
   </React.StrictMode>

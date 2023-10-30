@@ -100,9 +100,7 @@
 .input[type="date"]::-webkit-calendar-picker-indicator {
     margin-left: 10px;
     margin-right: 10px;
-    width: 1.5rem;
-    height: 1.5rem;
-}
+}/* borre cositas aqui para que tuviera un formato mas similar a los otros imputs */
 
 textarea{
     font-family: "Almarai";
