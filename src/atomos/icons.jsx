@@ -1,5 +1,9 @@
 import React from 'react';
+<<<<<<< HEAD
 import { BsFillHouseFill,BsPlusCircleFill,BsGraphUpArrow,BsCameraFill,BsTrashFill,BsSearch, BsDownload, BsPencilSquare} from "react-icons/bs";
+=======
+import { BsFillHouseFill,BsPlusCircleFill,BsGraphUpArrow,BsCameraFill,BsTrashFill, BsDownload, BsPencilSquare, BsCalendar2EventFill} from "react-icons/bs";
+>>>>>>> 3d4bc116fe893d01223be2adb0eb03e69f9f2e77
 import {AiFillTag,AiFillCloseCircle}from "react-icons/ai";
 import {BiLogOut}from "react-icons/bi";
 import {IoDocumentText} from "react-icons/io5";
