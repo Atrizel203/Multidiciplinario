@@ -6,8 +6,16 @@ import {IoDocumentText} from "react-icons/io5";
 import {FaSave} from "react-icons/fa";
 import Vaca from "../img/vaca.svg";
 import Toro from "../img/toro.svg";
+import {MdTitle} from "react-icons/md";
+import {BsFill1SquareFill} from "react-icons/bs";
+import {BsFillBandaidFill} from "react-icons/bs";
+import {BsFillHeartFill} from "react-icons/bs";
+
+
+import "./svg.css"
 function Icons(props) {
     const {iconName}=props;
+
 
     Icons={
         "home":<BsFillHouseFill/>,
@@ -28,7 +36,12 @@ function Icons(props) {
         "macho":<AiOutlineMan/>,
         "hembra":<AiOutlineWoman/>,
         "vaca": <img src={Vaca} alt="vaca" />,
-        "toro": <img src={Toro} alt="toro" />
+        "toro": <img src={Toro} alt="toro" />,
+        "titulo":<MdTitle/>,
+        "calendario":<BsCalendar2EventFill/>,
+        "icono":<BsFill1SquareFill/>,
+        "benda": <BsFillBandaidFill/>,
+        "heart": <BsFillHeartFill/>,
     }
 
     return(

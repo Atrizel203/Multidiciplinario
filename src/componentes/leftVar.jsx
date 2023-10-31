@@ -12,14 +12,15 @@ function leftvar(props) {
                     <div className="Bovinsoft" >BOVINSOFT</div>
                 </div>
 
-                <div className='opciones'>
-                    <OpcionesLeftVar texto="Inicio" icono="home"/>
-                    <OpcionesLeftVar texto="Graficas" icono="graficas"/>
-                    <OpcionesLeftVar texto="Agregar" icono="agregar"/>
-                </div>
+                <div className='opciones' />
+
+                <OpcionesLeftVar texto="Inicio" icono="home" />
+                <OpcionesLeftVar texto="Graficas" icono="graficas" />
+                <OpcionesLeftVar texto="Agregar" icono="agregar" />
 
                 <div className='salir'>
-                    <OpcionesLeftVar texto="Salir" icono="salir"/>
+
+                    <OpcionesLeftVar texto="Salir" icono="salir" />
                 </div>
 
 
