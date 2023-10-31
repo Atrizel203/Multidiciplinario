@@ -8,8 +8,9 @@ import Toro from "../img/toro.svg";
 import {MdTitle} from "react-icons/md";
 import {BsFill1SquareFill} from "react-icons/bs";
 import {BsFillBandaidFill} from "react-icons/bs";
-import {BsFillHeartFill} from "react-icons/bs";
-import {BsCalendar2EventFill} from "react-icons/bs";
+import {BsFillHeartFill, BsCalendar3} from "react-icons/bs";
+import {BsCalendar2EventFill, BsGenderAmbiguous,} from "react-icons/bs";
+import {AiOutlineMan, AiOutlineWoman, AiFillTag, AiFillCloseCircle} from "react-icons/ai";
 import "./svg.css"
 function Icons(props) {
     const {iconName}=props;

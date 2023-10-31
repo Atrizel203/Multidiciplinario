@@ -6,7 +6,10 @@ function buscador(props) {
     return (
         <div className="input-search">
             <input className='input-color' placeholder="Buscar" />
+        </div>
     );
 }
+
+
 
 export default buscador;
