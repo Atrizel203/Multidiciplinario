@@ -1,6 +1,6 @@
 import React from 'react';
-import { BsFillHouseFill,BsPlusCircleFill,BsGraphUpArrow,BsCameraFill,BsTrashFill, BsDownload, BsPencilSquare,BsSearch,BsGenderAmbiguous,BsCalendar3} from "react-icons/bs";
-import {AiFillTag,AiFillCloseCircle,AiOutlineMan,AiOutlineWoman}from "react-icons/ai";
+import { BsFillHouseFill,BsPlusCircleFill,BsGraphUpArrow,BsCameraFill,BsTrashFill, BsDownload, BsPencilSquare, BsCalendar2EventFill,BsSearch} from "react-icons/bs";
+import {AiFillTag,AiFillCloseCircle}from "react-icons/ai";
 import {BiLogOut}from "react-icons/bi";
 import {IoDocumentText} from "react-icons/io5";
 import {FaSave} from "react-icons/fa";
@@ -31,10 +31,6 @@ function Icons(props) {
         "guardar":<FaSave/>,
         "editar":<BsPencilSquare/>,
         "buscar":<BsSearch/>,
-        "genero":<BsGenderAmbiguous/>,
-        "calendario":<BsCalendar3/>,
-        "macho":<AiOutlineMan/>,
-        "hembra":<AiOutlineWoman/>,
         "vaca": <img src={Vaca} alt="vaca" />,
         "toro": <img src={Toro} alt="toro" />,
         "titulo":<MdTitle/>,
