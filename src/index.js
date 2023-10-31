@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals.js';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Principal from './componentes/Principal.jsx';
 import ModalModificarPerfil from './componentes/modalModificarPerfil.jsx';
 import LeftVar from "./componentes/leftVar.jsx";
 import Buscador from "./componentes/buscador.jsx";
@@ -11,17 +12,12 @@ import CardPadres from './componentes/CardPadres.jsx';
 import Acordion from "./moleculas/acordion.jsx";
 
 
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <div>
-      <LeftVar/>
-      <Buscador/>
-      <CardPadres/>
-      <Acordion/>
-    </div>
-
+  <div> 
+    <Principal />
+  </div>
   </React.StrictMode>
 );
 

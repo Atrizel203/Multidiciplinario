@@ -6,8 +6,6 @@ function buscador(props) {
     return (
         <div className="input-search">
             <input className='input-color' placeholder="Buscar" />
-            <BotonBuscar/>
-        </div>
     );
 }
 
