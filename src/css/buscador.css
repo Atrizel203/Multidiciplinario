@@ -10,6 +10,7 @@
     align-items: center;
     padding-top: .5%;
     margin-left: 25%;
+
 }
 
 .input-color{
@@ -30,3 +31,4 @@ padding-left:30px ;
 .input-search ::placeholder{
 margin-left: 10%;
 }
+

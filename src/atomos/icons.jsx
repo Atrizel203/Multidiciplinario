@@ -1,10 +1,5 @@
 import React from 'react';
-<<<<<<< HEAD
 import { BsFillHouseFill,BsPlusCircleFill,BsGraphUpArrow,BsCameraFill,BsTrashFill,BsSearch, BsDownload, BsPencilSquare} from "react-icons/bs";
-=======
-import { BsFillHouseFill,BsPlusCircleFill,BsGraphUpArrow,BsCameraFill,BsTrashFill, BsDownload, BsPencilSquare, BsCalendar2EventFill} from "react-icons/bs";
->>>>>>> 3d4bc116fe893d01223be2adb0eb03e69f9f2e77
-import {AiFillTag,AiFillCloseCircle}from "react-icons/ai";
 import {BiLogOut}from "react-icons/bi";
 import {IoDocumentText} from "react-icons/io5";
 import {FaSave} from "react-icons/fa";
@@ -15,8 +10,10 @@ import {BsFill1SquareFill} from "react-icons/bs";
 import {BsFillBandaidFill} from "react-icons/bs";
 import {BsFillHeartFill} from "react-icons/bs";
 import {BsCalendar2EventFill} from "react-icons/bs";
+import "./svg.css"
 function Icons(props) {
     const {iconName}=props;
+
 
     Icons={
         "home":<BsFillHouseFill/>,
@@ -32,6 +29,11 @@ function Icons(props) {
         "descargar":<BsDownload/>,
         "guardar":<FaSave/>,
         "editar":<BsPencilSquare/>,
+        "buscar":<BsSearch/>,
+        "genero":<BsGenderAmbiguous/>,
+        "calendario":<BsCalendar3/>,
+        "macho":<AiOutlineMan/>,
+        "hembra":<AiOutlineWoman/>,
         "vaca": <img src={Vaca} alt="vaca" />,
         "toro": <img src={Toro} alt="toro" />,
         "titulo":<MdTitle/>,

@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals.js';
-<<<<<<< HEAD
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Principal from './componentes/Principal.jsx';
-=======
 import ModalModificarPerfil from './componentes/modalModificarPerfil.jsx';
->>>>>>> 3d4bc116fe893d01223be2adb0eb03e69f9f2e77
+import LeftVar from "./componentes/leftVar.jsx";
+import Buscador from "./componentes/buscador.jsx";
+import CardDatos from "./componentes/cardDatos.jsx";
+import BotonesPerfil from './moleculas/botonesPer.jsx';
+import CardPadres from './componentes/CardPadres.jsx';
+import Acordion from "./moleculas/acordion.jsx";
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

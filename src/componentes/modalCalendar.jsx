@@ -4,6 +4,8 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction'; 
 import '../css/modalCalendario.css'; 
+import esLocale from '@fullcalendar/core/locales/es'; // Importar el locale español
+
 
 function DemoApp() {
   return (
@@ -17,22 +19,14 @@ function DemoApp() {
         }}
         customButtons={{
           Cargadas: {
-            text: 'Cargadas',
-            click: function() {
-              alert('Clicked Cargadas!');
-            }
+            text: 'Cargadas'
+           
           },
           Vacunas: {
-            text: 'Vacunas',
-            click: function() {
-              alert('Clicked Vacunas!');
-            }
+            text: 'Vacunas'
           },
           NotasExtra: {
             text: 'Notas extra',
-            click: function() {
-              alert('Clicked Notas extra!');
-            }
           }
         }}
         plugins={[ dayGridPlugin, timeGridPlugin, interactionPlugin ]}
@@ -42,6 +36,8 @@ function DemoApp() {
           { title: 'Evento 3', start: '2023-10-09T12:30:00' }
         ]}
         height={"90vh"}
+
+        locale={esLocale} // Establecer el locale a español
       />
     </div>
   );
