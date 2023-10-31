@@ -1,5 +1,5 @@
 import React from 'react';
-import { BsFillHouseFill,BsPlusCircleFill,BsGraphUpArrow,BsCameraFill,BsTrashFill, BsDownload, BsPencilSquare} from "react-icons/bs";
+import { BsFillHouseFill,BsPlusCircleFill,BsGraphUpArrow,BsCameraFill,BsTrashFill,BsSearch, BsDownload, BsPencilSquare} from "react-icons/bs";
 import {AiFillTag,AiFillCloseCircle}from "react-icons/ai";
 import {BiLogOut}from "react-icons/bi";
 import {IoDocumentText} from "react-icons/io5";
@@ -10,8 +10,7 @@ import {MdTitle} from "react-icons/md";
 import {BsFill1SquareFill} from "react-icons/bs";
 import {BsFillBandaidFill} from "react-icons/bs";
 import {BsFillHeartFill} from "react-icons/bs";
-
-
+import {BsCalendar2EventFill} from "react-icons/bs";
 function Icons(props) {
     const {iconName}=props;
 
@@ -25,6 +24,7 @@ function Icons(props) {
         "camara":<BsCameraFill/>,
         "cerrar":<AiFillCloseCircle/>,
         "eliminar":<BsTrashFill/>,
+        "buscar":<BsSearch/>,
         "descargar":<BsDownload/>,
         "guardar":<FaSave/>,
         "editar":<BsPencilSquare/>,

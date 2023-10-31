@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ModalModificarPerfil from './componentes/modalModificarPerfil.jsx';
+import Principal from './componentes/Principal.jsx';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
   <div> 
-    <ModalModificarPerfil />
+    <Principal />
   </div>
   </React.StrictMode>
 );

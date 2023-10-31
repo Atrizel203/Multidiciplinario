@@ -12,18 +12,20 @@
 }
 
 .carouselContainer {
+    font-family: "Almarai";
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: auto; 
     height: auto; 
     margin-left: 34%;
-    margin-top: 1%;
+    margin-top: 2%;
     margin-right: 9%;
 }
 
 .slide {
-    border-radius: 2%;
+    border-radius: 15px;
     flex-grow: 1;
     text-align: center; 
     background-color: #4C9680; 
