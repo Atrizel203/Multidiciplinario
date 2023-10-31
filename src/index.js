@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals.js';
-import ModalModificarPerfil from './componentes/modalModificarPerfil.jsx';
+import ModalModificarPerfil from "./pages/primerFiltroV.jsx";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

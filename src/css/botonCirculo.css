@@ -10,3 +10,22 @@
         url('./Almarai/Almarai-Light.ttf') format('truetype'),
         url('./Almarai/Almarai-Regular.ttf') format('truetype');
 }
+
+.botonCirculo {
+    width: 20px;
+    height: 20px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+}
+
+.botonCirculo span {
+    color: var(--primary-color);
+    text-align: center;
+    font-family: "Almarai";
+    font-size: 15px;
+}

@@ -1,26 +1,48 @@
-import React from 'react';
-import { BsFillHeartFill, BsFillBandaidFill } from "react-icons/bs";
+import React, { useEffect, useState } from 'react';
 import NuevaImagenVaca from '../img/Vaca2.jpg';
+import '../css/perfilChico.css';
+import Icons from '../atomos/icons';
 
-function Perfil() {
-    const arete = "0000"; 
-    const nombreDeVaca = "Lucky";
+function Perfil(InfoPerfilMini) {
+
+
+    let { arete,nombreDeVaca } = InfoPerfilMini;
+
+    const [shouldAnimateArete, setShouldAnimateArete] = useState(false);
+    const [shouldAnimateNombre, setShouldAnimateNombre] = useState(false);
+
+    useEffect(() => {
+        if (arete.length > 15) {
+            setShouldAnimateArete(true);
+        }
+
+        if (nombreDeVaca.length > 12) {
+            setShouldAnimateNombre(true);
+        }
+    }, [arete, nombreDeVaca]);
 
     return (
-        <div style={{ width: '300px', border: '1px solid black', borderRadius: '10px', padding: '0px', backgroundColor: 'white', overflow: 'hidden', marginTop:'10%' }}>
-            <img src={NuevaImagenVaca} alt="vaca" style={{ width: '100%', borderTopLeftRadius: '10px', borderTopRightRadius: '10px', borderBottomLeftRadius:'10%', borderBottomRightRadius:'10%' }} />
-            <div style={{ color: '#000000', padding: '5px' }}>
-                <div>
-                    Arete: {arete}
+        <div className="perfil-container">
+            <img src={NuevaImagenVaca} alt="vaca" className="perfil-image" />
+
+            <div className='infoEspPerfil'>
+
+                <div className="perfil-details">
+                    <div className="perfil-detailNomr">
+                        <span className={`text-container ${shouldAnimateArete ? 'animate' : ''}`}>Arete: {arete}</span>
+                    </div>
+                    <div className="perfil-detailImp">
+                        <span className={`text-container ${shouldAnimateNombre ? 'animate' : ''}`}>Nombre: {nombreDeVaca}</span>
+                    </div>
+
                 </div>
-                <div>
-                    Nombre: {nombreDeVaca}
+                <div className="perfil-icons">
+                    <Icons iconName="heart" />
+                    <Icons iconName="benda" />
                 </div>
+
             </div>
-            <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '-30px', marginLeft:'50px' }}>
-                <BsFillHeartFill color="#008000" size="30px" style={{marginLeft:'30px'}}  />
-                <BsFillBandaidFill color="#D182BC" size="30px" style={{marginLeft:'20px'}}/>
-            </div>
+
         </div>
     );
 }
