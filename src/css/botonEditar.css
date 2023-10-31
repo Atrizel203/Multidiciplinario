@@ -1,0 +1,20 @@
+:root {
+    --primary-color: #FFFFFF;
+    --secondary-color: #5AA257;
+    --tertiary-color: #F44336;
+    --cuarto-color:#ADA1AE;
+}
+
+.button-Editar{
+    width: 70px;
+    height: 45px;
+    position: relative;
+    margin-top: 1%;
+    margin-left: 1%;
+    background-color: var(--cuarto-color);
+    border-color: var(--cuarto-color);
+    color: var(--primary-color);
+    border-radius: 15px;
+    font-size: 20px;
+}
+    
