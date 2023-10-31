@@ -5,9 +5,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import "../css/carrusel.css";
 import "../css/botonesPrincipal.css";
+import Buscador from './buscador';
+import "../css/buscador.css";
+import "../img/vacaPrincipal.jpg"
 
 
-function App() {
+
+function Principal() {
     const [currentSlide, setCurrentSlide] = useState(0);
     const slides = [
         { evento: 'Evento 1', vaca: 'Lucky', fecha: '00:00:00' },
@@ -25,7 +29,8 @@ function App() {
 
     return (
         <div>
-            <Leftvar />
+        <Leftvar />
+        <Buscador />
             <div className="carouselContainer">
                 <button onClick={goToPreviousSlide}><FontAwesomeIcon icon={faArrowLeft} /></button>
                 <div className="slide">
@@ -37,21 +42,21 @@ function App() {
                 <button onClick={goToNextSlide}><FontAwesomeIcon icon={faArrowRight} /></button>
             </div>
             <div className="buttonContainer">
-                <div className="buttonWrapper" style={{top: '35%', left: '40%'}}>
-                    <button className="customButton">VACAS</button>
+                <div className="vaca">
+                    <button className="customButton vaca">VACAS</button>
                 </div>
-                <div className="buttonWrapper" style={{top: '35%', left: '65%'}}>
-                    <button className="customButton">TOROS</button>
+                <div className="toro">
+                    <button className="customButton toro">TOROS</button>
                 </div>
-                <div className="buttonWrapper" style={{top: '70%', left: '40%'}}>
-                    <button className="customButton">BECERROS</button>
+                <div className="becerro">
+                    <button className="customButton becerro">BECERROS</button>
                 </div>
-                <div className="buttonWrapper" style={{top: '70%', left: '65%'}}>
-                    <button className="customButton">TORITOS</button>
+                <div className="torito">
+                    <button className="customButton torito">TORITOS</button>
                 </div>
             </div>
         </div>
     );
 }
 
-export default App;
+export default Principal;

@@ -1,0 +1,66 @@
+:root {
+  --primary-color: #FFFFFF;
+  --secondary-color: #5AA257;
+  --tertiary-color: #F44336;
+}
+
+@font-face {
+    font-family: 'Almarai';
+    src: url('./Almarai/Almarai-Bold.ttf') format('truetype'),
+        url('./Almarai/Almarai-ExtraBold.ttf') format('truetype'),
+        url('./Almarai/Almarai-Light.ttf') format('truetype'),
+        url('./Almarai/Almarai-Regular.ttf') format('truetype');
+}
+
+
+.accordion {
+    display: flex;
+    border-radius: 15px;
+    width: 40%;
+    height: 50px;
+    background-color: var(--secondary-color);
+    margin-left: 56.2%;
+    margin-top: 1.5%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .accordion-item {
+    position: relative;
+  }
+  
+  .accordion-header {
+    cursor: pointer;
+    margin-top: 240px;
+    background-color: var(--secondary-color);
+    border-radius: 15px;
+    font-family: "Almarai";
+    color: var(--primary-color);
+    font-size: 20px;
+  }
+  
+  .accordion-body {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    min-height: 250px; 
+    overflow-y: auto; 
+    max-height: 300px; 
+    transition: max-height 0.3s; 
+  }
+  
+  .cards {
+    max-width: 100%;
+    text-align: center;
+    height: 100px; 
+    
+  }
+  
+  .accordion-item.active .accordion-body {
+    max-height: 270px; 
+  }
+
+.fondo{
+    background-color: var(--secondary-color);
+}

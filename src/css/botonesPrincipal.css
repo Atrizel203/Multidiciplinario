@@ -1,17 +1,60 @@
+:root {
+    --primary-color: #FFFFFF;
+    --secondary-color: #5AA257;
+}
+
+@font-face {
+    font-family: 'Almarai';
+    src: url('./Almarai/Almarai-Bold.ttf') format('truetype'),
+        url('./Almarai/Almarai-ExtraBold.ttf') format('truetype'),
+        url('./Almarai/Almarai-Light.ttf') format('truetype'),
+        url('./Almarai/Almarai-Regular.ttf') format('truetype');
+}
+
+
 body{
     background-color: #DFDFDF;
 }
 
 
 .buttonContainer {
+    font-family: 'Almarai';
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 10px;
 }
 
-.buttonWrapper {
+.vaca {
+    background-image: url('../img/vacaPrincipal.jpg');
+    background-size: cover;
     position: absolute;
+    margin-right: 23%;
+    margin-top: 2%;
+}
+
+.toro {
+    background-image: url('../img/toroPrincipal.jpg');
+    background-size: cover;
+    position: absolute;
+    margin-left: 29%;
+    margin-top: 2%;
+}
+
+.becerro {
+    background-image: url('../img/becerritoPrincipal.jpg');
+    background-size: cover;
+    position: absolute;
+    margin-top: 16%;
+    margin-right: 23%;
+}
+
+.torito {
+    background-image: url(../img/toritoPrincipal.jpg);
+    background-size: cover;
+    position: absolute;
+    margin-top: 16%;
+    margin-left: 29%;
 }
 
 .customButton {
@@ -22,9 +65,7 @@ body{
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-
-    /* Ajusta estos valores según sea necesario */
     width: 300px; 
-    height: 200px; 
-    border-radius: 15%;
+    height: 160px; 
+    border-radius: 15px;
 }
