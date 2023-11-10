@@ -13,7 +13,7 @@ function CardPadres() {
             </div>
             <div className='padres'>
             <div className='madre'> 
-    <div className='icon'>
+            <div className='icn'>
         <h1>Nombre Arete</h1>
         <Icons iconName="hembra" className="icon" />
     </div>
@@ -22,7 +22,7 @@ function CardPadres() {
     </div>
 </div>
 <div className='padre'> 
-    <div className='icon'>
+    <div className='icn'>
         <h1>Nombre Arete</h1>
         <Icons iconName="macho" className="icon" />
     </div>

@@ -2,9 +2,15 @@ import React, { useEffect, useState } from 'react';
 import NuevaImagenVaca from '../img/Vaca2.jpg';
 import '../css/perfilChico.css';
 import Icons from '../atomos/icons';
+import { useNavigate } from 'react-router-dom';
 
-function Perfil(InfoPerfilMini) {
 
+const App = (InfoPerfilMini) => {
+    const navigate = useNavigate();
+
+    const VistaDatos = () => {
+        navigate('/Vistadatos');
+    };
 
     let { arete,nombreDeVaca } = InfoPerfilMini;
 
@@ -22,7 +28,7 @@ function Perfil(InfoPerfilMini) {
     }, [arete, nombreDeVaca]);
 
     return (
-        <div className="perfil-container">
+        <div className="perfil-container" onClick={VistaDatos}>
             <img src={NuevaImagenVaca} alt="vaca" className="perfil-image" />
 
             <div className='infoEspPerfil'>
@@ -47,4 +53,4 @@ function Perfil(InfoPerfilMini) {
     );
 }
 
-export default Perfil;
+export default App;

@@ -20,8 +20,8 @@
     align-items: center;
     justify-content: center;
     border-radius: 15px;
-    margin-top: 2%;
-    margin-left: 55%;
+    margin-left: 72%;
+    margin-top: 5%;
     text-align: center;
 }
 
@@ -50,7 +50,7 @@ justify-content: center;
     text-align: center;
     justify-content: center;
     justify-content: space-around;
-    margin-top: -2%;
+    margin-top: 2%;
     margin-left: -2.5%;
 }
 
@@ -71,7 +71,7 @@ justify-content: center;
 }
 
 .imagen-container {
-margin-top: -2%;
+margin-top: 2%;
 }
 
 .imagen {
@@ -81,12 +81,12 @@ margin-top: -2%;
     margin-right: -30px;
 }
 
-.icon {
+.icn {
     display: flex;
     align-items: center;
     color: var(--primary-color);
 }
 
-.icon h1 {
+.icn h1 {
     margin-right: -30px; /* Ajusta el espacio entre el texto y el icono */
 }

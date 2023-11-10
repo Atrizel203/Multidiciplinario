@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Leftvar from './leftVar';
+import { useNavigate } from 'react-router-dom';
 import '../css/botonesPrincipal.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
@@ -9,9 +10,13 @@ import Buscador from './buscador';
 import "../css/buscador.css";
 import "../img/vacaPrincipal.jpg"
 
+const App = () => {
+    const navigate = useNavigate();
 
+    const PrimerFiltro = () => {
+        navigate('/primerFiltroV');
+    };
 
-function Principal() {
     const [currentSlide, setCurrentSlide] = useState(0);
     const slides = [
         { evento: 'Evento 1', vaca: 'Lucky', fecha: '00:00:00' },
@@ -29,8 +34,8 @@ function Principal() {
 
     return (
         <div>
-        <Leftvar />
-        <Buscador />
+            <Leftvar />
+            <Buscador />
             <div className="carouselContainer">
                 <button onClick={goToPreviousSlide}><FontAwesomeIcon icon={faArrowLeft} /></button>
                 <div className="slide">
@@ -43,7 +48,7 @@ function Principal() {
             </div>
             <div className="buttonContainer">
                 <div className="vaca">
-                    <button className="customButton vaca">VACAS</button>
+                    <button className="customButton vaca" onClick={PrimerFiltro}>VACAS</button>
                 </div>
                 <div className="toro">
                     <button className="customButton toro">TOROS</button>
@@ -59,4 +64,4 @@ function Principal() {
     );
 }
 
-export default Principal;
+export default App;

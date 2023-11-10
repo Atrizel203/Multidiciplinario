@@ -4,9 +4,9 @@ import Icons from "./icons";
 
 function BotonDescargar(props) {
     return (
-        <button className='button-descarga'>
+        <div className='button-descarga'>
                 <Icons iconName="descargar" />
-            </button>
+            </div>
     );
 }
 
