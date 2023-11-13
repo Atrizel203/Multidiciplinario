@@ -19,25 +19,13 @@ function PerfilVaca() {
         { arete: "1234", nombreDeVaca: "1234" },
         { arete: "1234", nombreDeVaca: "1234" },
         { arete: "1234", nombreDeVaca: "1234" },
-        { arete: "1234", nombreDeVaca: "1234" },
+        { arete: "1234", nombreDeVaca: "1234" },   
     ];
 
     const perPage = 6;
     const [currentPage, setCurrentPage] = useState(1);
 
     const totalPages = Math.ceil(profiles.length / perPage);
-
-    const handleNextPage = () => {
-        if (currentPage < totalPages) {
-            setCurrentPage(currentPage + 1);
-        }
-    };
-
-    const handlePrevPage = () => {
-        if (currentPage > 1) {
-            setCurrentPage(currentPage - 1);
-        }
-    }
 
     return (
         <div className="contenedor-principal">
@@ -49,31 +37,18 @@ function PerfilVaca() {
                         .map((profile, index) => (
                             <MiniPerfiles key={index} arete={profile.arete} nombreDeVaca={profile.nombreDeVaca} />
                         ))}
-                    
                 </div>
 
                 <div className="pagination">
-                        {currentPage > 1 && (
-                            <BotonCirculo
-                                texto={currentPage - 1}
-                                onClick={handlePrevPage}
-                            />
-                        )}
-                        {[...Array(totalPages).keys()].map((page) => (
-                            <BotonCirculo
-                                key={page}
-                                texto={page + 1}
-                                selected={page + 1 === currentPage} // Resalta la página actual
-                                onClick={() => setCurrentPage(page + 1)}
-                            />
-                        ))}
-                        {currentPage < totalPages && (
-                            <BotonCirculo
-                                texto={currentPage + 1}
-                                onClick={handleNextPage}
-                            />
-                        )}
-                    </div>
+                    {[...Array(totalPages).keys()].map((page) => (
+                        <BotonCirculo
+                            key={page}
+                            texto={page + 1}
+                            onClick={() => setCurrentPage(page + 1)}
+                            style={page + 1 === currentPage ? { backgroundColor: "#FFFFFF", color: "#5AA257" } : {}}
+                        />
+                    ))}
+                </div>
             </div>
         </div>
     );
