@@ -4,9 +4,9 @@ import Icons from "./icons";
 
 function BotonBorrar(props) {
     return (
-        <button className='button-borrar'>
+        <div className='button-borrar'>
                 <Icons iconName="eliminar" />
-            </button>
+            </div>
     );
 }
 

@@ -1,4 +1,5 @@
 .Botones-contenedor{
-margin-left: 25.5%;
+display: flex;
+margin-left: 24.5%;
 margin-top: 1%;
 }

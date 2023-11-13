@@ -7,7 +7,7 @@ function CardDatos(props) {
     return (
         <div className="Card-contenedor">
             <div className='Datos'>
-                <img className='imagen' src={Vaca} alt="Perfil de la vaca" />
+                <img className='imag' src={Vaca} alt="Perfil de la vaca" />
                 <LabelTexto texto="Nombre" />
                 <LabelTexto texto="Genero" iconName="genero" />
                 <LabelTexto texto="Arete" iconName="tag" />

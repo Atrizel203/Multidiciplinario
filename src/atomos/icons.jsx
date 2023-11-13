@@ -1,12 +1,13 @@
 import React from 'react';
 import { BsFillHouseFill,BsPlusCircleFill,BsGraphUpArrow,BsCameraFill,BsTrashFill,BsSearch, BsDownload, BsPencilSquare} from "react-icons/bs";
+import {AiFillTag,AiFillCloseCircle,AiOutlineMan,AiOutlineWoman} from "react-icons/ai";
 import {BiLogOut}from "react-icons/bi";
 import {IoDocumentText} from "react-icons/io5";
 import {FaSave} from "react-icons/fa";
 import Vaca from "../img/vaca.svg";
 import Toro from "../img/toro.svg";
 import {MdTitle} from "react-icons/md";
-import {BsFill1SquareFill} from "react-icons/bs";
+import {BsFill1SquareFill,BsGenderAmbiguous,BsCalendar3} from "react-icons/bs";
 import {BsFillBandaidFill} from "react-icons/bs";
 import {BsFillHeartFill, BsCalendar3} from "react-icons/bs";
 import {BsCalendar2EventFill, BsGenderAmbiguous,} from "react-icons/bs";

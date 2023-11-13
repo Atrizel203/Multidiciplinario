@@ -3,11 +3,6 @@
     --secondary-color: #5AA257;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-}
-
 @font-face {
     font-family: 'Almarai';
     src: url('./Almarai/Almarai-Bold.ttf') format('truetype'),
@@ -34,7 +29,8 @@ body {
     display: flex;
     background-color: var(--primary-color);
     margin-bottom: 15px;
-
+    border-radius: 15px;
+    padding: 1%;
 }
 
 h1{
@@ -52,11 +48,11 @@ h1{
 }
 
 .containerAgregarBovino{
-    width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: .5%;
+    margin-left: 18%;
 }
 
 .botonGuardar{

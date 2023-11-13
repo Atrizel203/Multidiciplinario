@@ -1,13 +1,15 @@
-import React from "react";
-import "../css/botonEditar.css";
+import React, { useState } from 'react';
 import Icons from "./icons";
+import "../css/botonEditar.css";
 
-function BotonEditar(props) {
+function BotonEditar (props){
     return (
-        <button className='button-Editar'>
+            <div className='button-Editar'>
                 <Icons iconName="editar" />
-            </button>
+            </div>
     );
 }
+
+       
 
 export default BotonEditar;

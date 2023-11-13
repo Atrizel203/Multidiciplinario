@@ -1,9 +1,22 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import "../css/leftvar.css"
 import OpcionesLeftVar from "../moleculas/opcionesNav.jsx"
 import Logo from "../img/logoNuevo.png"
 
-function leftvar(props) {
+function Leftvar(props) {
+
+    const navigate = useNavigate();
+
+    const Inicio = () => {
+        navigate('/');
+    };
+
+
+    const VerAgregar = () => {
+        navigate('/AgregarBovino');
+    };
+
     return (
         <div className="navContainer">
             <div>
@@ -13,10 +26,15 @@ function leftvar(props) {
                 </div>
 
                 <div className='opciones' />
-
-                <OpcionesLeftVar texto="Inicio" icono="home" />
-                <OpcionesLeftVar texto="Graficas" icono="graficas" />
+<div onClick={Inicio}>
+<OpcionesLeftVar texto="Inicio" icono="home" />
+</div>
+<div >
+<OpcionesLeftVar texto="Graficas" icono="graficas" />
+</div>
+                <div onClick={VerAgregar}>
                 <OpcionesLeftVar texto="Agregar" icono="agregar" />
+                </div>
 
                 <div className='salir'>
 
@@ -29,4 +47,4 @@ function leftvar(props) {
     );
 }
 
-export default leftvar;
+export default Leftvar;

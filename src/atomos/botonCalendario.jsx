@@ -4,9 +4,9 @@ import Icons from "./icons";
 
 function BotonCalendario(props) {
     return (
-        <button className='button-calendario'>
+        <div className='button-calendario' >
                 <Icons iconName="calendario" />
-            </button>
+            </div>
     );
 }
 
