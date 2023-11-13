@@ -34,10 +34,18 @@ margin-left: 10%;
 }
 
 .boton{
+display: flex;
 background-color: var(--secondary-color);
 color: #FFFFFF;
 border-top-right-radius: 15px;
 border-bottom-right-radius: 15px;
 width: 25px;
-padding:.8px;
+height: 25px;
+}
+
+.icon-buscar{
+display: flex;
+top: -5%;
+margin-top: -2px;
+margin-left: 1.5px;
 }
