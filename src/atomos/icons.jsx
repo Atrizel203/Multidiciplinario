@@ -7,7 +7,7 @@ import {FaSave} from "react-icons/fa";
 import Vaca from "../img/vaca.svg";
 import Toro from "../img/toro.svg";
 import {MdTitle} from "react-icons/md";
-import {BsFill1SquareFill,BsGenderAmbiguous,BsCalendar3} from "react-icons/bs";
+import {BsFill1SquareFill,BsGenderAmbiguous} from "react-icons/bs";
 import {BsFillBandaidFill} from "react-icons/bs";
 import {BsFillHeartFill} from "react-icons/bs";
 import {BsCalendar2EventFill} from "react-icons/bs";
