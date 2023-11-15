@@ -16,7 +16,7 @@ function Icons(props) {
     const {iconName}=props;
 
 
-    Icons={
+    const Icons={
         "home":<BsFillHouseFill/>,
         "tag":<AiFillTag/>,
         "agregar":<BsPlusCircleFill/>,

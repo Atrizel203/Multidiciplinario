@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Leftvar from "../componentes/leftVar";
 import CardDatos from '../componentes/cardDatos';
 import Buscador from "../componentes/buscador";

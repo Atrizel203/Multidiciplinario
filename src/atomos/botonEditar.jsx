@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Icons from "./icons";
 import "../css/botonEditar.css";
 
@@ -10,6 +10,5 @@ function BotonEditar (props){
     );
 }
 
-       
 
 export default BotonEditar;
