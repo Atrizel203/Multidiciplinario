@@ -38,7 +38,7 @@ function ModalAgregarEvento(props) {
 
 
             <ImputAgregar texto="Descripcion" tipo="textarea" className="descripcion" />
-            <ImputAgregar texto="Fecha naciemiento" tipo="date" />
+            <ImputAgregar texto="Fecha A Terminar" tipo="date" />
 
             <div className="guardar">
                 <BotonGuardar />
