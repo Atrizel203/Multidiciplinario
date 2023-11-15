@@ -4,7 +4,13 @@ import BotonGuardar from "../atomos/botonGuardar.jsx";
 import ImputAgregar from "../moleculas/impustEspeciales.jsx";
 import "../css/modalAgregarEvento.css";
 
-function ModalAgregarEvento(params) {
+function ModalAgregarEvento(props) {
+    const handleClose = () => {
+        if (props.onClose) {
+            props.onClose();
+        }
+    };
+
     let opcionesEvento = [
         { value: '', label: '' },
         { value: 'Vacuna', label: 'Vacuna' },
@@ -22,7 +28,9 @@ function ModalAgregarEvento(params) {
                     Agregar evento al Bovino
                     <Icons iconName="calendario" />
                 </h1>
+                <div onClick={handleClose}>
                 <Icons iconName="cerrar" />
+                </div>
             </div>
 
             <ImputAgregar texto="Titulo de evento" tipo="text" />
