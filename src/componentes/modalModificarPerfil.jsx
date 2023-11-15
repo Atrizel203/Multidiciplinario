@@ -36,7 +36,9 @@ function ModalModificarPerfil(props) {
                 <ImputImg texto="Foto del Pedigri" />
             </div>
 
+            <div className="guardarBotonModal">
             <BotonGuardar />
+            </div>
         </div>
     );
 }

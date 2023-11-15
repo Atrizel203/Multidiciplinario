@@ -4,7 +4,7 @@ import Borrar from "../atomos/botonBorrar";
 import Descargar from "../atomos/botonDescarga";
 import Calendario from "../atomos/botonCalendario";
 import Editar from "../atomos/botonEditar";
-import ModalEditar from "../componentes/modalModificarPerfil"; // Asegúrate de importar el componente ModalEditar
+import ModalEditar from "../componentes/modalModificarPerfil"; 
 
 function BotonesPerfil(props) {
     const [showModalEditar, setShowModalEditar] = useState(false);
@@ -25,7 +25,6 @@ function BotonesPerfil(props) {
             <div onClick={openModalEditar}>
             <Editar />
             </div >
-            {/* Modal para el botón de editar */}
             {showModalEditar && <ModalEditar onClose={closeModalEditar} />}
         </div>
     );
