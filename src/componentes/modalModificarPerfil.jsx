@@ -7,15 +7,14 @@ import ImputImg from "../moleculas/imputImg.jsx";
 
 function ModalModificarPerfil(props) {
     const handleClose = () => {
-        // Llama a la función onClose cuando se hace clic en el icono de cerrar
         if (props.onClose) {
             props.onClose();
         }
     };
 
     return (
-        <div className="contenedor">
-            <div className="cerrar">
+        <div className="contenedorA">
+            <div className="cerrarA">
                 <h1>
                     Modificar Perfil
                     <Icons iconName="editar" />
@@ -31,12 +30,12 @@ function ModalModificarPerfil(props) {
             <ImputEditar texto="Arete del Vaca" iconName="vaca" />
             <ImputEditar texto="Siniiga" iconName="documentos" />
 
-            <div className="fotos">
+            <div className="fotosA">
                 <ImputImg texto="Foto del Bovino" />
                 <ImputImg texto="Foto del Pedigri" />
             </div>
 
-            <div className="guardarBotonModal">
+            <div className="guardarBotonModalA">
             <BotonGuardar />
             </div>
         </div>
