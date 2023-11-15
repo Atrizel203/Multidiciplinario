@@ -19,7 +19,7 @@ function ModalAgregarEvento(params) {
         <div className="contenedor">
             <div className="cerrar">
                 <h1>
-                    Agregar evenento al Bovino
+                    Agregar evento al Bovino
                     <Icons iconName="calendario" />
                 </h1>
                 <Icons iconName="cerrar" />
