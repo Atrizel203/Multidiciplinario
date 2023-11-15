@@ -29,7 +29,7 @@
     display: flex;
     background-color: var(--primary-color);
     margin-bottom: 15px;
-    border-radius: 15px;
+    border-radius: 5px;
     padding: 1%;
 }
 
@@ -55,7 +55,7 @@ h1{
     margin-left: 18%;
 }
 
-.botonGuardar{
+.botonGuardarAgregar{
     width: 80vh;
 }
 

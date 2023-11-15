@@ -9,12 +9,16 @@ function Leftvar(props) {
     const navigate = useNavigate();
 
     const Inicio = () => {
-        navigate('/');
+        navigate('/Principal');
     };
 
 
     const VerAgregar = () => {
         navigate('/AgregarBovino');
+    };
+
+    const Salir = () => {
+        navigate('/');
     };
 
     return (
@@ -36,7 +40,7 @@ function Leftvar(props) {
                 <OpcionesLeftVar texto="Agregar" icono="agregar" />
                 </div>
 
-                <div className='salir'>
+                <div onClick={Salir} className='salir'>
 
                     <OpcionesLeftVar texto="Salir" icono="salir" />
                 </div>

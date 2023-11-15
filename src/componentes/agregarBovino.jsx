@@ -57,7 +57,9 @@ function AgregarBovino() {
                 </div>
 
             </div>
-            <BotonGuardar className="botonGuardar" />
+            <div className="botonGuardarAgregar">
+                <BotonGuardar />
+            </div>
         </div>
     );
 }

@@ -1,0 +1,47 @@
+:root {
+    --primary-color: #FFFFFF;
+    --secondary-color: #5AA257;
+    --tercer-color:#8FD182;
+    --cuarto-color:#4C9680;
+}
+
+@font-face {
+    font-family: 'Almarai';
+    src: url('./Almarai/Almarai-Bold.ttf') format('truetype'),
+        url('./Almarai/Almarai-ExtraBold.ttf') format('truetype'),
+        url('./Almarai/Almarai-Light.ttf') format('truetype'),
+        url('./Almarai/Almarai-Regular.ttf') format('truetype');
+}
+
+.logNuevo{
+display: flex;
+width: 400px;
+margin-top: 12%;
+margin-left: 30%;
+}
+
+.text{
+display: flex;
+margin-top: 4%;
+margin-left: 13%;
+width: 600px;
+text-align: center;
+font-family: "Almarai";
+color: var(--cuarto-color);
+font-size: 15px;
+}
+
+.text {
+    opacity: 1;
+    transition: opacity 1s ease-in-out, height .5s ease-in-out;
+  }
+  
+  .text.fadeOut {
+    opacity: 0;
+    height: 0;
+  }
+  
+  .text.fadeIn {
+    opacity: 1;
+  }
+  
