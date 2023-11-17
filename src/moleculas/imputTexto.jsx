@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/imputTexto.css";
+import Style from "../css/imputTexto.module.css";
 import Icons from "../atomos/icons";
 
 function ImputTexto(props) {
@@ -7,11 +7,11 @@ function ImputTexto(props) {
 
     return (
 
-        <div className="input-group">
-            <input required type="text" name="text" autoComplete="off" className="input" />
-            <label className="user-label">
+        <div className={Style.input_group}>
+            <input required type="text" name="text" autoComplete="off"className={Style.input} />
+            <label className={Style.user_label}>
                 {texto}
-                <Icons iconName={iconName} className="iconinput" />
+                <Icons iconName={iconName} className={Style.iconinput} />
             </label>
         </div>
 

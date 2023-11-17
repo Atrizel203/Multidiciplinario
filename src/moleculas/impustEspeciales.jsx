@@ -1,16 +1,16 @@
 import React from "react";
-import "../css/imputTextoEspecifico.css";
+import Style from "../css/imputTextoEspecifico.module.css";
 import Icons from "../atomos/icons";
 
 function ImputTexto(props) {
     let { texto, iconName, tipo , options} = props;
 
     return (
-        <div className="input-group">
+        <div className={Style.input_group}>
             {tipo === "textarea" ? (
-                <textarea required name="text" autoComplete="off" className="input textarea" />
+                <textarea required name="text" autoComplete="off" className={Style.input} textarea />
             ) : tipo === "select" ? (
-                <select required name="text" className="input select">
+                <select required name="text" className={Style.input} select>
                 {options.map((option, index) => (
                     <option key={index} value={option.value}>
                         {option.label}
@@ -19,11 +19,11 @@ function ImputTexto(props) {
             </select>
 
             ) : (
-                <input required type={tipo} name="text" autoComplete="off" className="input" />
+                <input required type={tipo} name="text" autoComplete="off" className={Style.input} />
             )}
-            <label className="user-label">
+            <label className={Style.user_label}>
                 {texto}
-                <Icons iconName={iconName} className="iconinput" />
+                <Icons iconName={iconName} className={Style.iconinput} />
             </label>
         </div>
     );

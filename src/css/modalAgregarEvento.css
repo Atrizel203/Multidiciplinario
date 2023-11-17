@@ -25,6 +25,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-top: 20px;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000; /* Ajusta el valor según sea necesario */
 }
 
 .contenedor h1 {
@@ -50,7 +57,6 @@
     width: 20px;
     height: 20px;
     cursor: default;
-    margin-top: 10px;
     margin-left: 50%;
 }
 
@@ -82,10 +88,9 @@
 
 .guardar{
     margin-top: 25px;
-    width: 100%;
+    width: 70%;
     height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
