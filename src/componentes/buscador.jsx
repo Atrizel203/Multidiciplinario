@@ -1,28 +1,32 @@
 import React, { useState } from 'react';
-import "../css/buscador.css"
-import Icons from "../atomos/icons";
+import "../css/buscador.css";
+import Icons from '../atomos/icons';
 
-function buscador(props) {
-    // const [filtradoNombre, setFiltrado] = useState([])
-    // const arr = []
-    // const handleChange = ({target}) => {
-    //     setFiltrado(arr.filter(({nombre}) => {
-    //         nombre.include(target.value)
-    //     }))
-    // }
+function Buscador(props) { 
+    const [filtradoNombre, setFiltrado] = useState([]);
+    const arr = ["a", "b", "c", "d", "e", "f", "g", "h", "i"];  
+
+    const handleChange = ({ target }) => {
+        const filtered = arr.filter((nombre) => nombre.includes(target.value));
+        setFiltrado(filtered);
+    };
+    
     return (
-        <div className="input-search">
-            <input className='input-color' placeholder="Buscar"/*  onChange={handleChange} list='x' *//>
-            <label className='boton'> 
-            <div className='icon-buscar' > 
-            <Icons  iconName="buscar" />
-                </div>
-                </label>
-          {/* <datalist id='x'>
-            {filtradoNombre.map(() => (<option>a</option>))}
-            </datalist>   */}
-        </div> 
+        <form className="form">
+            <button>
+                <Icons iconName="buscar"/>
+            </button>
+            <input className="input" placeholder="Escribe el Nombre o el Arete" required type="text" onChange={handleChange} list='x'  />
+            <button className="reset" type="reset">
+                <Icons iconName="cerrar"/>
+            </button>
+            <datalist id='x'>
+                {filtradoNombre.map((nombre, index) => (
+                    <option key={index} value={nombre} />
+                ))}
+            </datalist>
+        </form>
     );
 }
 
-export default buscador;
+export default Buscador;
