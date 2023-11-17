@@ -12,7 +12,8 @@ function Vistadatos(props) {
 
         /* AQUI ES NECESARIO PASAR EL URL DEL LA DB QUE ESTA EN LA NUBE QUE LE PERTENECE AL USUARIO*/
     /* const url = "https://bovinosapp.herokuapp.com" */;/* ejemplo */
-    const dataBovinosAll = obtenerDatosApi(/* url */);
+    const dblink = "http://localhost:3003";/* ejemplo */
+    const dataBovinosAll = obtenerDatosApi(dblink);
 
     return (
         <div>

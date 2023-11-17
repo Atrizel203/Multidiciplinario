@@ -2,14 +2,7 @@ import axios from 'axios';
 
 const obtenerDatosApi = async (params) => {
     try {
-        const { dblink } = params;
-        const datalink = dblink || "http://localhost:3003";
-        
-        if (typeof datalink !== 'string' || datalink.trim() === '') {
-            throw new Error('La URL de la base de datos no es válida.');
-        }
-
-        const response = await axios.get(`${datalink}/bovinos/buscador`);
+        const response = await axios.get(`${params}/bovinos/buscador`);
 
         if (response.status === 200) {
             return response.data;
