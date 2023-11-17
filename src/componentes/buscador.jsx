@@ -27,7 +27,7 @@ function Buscador(props) {
             (bovino) =>
                 bovino.nombre.toLowerCase().includes(searchTerm) ||
                 bovino.areteBovino.toLowerCase().includes(searchTerm)
-        );
+        ).slice(0, 5);
         setFiltrado(filteredData);
     };
 
