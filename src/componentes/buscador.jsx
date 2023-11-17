@@ -1,28 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import "../css/buscador.css"
-import Icons from "../atomos/icons";
+import Icons from '../atomos/icons';
 
-function buscador(props) {
-    // const [filtradoNombre, setFiltrado] = useState([])
-    // const arr = []
-    // const handleChange = ({target}) => {
-    //     setFiltrado(arr.filter(({nombre}) => {
-    //         nombre.include(target.value)
-    //     }))
-    // }
+function buscador(props) { 
     return (
-        <div className="input-search">
-            <input className='input-color' placeholder="Buscar"/*  onChange={handleChange} list='x' *//>
-            <label className='boton'> 
-            <div className='icon-buscar' > 
-            <Icons  iconName="buscar" />
-                </div>
-                </label>
-          {/* <datalist id='x'>
-            {filtradoNombre.map(() => (<option>a</option>))}
-            </datalist>   */}
-        </div> 
+        <form className="form">
+            <button>
+                    <Icons iconName="buscar"/>
+            </button>
+            <input className="input" placeholder="Escribe el Nombre o el Arete" required type="text" />
+            <button className="reset" type="reset">
+                <Icons iconName="cerrar"/>
+            </button>
+        </form>
     );
 }
+
 
 export default buscador;
