@@ -9,6 +9,11 @@ function Login(props) {
     const [Correo, setCorreo] = useState('');
     const [contrasena, setContrasena] = useState('');
 
+    /* esto es agregado del amigo */
+    const mostrarAlerta = (mensaje) => {
+        alert(mensaje);
+    };
+
     const handleInicio = async () => {
         // Validar que los campos de Correo y contraseña no estén vacíos
         if (Correo.trim() === '' || contrasena.trim() === '') {
@@ -27,15 +32,15 @@ function Login(props) {
             const autenticacionExitosa = await ValidarLog(params);
 
             if (autenticacionExitosa) {
-                /* alerta de inicio de secion exitosa */
+                /* esto es agregado del amigo */
+                mostrarAlerta('Inicio de sesión exitoso');
                 navigate('/Principal');
             } else {
-                /* alerta de credenciales incorrectas */
-                console.error('Credenciales incorrectas');
+                /* esto es agregado del amigo */
+                mostrarAlerta('Credenciales incorrectas');
             }
         } catch (error) {
-                /* error externo de el back */
-            console.error('Error al iniciar sesión:', error.message);
+            mostrarAlerta('Error al iniciar sesión: ' + error.message);
         }
     };
     return (
@@ -47,7 +52,7 @@ function Login(props) {
                 <img className='log' src={Logo} alt="logo login" />
                 <div className="input-pos" >
                     <div className="desc">
-                        Correo:  
+                        Correo:
                     </div>
                     <input
                         className="input-dis"
@@ -56,7 +61,7 @@ function Login(props) {
                         onChange={(e) => setCorreo(e.target.value)}
                     />
                     <div className="desc">
-                        Contraseña:  
+                        Contraseña:
                     </div>
                     <input
                         type="password"
