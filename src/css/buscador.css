@@ -3,6 +3,22 @@
     --secondary-color: #5AA257;
 }
 
+.NavComp {
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+}
+
+.NavComp .salirBoton svg {
+    width: 30px;
+    height: 30px;
+    margin-left: 15px;
+    margin-top: 6px;
+    cursor: pointer;
+    color: var(--secondary-color);
+}
+
 .form button {
     border: none;
     background: none;
@@ -30,7 +46,8 @@
     background: var(--input-bg, --primary-color);
 
     margin-top: .5%;
-    margin-left: 45%;
+    margin-left: 15px;
+    /* para centrar aunque no se necesita aqui */
     border: 1px solid var(--secondary-color);
 }
 
@@ -96,3 +113,51 @@ input:not(:placeholder-shown)~.reset {
     width: 17px;
 }
 
+
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--primary-color);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content p {
+    padding: 10px 16px;
+    margin: 0;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.dropdown-content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-content ul li {
+    padding: 10px 16px;
+    color: var(--secondary-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+}
+
+.dropdown-content ul li svg {
+    margin-right: 10px;
+    margin-bottom: 2px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
