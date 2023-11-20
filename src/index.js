@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals.js';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Principal from "./componentes/Principal.jsx";
+import Principal from "./pages/Principal.jsx";
 import PrimerFiltro from "./pages/primerFiltroV.jsx";
 import VistaDatos from "./pages/VistaDatos.jsx";
 import AgregarBovino from "./pages/agregerBovinoVista.jsx";
