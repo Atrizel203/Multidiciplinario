@@ -17,6 +17,10 @@ function Leftvar(props) {
         navigate('/AgregarBovino');
     };
 
+    const PrimerFiltro = () => {
+        navigate('/primerFiltroV');
+    };
+
     return (
         <div className="navContainer">
             <div>
@@ -35,7 +39,7 @@ function Leftvar(props) {
                 <div onClick={VerAgregar}>
                     <OpcionesLeftVar texto="Agregar" icono="agregar" />
                 </div>
-                <div onClick={VerAgregar}>
+                <div onClick={PrimerFiltro}>
                     <OpcionesLeftVar texto="Bovinos" icono="tag" />
                 </div>
 
