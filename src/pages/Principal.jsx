@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import Leftvar from './leftVar';
+import Leftvar from '../componentes/leftVar';
 import { useNavigate } from 'react-router-dom';
 import '../css/botonesPrincipal.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import "../css/carrusel.css";
 import "../css/botonesPrincipal.css";
-import Buscador from './buscador';
+import Buscador from '../componentes/buscador';
 import "../css/buscador.css";
 import "../img/vacaPrincipal.jpg"
 

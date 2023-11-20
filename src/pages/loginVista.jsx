@@ -4,11 +4,10 @@ import Logo from "../moleculas/imgTexto"
 
 function LoginVista(params) {
     return (
-        <div style={{display:"flex"  }} >
+        <div style={{display:"flex"}} >
         <Logo/>
         <Login/>
         </div>
-
     );
 
 }
