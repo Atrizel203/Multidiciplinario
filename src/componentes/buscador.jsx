@@ -83,6 +83,7 @@ function Buscador(props) {
             <div  className="salirBoton">
                 <Icons iconName="notificacion" />
             </div>
+
         </div>
     );
 }

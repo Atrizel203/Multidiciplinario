@@ -46,7 +46,7 @@
     background: var(--input-bg, --primary-color);
 
     margin-top: .5%;
-    margin-left: 15px;
+    margin-left: 25%;
     /* para centrar aunque no se necesita aqui */
     border: 1px solid var(--secondary-color);
 }
