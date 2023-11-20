@@ -35,6 +35,9 @@ function Leftvar(props) {
                 <div onClick={VerAgregar}>
                     <OpcionesLeftVar texto="Agregar" icono="agregar" />
                 </div>
+                <div onClick={VerAgregar}>
+                    <OpcionesLeftVar texto="Bovinos" icono="tag" />
+                </div>
 
             </div>
         </div>

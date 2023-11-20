@@ -1,0 +1,10 @@
+.containerSwitch {
+    margin-left: 30%;
+    display: grid;
+    width: 50%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+}
