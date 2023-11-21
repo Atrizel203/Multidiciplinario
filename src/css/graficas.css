@@ -1,0 +1,32 @@
+:root {
+    --primary-color: #FFFFFF;
+    --secondary-color: #5AA257;
+  }
+  
+  @font-face {
+    font-family: 'Almarai';
+    src: url('./Almarai/Almarai-Bold.ttf') format('truetype'),
+        url('./Almarai/Almarai-ExtraBold.ttf') format('truetype'),
+        url('./Almarai/Almarai-Light.ttf') format('truetype'),
+        url('./Almarai/Almarai-Regular.ttf') format('truetype');
+  }
+  
+  body {
+    font-family: 'Almarai';
+  }
+
+.chartContainer {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-left: 30%;
+}
+
+.recharts-wrapper {
+    box-shadow: 0px 0px 10px 0px var(--secondary-color);
+    border-radius: 15px;
+    background-color: #fff;
+}
+
