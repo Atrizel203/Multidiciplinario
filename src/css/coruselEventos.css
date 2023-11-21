@@ -40,8 +40,9 @@
 }
 
 .card button {
+    
     font-family: 'Almarai';
-    font-size: 1em;
+    font-size: 11px;
     color: var(--primary-color);
     border: none;
     outline: none;
@@ -70,3 +71,7 @@
     margin-top: 50px;
   }
 
+.paginationButtons {
+    display: flex;
+    justify-content: center;
+}

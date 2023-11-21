@@ -33,6 +33,25 @@ const App = () => {
             descripcion: 'Ven a nuestra exposición y descubre las últimas innovaciones en maquinaria agrícola. Podrás ver de cerca los equipos más avanzados y hablar con los fabricantes.',
             fecha_Reinsidio: '2023-11-26T10:00:00Z',
         },
+        {
+            titulo: 'Exposición de Maquinaria Agrícola',
+            asunto: 'Descubre las últimas innovaciones en maquinaria agrícola',
+            fecha_Reporte: '2023-11-22',
+            descripcion: 'Ven a nuestra exposición y descubre las últimas innovaciones en maquinaria agrícola. Podrás ver de cerca los equipos más avanzados y hablar con los fabricantes.',
+            fecha_Reinsidio: '2023-11-26T10:00:00Z',
+        },        {
+            titulo: 'Exposición de Maquinaria Agrícola',
+            asunto: 'Descubre las últimas innovaciones en maquinaria agrícola',
+            fecha_Reporte: '2023-11-22',
+            descripcion: 'Ven a nuestra exposición y descubre las últimas innovaciones en maquinaria agrícola. Podrás ver de cerca los equipos más avanzados y hablar con los fabricantes.',
+            fecha_Reinsidio: '2023-11-26T10:00:00Z',
+        },        {
+            titulo: 'Exposición de Maquinaria Agrícola',
+            asunto: 'Descubre las últimas innovaciones en maquinaria agrícola',
+            fecha_Reporte: '2023-11-22',
+            descripcion: 'Ven a nuestra exposición y descubre las últimas innovaciones en maquinaria agrícola. Podrás ver de cerca los equipos más avanzados y hablar con los fabricantes.',
+            fecha_Reinsidio: '2023-11-26T10:00:00Z',
+        },
     ];
 
     return (
