@@ -1,0 +1,77 @@
+:root {
+    --primary-color: #FFFFFF;
+    --secondary-color: #5AA257;
+    --tercer-color:#8FD182;
+}
+
+@font-face {
+    font-family: 'Almarai';
+    src: url('./Almarai/Almarai-Bold.ttf') format('truetype'),
+        url('./Almarai/Almarai-ExtraBold.ttf') format('truetype'),
+        url('./Almarai/Almarai-Light.ttf') format('truetype'),
+        url('./Almarai/Almarai-Regular.ttf') format('truetype');
+}
+
+
+.card {
+    width: 40vh;
+    
+    margin-left: 5px;
+    margin-right: 5px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}   
+
+.card h2 {
+    font-family: 'Almarai';
+    margin-bottom: 8px;
+    font-size: 1.5em;
+}
+
+.card p {
+    margin-bottom: 4px;
+}
+
+.card p strong {
+    font-weight: bold;
+}
+
+.card button {
+    
+    font-family: 'Almarai';
+    font-size: 11px;
+    color: var(--primary-color);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 8px 16px;
+    background-color: var(--secondary-color);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    border: 1px solid var(--secondary-color);
+}
+
+.card button:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.buttonContainer {
+    display: flex;
+    gap: 8px;
+  }
+
+  .cardsEventos {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 300px;
+    margin-top: 50px;
+  }
+
+.paginationButtons {
+    display: flex;
+    justify-content: center;
+}
