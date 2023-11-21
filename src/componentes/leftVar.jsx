@@ -16,18 +16,14 @@ function Leftvar(props) {
     const VerAgregar = () => {
         navigate('/AgregarBovino');
     };
-  
-    const PrimerFiltro =() => {
-        navigate('/primerFiltroV')
-    };
 
     const Graficos = () => {
         navigate('/Graficos')
-
+    };
 
     const PrimerFiltro = () => {
         navigate('/bovinosOpciones');
-    }; 
+    };
 
 
     return (
@@ -51,7 +47,6 @@ function Leftvar(props) {
                 <div onClick={PrimerFiltro}>
                     <OpcionesLeftVar texto="Bovinos" icono="tag" />
                 </div>
-
 
             </div>
         </div>
