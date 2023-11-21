@@ -24,7 +24,11 @@ function Leftvar(props) {
     const Graficos = () => {
         navigate('/Graficos')
 
-    };
+
+    const PrimerFiltro = () => {
+        navigate('/bovinosOpciones');
+    }; 
+
 
     return (
         <div className="navContainer">
@@ -47,6 +51,7 @@ function Leftvar(props) {
                 <div onClick={PrimerFiltro}>
                     <OpcionesLeftVar texto="Bovinos" icono="tag" />
                 </div>
+
 
             </div>
         </div>
