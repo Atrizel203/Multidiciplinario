@@ -1,13 +1,31 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import '../css/bovinosOpciones.css';
 
 const CardBovinosSimp = () => {
+    const navigate = useNavigate();
 
+    const PrimerFiltroToros = () => {
+        navigate('/primerFiltroV');
+    };
+
+    const PrimerFiltroVacas  = () => {
+        navigate('/primerFiltroV');
+    };
+
+    const PrimerFiltroToritos = () => {
+        navigate('/primerFiltroV');
+    };
+
+    const PrimerFiltroBecerros = () => {
+        navigate('/primerFiltroV');
+    };
 
     return (
         <div className="ContenedorOpcionesImg">
 
-            <div className="cardBovinos">
+            <div className="cardBovinos" onClick={PrimerFiltroToros}>
                 <div className="cardBovinos-imgToro"></div>
                 <div className="cardBovinos-info">
                     <div className="cardBovinos-text">
@@ -22,8 +40,8 @@ const CardBovinosSimp = () => {
                 </div>
             </div>
 
-            <div className="cardBovinos">
-                <div className="cardBovinos-imgVaca"></div>
+            <div className="cardBovinos"onClick={PrimerFiltroVacas}>
+                <div className="cardBovinos-imgVaca" ></div>
                 <div className="cardBovinos-info">
                     <div className="cardBovinos-text">
                         <p className="text-title">Vacas</p>
@@ -37,7 +55,7 @@ const CardBovinosSimp = () => {
                 </div>
             </div>
 
-            <div className="cardBovinos">
+            <div className="cardBovinos" onClick={PrimerFiltroToritos}>
                 <div className="cardBovinos-imgTorito"></div>
                 <div className="cardBovinos-info">
                     <div className="cardBovinos-text">
@@ -52,7 +70,7 @@ const CardBovinosSimp = () => {
                 </div>
             </div>
 
-            <div className="cardBovinos">
+            <div className="cardBovinos" onClick={PrimerFiltroBecerros}>
                 <div className="cardBovinos-imgBecerrito"></div>
                 <div className="cardBovinos-info">
                     <div className="cardBovinos-text">

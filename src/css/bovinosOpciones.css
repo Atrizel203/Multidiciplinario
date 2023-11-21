@@ -37,9 +37,9 @@
     height: 100%;
     width: 100%;
     background-image: url(../img/vacaPrincipal.jpg);
-    background-size: cover; /* Ajusta el tamaño para cubrir todo el contenedor */
+    background-size: cover;
     background-position: center; /* Centra la imagen dentro del contenedor */
-    background-repeat: no-repeat; /* Evita repetir la imagen */
+    background-repeat: no-repeat; 
 }
 
 .cardBovinos-imgTorito {
@@ -47,9 +47,9 @@
     height: 100%;
     width: 100%;
     background-image: url(../img/toritoPrincipal.jpg);
-    background-size: cover; /* Ajusta el tamaño para cubrir todo el contenedor */
+    background-size: cover; 
     background-position: right; /* Centra la imagen dentro del contenedor */
-    background-repeat: no-repeat; /* Evita repetir la imagen */
+    background-repeat: no-repeat; 
 }
 
 .cardBovinos-imgBecerrito {
@@ -57,9 +57,9 @@
     height: 100%;
     width: 100%;
     background-image: url(../img/becerritoPrincipal.jpg);
-    background-size: cover; /* Ajusta el tamaño para cubrir todo el contenedor */
+    background-size: cover; 
     background-position: center; /* Centra la imagen dentro del contenedor */
-    background-repeat: no-repeat; /* Evita repetir la imagen */
+    background-repeat: no-repeat; 
 }
 
 
