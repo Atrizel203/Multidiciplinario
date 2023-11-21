@@ -1,0 +1,117 @@
+:root {
+    --primary-color: #FFFFFF;
+    --secondary-color: #5AA257;
+}
+.ContenedorOpcionesImg{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    margin-left: 16%;
+}
+.cardBovinos {
+    font-family: "Almarai";
+    margin-left: 25px;
+    width: 190px;
+    height: 250px;
+    position: relative;
+    border-radius: 15px;
+    transition: box-shadow .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.cardBovinos-imgToro {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url(../img/toroPrincipal.jpg);
+    background-size: cover; 
+    background-repeat: no-repeat;
+}
+
+.cardBovinos-imgVaca {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url(../img/vacaPrincipal.jpg);
+    background-size: cover; /* Ajusta el tamaño para cubrir todo el contenedor */
+    background-position: center; /* Centra la imagen dentro del contenedor */
+    background-repeat: no-repeat; /* Evita repetir la imagen */
+}
+
+.cardBovinos-imgTorito {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url(../img/toritoPrincipal.jpg);
+    background-size: cover; /* Ajusta el tamaño para cubrir todo el contenedor */
+    background-position: right; /* Centra la imagen dentro del contenedor */
+    background-repeat: no-repeat; /* Evita repetir la imagen */
+}
+
+.cardBovinos-imgBecerrito {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url(../img/becerritoPrincipal.jpg);
+    background-size: cover; /* Ajusta el tamaño para cubrir todo el contenedor */
+    background-position: center; /* Centra la imagen dentro del contenedor */
+    background-repeat: no-repeat; /* Evita repetir la imagen */
+}
+
+
+.cardBovinos-info {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding: 1rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.cardBovinos-icon {
+    opacity: 0;
+    transform: translateX(-20%);
+    width: 3rem;
+    height: 3em;
+    transition: all .3s ease-in-out;
+    fill: var(--primary-color);
+}
+
+.icon {
+    --size: 30px;
+    width: var(--size);
+    height: var(--size);
+}
+
+/*Text*/
+.cardBovinos-text p {
+    line-height: 140%;
+}
+
+.text-title {
+    font-weight: 900;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+
+}
+
+.text-subtitle {
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: .6rem;
+}
+
+/*Hover*/
+.cardBovinos:hover {
+    box-shadow: 0 10px 20px 4px var(--secondary-color);
+}
+
+.cardBovinos:hover .cardBovinos-icon {
+    opacity: 1;
+    transform: translateX(20%);
+}
