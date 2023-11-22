@@ -1,24 +1,27 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-
 import '../css/bovinosOpciones.css';
 
 const CardBovinosSimp = () => {
     const navigate = useNavigate();
 
     const PrimerFiltroToros = () => {
+        localStorage.setItem("InfoBovino", "toros")
         navigate('/primerFiltroV');
     };
 
     const PrimerFiltroVacas  = () => {
+        localStorage.setItem("InfoBovino", "vacas")
         navigate('/primerFiltroV');
     };
 
     const PrimerFiltroToritos = () => {
+        localStorage.setItem("InfoBovino", "novillos")
         navigate('/primerFiltroV');
     };
 
     const PrimerFiltroBecerros = () => {
+        localStorage.setItem("InfoBovino", "novillas")
         navigate('/primerFiltroV');
     };
 

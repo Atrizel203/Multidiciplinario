@@ -2,13 +2,15 @@ import React, { useState, useEffect } from 'react';
 import '../css/buscador.css';
 import Icons from '../atomos/icons';
 import { useNavigate } from 'react-router-dom';
-import ObtenerDatosApi from "../api/buscador.js" // Ajusta la ruta según tu estructura
-
+import NotificacionesModal from './modalNotificacion';
+import ObtenerDatosApi from "../api/peticionesGet/buscador.js" // Ajusta la ruta según tu estructura
 function Buscador() {
+
     const navigate = useNavigate();
     const [infoBovinos, setInfoBovinos] = useState([]);
     const [filtradoDatos, setFiltrado] = useState([]);
     const [showMenu, setShowMenu] = useState(false);
+    const [modalIsOpen, setModalIsOpen] = useState(false);
 
     useEffect(() => {
         async function fetchData() {
@@ -94,9 +96,12 @@ function Buscador() {
                 )}
             </div>
 
-            <div className="salirBoton">
-                <Icons iconName="notificacion" />
-            </div>
+
+            <div className="salirBoton" onClick={() => setModalIsOpen(true)}>
+    <Icons iconName="notificacion" />
+</div>
+
+<NotificacionesModal modalIsOpen={modalIsOpen} setModalIsOpen={setModalIsOpen} />
         </div>
     );
 }

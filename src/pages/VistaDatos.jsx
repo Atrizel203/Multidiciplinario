@@ -8,14 +8,13 @@ import Grid from '@mui/material/Grid';
 import Acordion from "../moleculas/acordion.jsx"
 
 
-
 function Vistadatos() {
 
 
     return (
         <div>
             <Leftvar />
-            <Buscador style={{ marginLeft: "45%"}}/>
+            <Buscador/>
             <div style={{ display: "flex" }}>
                 <Grid container spacing={2}>
                     <Grid item lg={6} xs={12}>
