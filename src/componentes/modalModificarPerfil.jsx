@@ -47,13 +47,13 @@ function ModalModificarPerfil(props) {
             </div>
 
             <ImputEditar texto="Arete del Bovino" iconName="tag"  value={AreteBovino} onChange={setAreteBovino} />
-            <ImputEditar texto="Arete del Toro" iconName="toro"  value={AreteToro} onChange={setAreteToro} />
-            <ImputEditar texto="Arete del Vaca" iconName="vaca"  value={AreteVaca} onChange={setAreteVaca}/>
+            <ImputEditar texto="Arete del Padre" iconName="toro"  value={AreteToro} onChange={setAreteToro} />
+            <ImputEditar texto="Arete de la Madre" iconName="vaca"  value={AreteVaca} onChange={setAreteVaca}/>
             <ImputEditar texto="Siniiga" iconName="documentos"  value={Siniiga} onChange={setSiniiga} />
 
             <div className="fotosA">
                 <ImputImg texto="Foto del Bovino" />
-                <ImputImg texto="Foto del Pedigri" />
+                <ImputImg texto="Foto del Pedigrí" />
             </div>
 
             <div className="guardarBotonModalA" onClick={handleGuardar}>

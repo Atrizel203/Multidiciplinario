@@ -13,10 +13,10 @@ function ImputTexto(props) {
     };
 
     const handleBlur = () => {
-      let valid = value.trim() !== "";
+      let valid = value ? value.trim() !== "" : false;
       setIsValid(valid);
     };
-
+    
     return (
         <div className={Style.input_group}>
             <input 

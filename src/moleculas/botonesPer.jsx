@@ -44,18 +44,18 @@ function BotonesPerfil(props) {
 
     const handleBorrar = () => {
         swal({
-            title: "¿Estas seguro de borrar la informacion de este bovino?",
+            title: "¿Estás seguro de borrar la información de este bovino?",
             icon: "warning",
             buttons: true,
             dangerMode: true,
         })
         .then((willDelete) => {
             if (willDelete) {
-                swal("La informacion del bovino fue borrada", {
+                swal("La información del bovino fue borrada", {
                     icon: "success",
                 });
             } else {
-                swal("¡La informacion sigue donde siempre!");
+                swal("¡La información sigue donde siempre!");
             }
         });
     };

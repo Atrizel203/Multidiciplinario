@@ -79,7 +79,7 @@ function AgregarBovino() {
         <div className="containerAgregarBovino">
             <div className="containerInfo">
                 <div className="infoImportant">
-                    <h1>Informacion Importante</h1>
+                    <h1>Información Importante</h1>
                     <div className="opciones">
                         <ImputAgregarNormal texto="Nombre" value={Nombre} onChange={setNombre}/>
                         {!Nombre && <div className="feedback">{NombreFeedback}</div>}
@@ -96,11 +96,11 @@ function AgregarBovino() {
                 </div>
 
                 <div className="infoExtra">
-                    <h1>Informacion Relacionada</h1>
+                    <h1>Información Relacionada</h1>
                     <div className="opciones">
                         <ImputAgregarNormal texto="Arete del Bovino" iconName="tag" />
-                        <ImputAgregarNormal texto="Arete del Toro" iconName="tag" />
-                        <ImputAgregarNormal texto="Arete del Vaca" iconName="tag" />
+                        <ImputAgregarNormal texto="Arete del Padre" iconName="tag" />
+                        <ImputAgregarNormal texto="Arete de la Madre" iconName="tag" />
                         <ImputAgregarNormal texto="Siniiga" iconName="documentos" />
                     </div>
 

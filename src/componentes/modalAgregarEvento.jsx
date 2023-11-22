@@ -34,13 +34,13 @@ function ModalAgregarEvento({ onClose }) {
     const handleGuardar = () => {
         if (tituloEvento === "" || asunto === "" || fechaNacimiento === "") {
             if (tituloEvento === "") {
-                setTituloFeedback("¡Requiere rellenar el título del evento!");
+                setTituloFeedback("¡Se requiere rellenar el título del evento!");
             }
             if (asunto === "") {
-                setAsuntoFeedback("¡Requiere seleccionar un asunto!");
+                setAsuntoFeedback("¡Se requiere seleccionar un asunto!");
             }
             if (fechaNacimiento === "") {
-                setFechaFeedback("¡Requiere seleccionar una fecha!");
+                setFechaFeedback("¡Se requiere seleccionar una fecha!");
             }
             swal({
                 title: "Por favor, rellena los campos importantes antes de guardar.",
@@ -67,12 +67,12 @@ function ModalAgregarEvento({ onClose }) {
                 </div>
             </div>
 
-            <ImputAgregar texto="Titulo de evento" tipo="text" value={tituloEvento} onChange={setTituloEvento} />
+            <ImputAgregar texto="Título de evento" tipo="text" value={tituloEvento} onChange={setTituloEvento} />
             {!tituloEvento && <div className="feedback">{tituloFeedback}</div>}
             <ImputAgregar texto="Asunto" tipo="select" options={opcionesEvento} value={asunto} onChange={setAsunto} />
             {!asunto && <div className="feedback">{asuntoFeedback}</div>}
-            <ImputAgregar texto="Descripcion" tipo="textarea" className={Style.descripcion} value={descripcion} onChange={setDescripcion} />
-            <ImputAgregar texto="Fecha A Terminar" tipo="date" value={fechaNacimiento} onChange={setFechaNacimiento}/>
+            <ImputAgregar texto="Descripción" tipo="textarea" className={Style.descripcion} value={descripcion} onChange={setDescripcion} />
+            <ImputAgregar texto="Fecha a terminar" tipo="date" value={fechaNacimiento} onChange={setFechaNacimiento}/>
             {!fechaNacimiento && <div className="feedback">{fechaFeedback}</div>}
             <div className={Style.guardar} onClick={handleGuardar}>
                 <BotonGuardar />
