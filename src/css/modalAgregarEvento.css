@@ -94,3 +94,9 @@
     justify-content: center;
     align-items: center;
 }
+
+.feedback{
+    font-family: "Almarai";
+    color: red;
+    font-size: 15px;
+}

@@ -28,6 +28,14 @@ function AgregarBovino() {
         { value: 'Macho', label: 'Macho' },
         { value: 'Hembra', label: 'Hembra' },
     ];
+    let tipoNacimiento = [
+        { value: '', label: '' },
+        { value: 'CargaManual', label: 'Carga Manual' },
+        { value: 'Inseminada', label: 'Inseminada'},
+        { value: 'CompraEmbrion', label: 'Compra de Embrion'},
+        { value: 'CompraOvulo', label: 'Compra de Ovulo'},
+        { value: 'CompraSemen', label: 'Compra de Semen'}
+    ];
 
     return (
 
@@ -39,7 +47,9 @@ function AgregarBovino() {
                         <ImputAgregarNormal texto="Nombre" />
                         <ImputAgregarEspecial texto="Raza" tipo="select" options={razas} />
                         <ImputAgregarEspecial texto="Fecha de Nacimiento" tipo="date" />
+                        <ImputAgregarEspecial texto="Tipo de nacimiento" tipo="select" options={tipoNacimiento} />
                         <ImputAgregarEspecial texto="Genero" tipo="select" options={genero} />
+                        
                     </div>
                     <ImputImg texto="Foto del Bovino" className="espacioImg" />
                 </div>

@@ -3,46 +3,52 @@ import "../css/login.css";
 import { useNavigate } from 'react-router-dom';
 import Logo from "../img/logoNuevo.png";
 import ValidarLog from "../api/login.js";
+import swal from 'sweetalert';
 
 function Login(props) {
     const navigate = useNavigate();
     const [Correo, setCorreo] = useState('');
     const [contrasena, setContrasena] = useState('');
+    const [CorreoFeedback, setCorreoFeedback] = useState("");
+    const [ContrasenaFeedback, setContrasenaFeedback] = useState("");
 
-    /* esto es agregado del amigo */
-    const mostrarAlerta = (mensaje) => {
-        alert(mensaje);
+    const mostrarAlerta = (mensaje, icono) => {
+        swal({
+            title: mensaje,
+            icon: icono,
+        });
     };
 
     const handleInicio = async () => {
-        // Validar que los campos de Correo y contraseña no estén vacíos
         if (Correo.trim() === '' || contrasena.trim() === '') {
-            console.error('Por favor, ingrese Correo y contraseña');
-            return;
-        }
-
-        /* agregar alertas y validaciones de front */
-
-        try {
-            const params = {
-                correo: Correo,
-                password: contrasena
-            };
-
-            const autenticacionExitosa = await ValidarLog(params);
-
-            if (autenticacionExitosa) {
-                /* esto es agregado del amigo */
-                mostrarAlerta('Inicio de sesión exitoso');
-                navigate('/Principal');
-            } else {
-                /* esto es agregado del amigo */
-                mostrarAlerta('Credenciales incorrectas');
+            if (Correo === "") {
+                setCorreoFeedback("¡Necesita un correo!");
             }
-        } catch (error) {
-            mostrarAlerta('Error al iniciar sesión: ' + error.message);
+            if (contrasena === "") {
+                setContrasenaFeedback("¡Necesita una contraseña!");
+            }
+        } else {
+            try {
+                const params = {
+                    correo: Correo,
+                    password: contrasena
+                };
+
+                const autenticacionExitosa = await ValidarLog(params);
+
+                if (autenticacionExitosa) {
+                    
+                    mostrarAlerta('Inicio de sesión exitoso', 'success');
+                    navigate('/Principal');
+                } else {
+                    mostrarAlerta('Credenciales incorrectas', 'error');
+                }
+            } catch (error) {
+                mostrarAlerta('Error al iniciar sesión: ' + error.message, 'error');
+            }
         }
     };
+
     return (
         <div className="login-contenedor">
             <div className="input-cont">
@@ -60,6 +66,8 @@ function Login(props) {
                         value={Correo}
                         onChange={(e) => setCorreo(e.target.value)}
                     />
+                    {!Correo && <div className="feedback">{CorreoFeedback}</div>}
+
                     <div className="desc">
                         Contraseña:
                     </div>
@@ -70,6 +78,8 @@ function Login(props) {
                         value={contrasena}
                         onChange={(e) => setContrasena(e.target.value)}
                     />
+                    {!contrasena && <div className="feedback">{ContrasenaFeedback}</div>}
+
                 </div>
                 <div className="boton-ini" onClick={handleInicio} >Iniciar</div>
             </div>
