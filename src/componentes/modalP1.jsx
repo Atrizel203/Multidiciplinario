@@ -9,10 +9,11 @@ const App = (InfoPerfilMini) => {
     const navigate = useNavigate();
 
     const VistaDatos = () => {
+        localStorage.setItem("idBovino", idBovino);
         navigate('/Vistadatos');
     };
 
-    let { arete,nombreDeVaca } = InfoPerfilMini;
+    let { arete,nombreDeVaca, idBovino} = InfoPerfilMini;
 
     const [shouldAnimateArete, setShouldAnimateArete] = useState(false);
     const [shouldAnimateNombre, setShouldAnimateNombre] = useState(false);
@@ -26,6 +27,8 @@ const App = (InfoPerfilMini) => {
             setShouldAnimateNombre(true);
         }
     }, [arete, nombreDeVaca]);
+
+
 
     return (
         <div className="perfil-container" onClick={VistaDatos}>
@@ -42,10 +45,10 @@ const App = (InfoPerfilMini) => {
                     </div>
 
                 </div>
-                <div className="perfil-icons">
+{/*                 <div className="perfil-icons">
                     <Icons iconName="heart" />
                     <Icons iconName="benda" />
-                </div>
+                </div> */}
 
             </div>
 
