@@ -38,7 +38,7 @@ function Buscador() {
             (bovino) =>
                 bovino.nombre.toLowerCase().includes(searchTerm) ||
                 bovino.areteBovino.toLowerCase().includes(searchTerm)
-        )/* .slice(0, 5) */;
+        ).slice(0, 5);
         setFiltrado(filteredData);
 
         console.log("filtrmos", filteredData);
@@ -50,20 +50,29 @@ function Buscador() {
         navigate('/');
     };
 
+    const handleSelectBovino = (idBovino) => {
+        localStorage.setItem('PagBovino', idBovino);
+        navigate('/Vistadatos');
+    };
+
     return (
         <div className='NavComp'>
 
             <form className="form">
                 <button>
-                    <Icons iconName="buscar" />
+                    <Icons iconName="buscar"/>
                 </button>
                     <input className="input" placeholder="Escribe el Nombre o el Arete" required type="text" onChange={handleChange} list='x' />
                     <button className="reset" type="reset">
                         <Icons iconName="cerrar" />
                     </button>
-                <datalist id='x'>
+                    <datalist id='x'>
                     {filtradoDatos.map((bovino, index) => (
-                        <option key={index} value={`${bovino.nombre} - ${bovino.areteBovino}`} />
+                        <option
+                            key={index}
+                            value={`${bovino.nombre} - ${bovino.areteBovino}`}
+                            onClick={() => handleSelectBovino(bovino.idBovino)}
+                        />
                     ))}
                 </datalist>
             </form>
