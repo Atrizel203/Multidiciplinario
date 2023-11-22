@@ -54,7 +54,6 @@ const App = () => {
         },
     ];
 
- /*    const infoBuscador= ScripBuscar(); */
 
     return (
         <div>
