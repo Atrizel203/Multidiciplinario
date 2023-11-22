@@ -93,8 +93,6 @@ input:focus {
     transform: scale(1);
 }
 
-/* styling of close button */
-/* == you can click the close button to remove text == */
 .reset {
     border: none;
     background: none;
@@ -112,8 +110,6 @@ input:not(:placeholder-shown)~.reset {
 .form svg {
     width: 17px;
 }
-
-
 
 
 .dropdown {

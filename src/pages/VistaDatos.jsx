@@ -5,17 +5,15 @@ import Buscador from "../componentes/buscador";
 import CardPadres from "../componentes/CardPadres";
 import Botones from "../moleculas/botonesPer";
 
-import ObtenerDatosApi from "../api/buscador.js";
 
 
 function Vistadatos() {
 
-    const dataBovinosAll = ObtenerDatosApi();
 
     return (
         <div>
             <Leftvar/>
-            <Buscador infoBovinos={dataBovinosAll}/>
+            <Buscador/>
             <div style={{display:"flex"}}>
             <div>
             <CardDatos/>
