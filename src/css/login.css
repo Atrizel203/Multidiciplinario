@@ -90,3 +90,9 @@
 height: 150px;
 padding: 5%;
 }
+
+.feedback{
+    font-family: "Almarai";
+    color: red;
+    font-size: 14px;
+}

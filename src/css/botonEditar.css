@@ -12,8 +12,7 @@
     width: 70px;
     height: 45px;
     position: relative;
-    margin-top: 15%;
-    margin-left: 10%;
+    margin-left: 30%;
     background-color: var(--cuarto-color);
     border-color: var(--cuarto-color);
     color: var(--primary-color);

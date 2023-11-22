@@ -9,10 +9,9 @@
     align-items: center;
     display: flex;
     width: 70px;
-    height: 45px;
+    height: 40px;
     position: relative;
-    margin-top: 1%;
-    margin-left: 1%;
+    margin-left: 3%;
     background-color: var(--primary-color);
     border-color: var(--primary-color);
     color: var(--secondary-color);
