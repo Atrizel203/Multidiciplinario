@@ -7,20 +7,15 @@ import Botones from "../moleculas/botonesPer";
 import Grid from '@mui/material/Grid';
 import Acordion from "../moleculas/acordion.jsx"
 
-import obtenerDatosApi from "../api/buscador.js";
 
 
-function Vistadatos(props) {
+function Vistadatos() {
 
-        /* AQUI ES NECESARIO PASAR EL URL DEL LA DB QUE ESTA EN LA NUBE QUE LE PERTENECE AL USUARIO*/
-    /* const url = "https://bovinosapp.herokuapp.com" */;/* ejemplo */
-    const dblink = "http://localhost:3003";/* ejemplo */
-    const dataBovinosAll = obtenerDatosApi(dblink);
 
     return (
         <div>
             <Leftvar />
-            <Buscador infoBovinos={dataBovinosAll} style={{ marginLeft: "45%"}}/>
+            <Buscador style={{ marginLeft: "45%"}}/>
             <div style={{ display: "flex" }}>
                 <Grid container spacing={2}>
                     <Grid item lg={6} xs={12}>

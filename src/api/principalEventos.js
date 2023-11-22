@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const ObtenerDatosApi = async () => {
+const PrincipalEventos = async () => {
     try {
         const token = localStorage.getItem('token');
         const config = {
@@ -9,11 +9,11 @@ const ObtenerDatosApi = async () => {
             }
         };
 
-        const response = await axios.get(`http://localhost:3003/bovinos/buscador`, config);
+        const response = await axios.get(`http://localhost:3003/eventos/Importantes`, config);
 
         if (response.status === 200) {
-            console.log(response.data.Bovinos);
-            return response.data.Bovinos;
+            console.log(response.data.eventos);
+            return response.data.eventos;
         } else {
             throw new Error(`Error en la respuesta del servidor: ${response.status} ${response.statusText}`);
         }
@@ -33,4 +33,4 @@ const ObtenerDatosApi = async () => {
     }
 };
 
-export default ObtenerDatosApi;
+export default PrincipalEventos;
