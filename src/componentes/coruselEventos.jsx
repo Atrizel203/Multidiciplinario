@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../css/coruselEventos.css';
 import BotonBorrar from '../atomos/botonBorrar';
-import PrincipalEventos from '../api/principalEventos';
+import PrincipalEventos from '../api/peticionesGet/principalEventos.js';
 import {terminarEvento, borrarEventoLogico} from '../api/borrarEntidades/borrarEvento.js';
 
 const CoruselEventos = () => {
