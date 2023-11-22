@@ -6,7 +6,7 @@ import {terminarEvento, borrarEventoLogico} from '../api/borrarEntidades/borrarE
 
 const CoruselEventos = () => {
     const [eventos, setEventos] = useState([]);
-    const eventosPorPagina = 4;
+    const eventosPorPagina = 3;
     const [currentPage, setCurrentPage] = useState(1);
 
     useEffect(() => {
@@ -57,11 +57,11 @@ const CoruselEventos = () => {
                 ))}
             </div>
             <div className="paginationButtons">
-                <button onClick={goToFirstPage} disabled={currentPage === 1}>« Primera</button>
-                <button onClick={() => goToPage(currentPage - 1)} disabled={currentPage === 1}>‹ Anterior</button>
+                <div className='paginationButtons-colors' onClick={goToFirstPage} disabled={currentPage === 1}>« Primera</div>
+                <div className='paginationButtons-colors' onClick={() => goToPage(currentPage - 1)} disabled={currentPage === 1}>‹ Anterior</div>
                 <span>{`${currentPage} de ${totalPages}`}</span>
-                <button onClick={() => goToPage(currentPage + 1)} disabled={currentPage === totalPages}>Siguiente ›</button>
-                <button onClick={goToLastPage} disabled={currentPage === totalPages}>Última »</button>
+                <div className='paginationButtons-colors' onClick={() => goToPage(currentPage + 1)} disabled={currentPage === totalPages}>Siguiente ›</div>
+                <div className='paginationButtons-colors' onClick={goToLastPage} disabled={currentPage === totalPages}>Última »</div>
             </div>
         </div>
     );
@@ -113,8 +113,8 @@ const CardEvento = ({ idEvento ,titulo, asunto, fecha_Reporte, descripcion, fech
     return (
         <div className="card">
             <h5>{titulo}</h5>
-            <p><strong>Arete</strong> {areteBovino}</p>
-            <p><strong>Nombre</strong> {nombreBovino}</p>
+            <p><strong>Arete:</strong> {areteBovino}</p>
+            <p><strong>Nombre:</strong> {nombreBovino}</p>
             <p><strong>Asunto:</strong> {asunto}</p>
             <p><strong>Fecha de Reporte:</strong> {fecha_Reporte}</p>
             <p><strong>Descripción:</strong> {descripcion}</p>
