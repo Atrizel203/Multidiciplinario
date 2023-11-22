@@ -5,6 +5,7 @@ import ImputAgregarNormal from "../moleculas/imputTexto.jsx"
 import ImputImg from "../moleculas/imputImg.jsx";
 import "../css/agregarBovino.css";
 import swal from 'sweetalert';
+import crearBovino from "../api/crearEntidades/crearBovino.js";
 
 function AgregarBovino() {
 
@@ -18,6 +19,12 @@ function AgregarBovino() {
     const [fechaFeedback, setFechaFeedback] = useState("");
     const [fechaTipoFeedback, setFechaTipoFeedback] = useState("");
     const [GeneroFeedback, setGeneroFeedback] = useState("");
+    const [areteBovino, setAreteBovino] = useState("");
+    const [areteToro, setAreteToro] = useState("");
+    const [areteVaca, setAreteVaca] = useState("");
+    const [siniiga, setSiniiga] = useState("");
+/*     const [fotoBovino, setFotoBovino] = useState("");
+    const [fotoPedigri, setFotoPedigri] = useState(""); */
 
     const handleGuardar = () => {
         if (Nombre === "" || Raza === "" || fechaNacimiento === "" || TipoNacimiento === "" || Genero === "") {
@@ -37,6 +44,21 @@ function AgregarBovino() {
                 setGeneroFeedback("¡Requiere seleccionar un Genero!");
             }
         } else {
+            let bovino = {
+                "nombre": Nombre,
+                "raza": Raza,
+                "fechaNacimiento": fechaNacimiento,
+                "tipoNacimiento": TipoNacimiento,
+                "genero": Genero,
+                "areteBovino": areteBovino,
+                "areteToro": areteToro,
+                "areteVaca": areteVaca,
+                "siniiga": siniiga,
+/*                 "fotoBovino": fotoBovino,
+                "fotoPedigri": fotoPedigri */
+                "idAdminResult": localStorage.getItem("correo"),
+            }
+            crearBovino(bovino);
             swal({
                 title: "Los datos se han guardado correctamente.",
                 icon: "success",
@@ -98,10 +120,10 @@ function AgregarBovino() {
                 <div className="infoExtra">
                     <h1>Informacion Relacionada</h1>
                     <div className="opciones">
-                        <ImputAgregarNormal texto="Arete del Bovino" iconName="tag" />
-                        <ImputAgregarNormal texto="Arete del Toro" iconName="tag" />
-                        <ImputAgregarNormal texto="Arete del Vaca" iconName="tag" />
-                        <ImputAgregarNormal texto="Siniiga" iconName="documentos" />
+                        <ImputAgregarNormal texto="Arete del Bovino" iconName="tag" onChange={setAreteBovino} />
+                        <ImputAgregarNormal texto="Arete del Toro" iconName="tag" onChange={setAreteToro} />
+                        <ImputAgregarNormal texto="Arete del Vaca" iconName="tag" onChange={setAreteVaca} />
+                        <ImputAgregarNormal texto="Siniiga" iconName="documentos" onChange={setSiniiga} />
                     </div>
 
                     <ImputImg texto="Foto del Pedigri" className="espacioImg" />
