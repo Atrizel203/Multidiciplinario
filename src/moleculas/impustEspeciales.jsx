@@ -13,18 +13,19 @@ function ImputTexto(props) {
   
     const handleBlur = () => {
       let valid;
-  
+    
       if (tipo === "textarea") {
-        valid = value.trim() !== "";
+        valid = value !== "";
       } else if (tipo === "select") {
         valid = value !== ""; // Requiere que se haya seleccionado una opción
       } else {
-        valid = value.trim() !== "";
+        valid = value !== "";
       }
-  
+    
       setIsValid(valid);
     };
-
+    
+    
     return (
         <div className={Style.input_group}>
         {tipo === "textarea" ? (

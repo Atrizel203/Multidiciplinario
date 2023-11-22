@@ -37,13 +37,13 @@ function ModalAgregarEvento({ onClose }) {
     const handleGuardar = () => {
         if (tituloEvento === "" || asunto === "" || fechaTerminar === "") {
             if (tituloEvento === "") {
-                setTituloFeedback("¡Requiere rellenar el título del evento!");
+                setTituloFeedback("¡Se requiere rellenar el título del evento!");
             }
             if (asunto === "") {
-                setAsuntoFeedback("¡Requiere seleccionar un asunto!");
+                setAsuntoFeedback("¡Se requiere seleccionar un asunto!");
             }
-            if (fechaTerminar === "") {
-                setFechaFeedback("¡Requiere seleccionar una fecha!");
+            if (fechaNacimiento === "") {
+                setFechaFeedback("¡Se requiere seleccionar una fecha!");
             }
             swal({
                 title: "Por favor, rellena los campos importantes antes de guardar.",
@@ -84,7 +84,7 @@ function ModalAgregarEvento({ onClose }) {
                 </div>
             </div>
 
-            <ImputAgregar texto="Titulo de evento" tipo="text" value={tituloEvento} onChange={setTituloEvento} />
+            <ImputAgregar texto="Título de evento" tipo="text" value={tituloEvento} onChange={setTituloEvento} />
             {!tituloEvento && <div className="feedback">{tituloFeedback}</div>}
             <ImputAgregar texto="Asunto" tipo="select" options={opcionesEvento} value={asunto} onChange={setAsunto} />
             {!asunto && <div className="feedback">{asuntoFeedback}</div>}
