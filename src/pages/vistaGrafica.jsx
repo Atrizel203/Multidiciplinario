@@ -11,6 +11,8 @@ const profiles = [
     { arete: "1234", nombreDeVaca: "1234", evento: 'Aborto' },
     { arete: "1234", nombreDeVaca: "1234", evento: 'Muerta' },
     { arete: "1234", nombreDeVaca: "1234", evento: 'Muerta' },
+    { arete: "1234", nombreDeVaca: "1234", evento: 'Muerta' },
+    { arete: "1234", nombreDeVaca: "1234", evento: 'Muerta' },
     { arete: "1234", nombreDeVaca: "1234", evento: 'Cargada' },
     { arete: "1234", nombreDeVaca: "1234", evento: 'Cargada' },
 ];
@@ -76,7 +78,7 @@ function VistaGrafica() {
             </div>
 
             <div className={Style.chartContenedor}>
-                <BarChart width={400} height={300} data={dataToro} barCategoryGap="30%" >
+                <BarChart width={400} height={300} data={dataToro} >
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="name" />
                     <YAxis tickCount={4}>
@@ -86,6 +88,7 @@ function VistaGrafica() {
                     <Bar dataKey="vacunadas" fill="#87b8ea" barSize={50} />
                     <Bar dataKey="enferma" fill="#7bd34e" barSize={50} />
                     <Bar dataKey="muerta" fill="#e4181b" barSize={50} />
+                    
                 </BarChart>
             </div>
 
