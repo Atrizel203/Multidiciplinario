@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useState } from 'react';
 import Icons from "../atomos/icons.jsx";
 import BotonGuardar from "../atomos/botonGuardar.jsx";
 import ImputAgregar from "../moleculas/impustEspeciales.jsx";
 import "../css/modalAgregarEvento.css";
 
-function ModalAgregarEvento(props) {
-    const handleClose = () => {
-        if (props.onClose) {
-            props.onClose();
-        }
+function ModalAgregarEvento({ onClose }) {
+    const [modalIsOpen, setModalIsOpen] = useState(true);
+
+    const closeModal = () => {
+      if (onClose) {
+        onClose();
+      }
     };
 
     let opcionesEvento = [
@@ -28,7 +30,7 @@ function ModalAgregarEvento(props) {
                     Agregar evento al Bovino
                     <Icons iconName="calendario" />
                 </h1>
-                <div onClick={handleClose}>
+                <div onClick={closeModal}>
                 <Icons iconName="cerrar" />
                 </div>
             </div>
