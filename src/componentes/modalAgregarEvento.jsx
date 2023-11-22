@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useState } from 'react';
 import Icons from "../atomos/icons.jsx";
 import BotonGuardar from "../atomos/botonGuardar.jsx";
 import ImputAgregar from "../moleculas/impustEspeciales.jsx";
-import "../css/modalAgregarEvento.css";
+import Style from "../css/modalAgregarEvento.module.css";
 
-function ModalAgregarEvento(props) {
-    const handleClose = () => {
-        if (props.onClose) {
-            props.onClose();
-        }
+function ModalAgregarEvento({ onClose }) {
+    const [modalIsOpen, setModalIsOpen] = useState(true);
+
+    const closeModal = () => {
+      if (onClose) {
+        onClose();
+      }
     };
 
     let opcionesEvento = [
@@ -22,13 +24,13 @@ function ModalAgregarEvento(props) {
     ];
     return (
 
-        <div className="contenedor">
-            <div className="cerrar">
+        <div className={Style.contenedor}>
+            <div className={Style.cerrar}>
                 <h1>
                     Agregar evento al Bovino
                     <Icons iconName="calendario" />
                 </h1>
-                <div onClick={handleClose}>
+                <div onClick={closeModal}>
                 <Icons iconName="cerrar" />
                 </div>
             </div>
@@ -37,10 +39,10 @@ function ModalAgregarEvento(props) {
             <ImputAgregar texto="Asunto" tipo="select" options={opcionesEvento} />
 
 
-            <ImputAgregar texto="Descripcion" tipo="textarea" className="descripcion" />
+            <ImputAgregar texto="Descripcion" tipo="textarea" className={Style.descripcion} />
             <ImputAgregar texto="Fecha A Terminar" tipo="date" />
 
-            <div className="guardar">
+            <div className={Style.guardar}>
                 <BotonGuardar />
             </div>
 

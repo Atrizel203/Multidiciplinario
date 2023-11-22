@@ -6,10 +6,12 @@ import Calendario from "../atomos/botonCalendario";
 import Editar from "../atomos/botonEditar";
 import ModalEditar from "../componentes/modalModificarPerfil"; 
 import ModalEvento from "../componentes/modalAgregarEvento";
+import ModalCalendario from '../componentes/modalCalendar';
 
 function BotonesPerfil(props) {
     const [showModalEditar, setShowModalEditar] = useState(false);
-    const [showModalEvento, setShowModalEvento] = useState(false);  // Agrega estado para la nueva modal
+    const [showModalEvento, setShowModalEvento] = useState(false);
+    const [showModalCalendario, setShowModalCalendario] = useState(false);
 
     const openModalEditar = () => {
         setShowModalEditar(true);
@@ -21,26 +23,39 @@ function BotonesPerfil(props) {
 
     const openModalEvento = () => {
         setShowModalEvento(true);
+        setShowModalCalendario(true); 
     };
 
     const closeModalEvento = () => {
-        setShowModalEvento(false);
+        setShowModalEvento(false); 
+        setShowModalCalendario(false); 
+    }
+    
+    const openModalCalendario = () => {
+        setShowModalEvento(true);
+        setShowModalCalendario(true); 
     };
 
+    const closeModalCalendario = () => {
+        setShowModalEvento(false); 
+        setShowModalCalendario(false); 
+    };
 
     return (
         <div className="Botones-contenedor">
-            <Borrar/>
+            <Borrar />
             <Descargar />
             <div onClick={openModalEvento}>
-            <Calendario/>
+                <Calendario />
+            </div>
+            <div onClick={openModalCalendario}>
             </div>
             <div onClick={openModalEditar}>
-            <Editar />
-            </div >
+                <Editar />
+            </div>
             {showModalEditar && <ModalEditar onClose={closeModalEditar} />}
             {showModalEvento && <ModalEvento onClose={closeModalEvento} />}
-
+            {showModalCalendario && <ModalCalendario onClose={closeModalCalendario} />}
         </div>
     );
 }

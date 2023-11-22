@@ -1,7 +1,7 @@
 import React from 'react';
 import Leftvar from '../componentes/leftVar';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, CartesianGrid } from 'recharts';
-import '../css/graficas.css';
+import Style from "../css/graficas.module.css"
 
 const profiles = [
     { arete: "1234", nombreDeVaca: "1234", evento: 'Vacuna' },
@@ -27,7 +27,7 @@ function VistaGrafica() {
     return (
         <div>
             <Leftvar />
-            <div className="chartContainer">
+            <div className={Style.chartContainer}>
                 <BarChart width={700} height={600} data={data}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="name" />
