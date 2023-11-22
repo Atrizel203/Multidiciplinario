@@ -18,6 +18,7 @@ const eventosEjemplo = [
     descripcion: 'Hay que estar preparados dias antes por si el parto llega a ser prematuro.',
     fecha_Reinsidio: '2023-11-25',
   },
+  
   {
     titulo: 'Webinar de Ganadería Sostenible',
     asunto: 'Aprende sobre prácticas de ganadería sostenible',
@@ -25,6 +26,7 @@ const eventosEjemplo = [
     descripcion: 'Participa en nuestro webinar donde expertos en ganadería sostenible compartirán consejos y mejores prácticas para mejorar la productividad y reducir el impacto ambiental.',
     fecha_Reinsidio: '2023-11-24',
   },
+
   {
     titulo: 'Exposición de Maquinaria Agrícola',
     asunto: 'Descubre las últimas innovaciones en maquinaria agrícola',
