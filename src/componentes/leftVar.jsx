@@ -16,15 +16,15 @@ function Leftvar(props) {
     const VerAgregar = () => {
         navigate('/AgregarBovino');
     };
-  
-    const PrimerFiltro =() => {
-        navigate('/primerFiltroV')
-    };
 
     const Graficos = () => {
         navigate('/Graficos')
-
     };
+
+    const PrimerFiltro = () => {
+        navigate('/bovinosOpciones');
+    };
+
 
     return (
         <div className="navContainer">

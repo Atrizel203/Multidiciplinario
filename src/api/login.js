@@ -11,7 +11,7 @@ const ValidarLog = async (params) => {
     try {
         const response = await axios.post("http://localhost:3003/administradores/login", info);
         if (response.data.token) {
-            localStorage.setItem("token", response.data.token);
+            localStorage.setItem("token",  response.data.token);
             localStorage.setItem("correo", params.correo);
             console.log("Token guardado correctamente");
             return true; // Autenticación exitosa
