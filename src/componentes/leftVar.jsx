@@ -9,20 +9,20 @@ function Leftvar(props) {
     const navigate = useNavigate();
 
     const Inicio = () => {
-        navigate('/Principal');
+        navigate('/principal');
     };
 
 
     const VerAgregar = () => {
-        navigate('/AgregarBovino');
+        navigate('/agregar-bovino');
     };
 
     const Graficos = () => {
-        navigate('/Graficos')
+        navigate('/graficos')
     };
 
     const PrimerFiltro = () => {
-        navigate('/bovinosOpciones');
+        navigate('/bovinos-opciones');
     };
 
 

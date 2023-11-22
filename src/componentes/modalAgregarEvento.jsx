@@ -11,7 +11,7 @@ function ModalAgregarEvento({ onClose }) {
     const [tituloEvento, setTituloEvento] = useState("");
     const [asunto, setAsunto] = useState("");
     const [descripcion, setDescripcion] = useState("");
-    const [fechaTerminar, setFechaNacimiento] = useState("");
+    const [fechaTerminar, setFechaTerminar] = useState("");
     const [tituloFeedback, setTituloFeedback] = useState("");
     const [asuntoFeedback, setAsuntoFeedback] = useState("");
     const [fechaFeedback, setFechaFeedback] = useState("");
@@ -89,7 +89,7 @@ function ModalAgregarEvento({ onClose }) {
             <ImputAgregar texto="Asunto" tipo="select" options={opcionesEvento} value={asunto} onChange={setAsunto} />
             {!asunto && <div className="feedback">{asuntoFeedback}</div>}
             <ImputAgregar texto="Descripcion" tipo="textarea" className={Style.descripcion} value={descripcion} onChange={setDescripcion} />
-            <ImputAgregar texto="Fecha A Terminar" tipo="date" value={fechaTerminar} onChange={setFechaNacimiento} />
+            <ImputAgregar texto="Fecha A Terminar" tipo="date" value={fechaTerminar} onChange={setFechaTerminar} />
             {!fechaTerminar && <div className="feedback">{fechaFeedback}</div>}
             <div className={Style.guardar} onClick={handleGuardar}>
                 <BotonGuardar />

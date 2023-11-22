@@ -7,22 +7,22 @@ const CardBovinosSimp = () => {
 
     const PrimerFiltroToros = () => {
         localStorage.setItem("InfoBovino", "toros")
-        navigate('/primerFiltroV');
+        navigate('/primer-filtro');
     };
 
     const PrimerFiltroVacas  = () => {
         localStorage.setItem("InfoBovino", "vacas")
-        navigate('/primerFiltroV');
+        navigate('/primer-filtro');
     };
 
     const PrimerFiltroToritos = () => {
         localStorage.setItem("InfoBovino", "novillos")
-        navigate('/primerFiltroV');
+        navigate('/primer-filtro');
     };
 
     const PrimerFiltroBecerros = () => {
         localStorage.setItem("InfoBovino", "novillas")
-        navigate('/primerFiltroV');
+        navigate('/primer-filtro');
     };
 
     return (

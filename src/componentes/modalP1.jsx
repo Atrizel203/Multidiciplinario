@@ -10,7 +10,7 @@ const App = (InfoPerfilMini) => {
 
     const VistaDatos = () => {
         localStorage.setItem("idBovino", idBovino);
-        navigate('/Vistadatos');
+        navigate('/vista-datos');
     };
 
     let { arete,nombreDeVaca, idBovino} = InfoPerfilMini;

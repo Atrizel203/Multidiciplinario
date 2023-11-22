@@ -39,7 +39,7 @@ function Login(props) {
                 if (autenticacionExitosa) {
                     
                     mostrarAlerta('Inicio de sesión exitoso', 'success');
-                    navigate('/Principal');
+                    navigate('/principal');
                 } else {
                     mostrarAlerta('Credenciales incorrectas', 'error');
                 }

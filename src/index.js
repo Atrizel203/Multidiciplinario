@@ -15,14 +15,14 @@ import Graficos from './pages/vistaGrafica.jsx';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 <Router>
-      <Routes>
+<Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/Principal" element={<Principal />} />
-        <Route path="/primerFiltroV" element={<PrimerFiltro />} />
-        <Route path="/Vistadatos" element={<VistaDatos/>} />
-        <Route path="/AgregarBovino" element={<AgregarBovino/>} />
-        <Route path="/bovinosOpciones" element={<BovinosOpciones/>} />  
-        <Route path="/Graficos" element={<Graficos />} />
+        <Route path="/principal" element={<Principal />} />
+        <Route path="/primer-filtro" element={<PrimerFiltro />} />
+        <Route path="/vista-datos" element={<VistaDatos/>} />
+        <Route path="/agregar-bovino" element={<AgregarBovino/>} />
+        <Route path="/bovinos-opciones" element={<BovinosOpciones/>} />  
+        <Route path="/graficos" element={<Graficos />} />
 
       </Routes>
     </Router>

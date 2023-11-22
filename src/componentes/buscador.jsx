@@ -54,7 +54,7 @@ function Buscador() {
 
     const handleSelectBovino = (idBovino) => {
         localStorage.setItem('PagBovino', idBovino);
-        navigate('/Vistadatos');
+        navigate('/vista-datos');
     };
 
     return (
