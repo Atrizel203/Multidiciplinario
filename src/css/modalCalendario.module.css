@@ -15,28 +15,28 @@ body {
   font-family: 'Almarai';
 }
 
-.fc .fc-header-toolbar .fc-left {
+.fc .fc_header_toolbar .fc_left {
   display: flex;
   align-items: center;
 }
 
-.fc .fc-header-toolbar .fc-left .fc-button-group {
+.fc .fc_header-toolbar .fc_left .fc-button_group {
   margin-right: 10px;
 }
 
 
 
-.modal-content {
+.modal_content {
   display: flex;
   flex-direction: column;
   height: 100%; 
 }
 
-.calendar-container {
+.calendar_container {
   flex: 1;
 }
 
-.form-container {
+.form_container {
   flex: 1;
 }
 
@@ -65,7 +65,7 @@ body {
 }
 
 
-.form-container label { 
+.form_container label { 
   color:  var(--secondary-color);
   display: flex;
   flex-direction: column;
@@ -73,8 +73,8 @@ body {
  
 }
 
-.form-container input,
-.form-container textarea {
+.form_container input,
+.form_container textarea {
   color:  var(--secondary-color);
   margin: 0.5em 0;
   padding: 0.5em;
@@ -82,7 +82,7 @@ body {
   border-radius: 10px;
 }
 
-.form-container button {
+.form_container button {
   width: 10%;
   height: 50px;
   display: flex;

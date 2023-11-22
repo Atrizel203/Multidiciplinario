@@ -4,11 +4,11 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction'; 
 import Modal from 'react-modal';
-import esLocale from '@fullcalendar/core/locales/es'; // Importar el locale español
-import '../css/modalCalendario.css';
+import esLocale from '@fullcalendar/core/locales/es'; 
+import Style from '../css/modalCalendario.module.css';
 import Icons from '../atomos/icons';
 
-Modal.setAppElement('#root'); // Esto es necesario para la accesibilidad del modal
+Modal.setAppElement('#root'); 
 
 const eventosEjemplo = [
   {
@@ -50,10 +50,10 @@ function ModalCalendario() {
       <Modal
         isOpen={true}
         contentLabel="Calendario Modal"
-        className="ModalCalendario" // Agrega la clase CSS al modal
+        className={Style.ModalCalendario}
       >
         {selectedEvent ? (
-          <div className="form-container">
+          <div className={Style.form_container}>
             <h2>Información del Evento</h2>
             <form>
               <label>
@@ -82,7 +82,7 @@ function ModalCalendario() {
             </button>
           </div>
         ) : (
-          <div className="calendar-container">
+          <div className={Style.calendar_container}>
             <FullCalendar
               initialView="dayGridMonth"
               headerToolbar={{
@@ -95,7 +95,7 @@ function ModalCalendario() {
                 title: e.titulo,
                 start: e.fecha_Reporte,
                 end: e.fecha_Reinsidio,
-                extendedProps: e // Aquí guardamos el resto de la información del evento
+                extendedProps: e 
               }))}
               eventClick={handleEventClick}
               height={"90vh"}
