@@ -8,12 +8,26 @@ const realizarOperacionBovinos = async (endpoint) => {
                 Authorization: `Bearer ${token}`
             }
         };
-
+        console.log(endpoint);
         const response = await axios.get(`http://localhost:3003/bovinos/${endpoint}`, config);
 
         if (response.status === 200) {
-            console.log(response.data.bovinos);
-            return response.data.bovinos;
+            if (endpoint === 'toros') {
+                console.log(response.data.toros);
+                return response.data.toros;
+            }
+            if (endpoint === 'vacas') {
+                console.log(response.data.vacas);
+                return response.data.vacas;
+            }
+            if (endpoint === 'novillos') {
+                console.log(response.data.novillos);
+                return response.data.novillos;
+            }
+            if (endpoint === 'novillas') {
+                console.log(response.data.novillas);
+                return response.data.novillas;
+            }
         } else {
             throw new Error(`Error en la respuesta del servidor: ${response.status} ${response.statusText}`);
         }
@@ -33,18 +47,4 @@ const realizarOperacionBovinos = async (endpoint) => {
     }
 };
 
-export const obtenerToros = async () => {
-    return realizarOperacionBovinos('toros');
-};
-
-export const obtenerVacas = async () => {
-    return realizarOperacionBovinos('vacas');
-};
-
-export const obtenerNovillos = async () => {
-    return realizarOperacionBovinos('novillos');
-};
-
-export const obtenerNovillas = async () => {
-    return realizarOperacionBovinos('novillas');
-};
+export default realizarOperacionBovinos;
