@@ -8,11 +8,14 @@ import ModalEditar from "../componentes/modalModificarPerfil";
 import ModalEvento from "../componentes/modalAgregarEvento";
 import ModalCalendario from '../componentes/modalCalendar';
 import swal from 'sweetalert';
+import {borradoLogico} from "../api/borrarEntidades/borrarBovino";
+import { useNavigate } from "react-router-dom";
 
 function BotonesPerfil(props) {
     const [showModalEditar, setShowModalEditar] = useState(false);
     const [showModalEvento, setShowModalEvento] = useState(false);
     const [showModalCalendario, setShowModalCalendario] = useState(false);
+    const navigator = useNavigate();
 
     const openModalEditar = () => {
         setShowModalEditar(true);
@@ -51,9 +54,11 @@ function BotonesPerfil(props) {
         })
         .then((willDelete) => {
             if (willDelete) {
+                borradoLogico(localStorage.getItem("idBovino"));
                 swal("La informacion del bovino fue borrada", {
                     icon: "success",
                 });
+                navigator("/bovinosOpciones");
             } else {
                 swal("¡La informacion sigue donde siempre!");
             }
