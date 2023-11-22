@@ -8,7 +8,6 @@ import Grid from '@mui/material/Grid';
 import Acordion from "../moleculas/acordion.jsx"
 
 
-
 function Vistadatos() {
 
 
