@@ -14,7 +14,7 @@
     width: 30px;
     height: 30px;
     margin-left: 15px;
-    margin-top: 6px;
+    margin-top: 15px;
     cursor: pointer;
     color: var(--secondary-color);
 }
@@ -110,7 +110,9 @@ input:not(:placeholder-shown)~.reset {
 
 /* sizing svg icons */
 .form svg {
+    margin-top: 5px;
     width: 17px;
+    height: 17px;
 }
 
 
