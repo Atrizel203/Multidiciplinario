@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import '../css/buscador.css'; // Asegúrate de tener tus estilos CSS importados correctamente
 import Icons from '../atomos/icons';
 import { useNavigate } from 'react-router-dom';
+import NotificacionesModal from './modalNotificacion';
 
 function Buscador(props) {
-    /*     const { infoBovinos } = props; */   
     const navigate = useNavigate();
     const [filtradoDatos, setFiltrado] = useState([]);
     const [showMenu, setShowMenu] = useState(false);
+    const [modalIsOpen, setModalIsOpen] = useState(false);
 
     const toggleMenu = () => {
         setShowMenu(!showMenu);
@@ -29,7 +30,6 @@ function Buscador(props) {
         setFiltrado(filteredData);
     };
 
-    
     const Salir = () => {
         navigate('/');
     };
@@ -59,9 +59,6 @@ function Buscador(props) {
                 </datalist>
             </form>
 
-
-
-
             <div className="dropdown">
                 <div className="salirBoton" onClick={toggleMenu}>
                     <Icons iconName="usuario" />
@@ -79,10 +76,11 @@ function Buscador(props) {
                 )}
             </div>
 
+            <div className="salirBoton" onClick={() => setModalIsOpen(true)}>
+    <Icons iconName="notificacion" />
+</div>
 
-            <div  className="salirBoton">
-                <Icons iconName="notificacion" />
-            </div>
+<NotificacionesModal modalIsOpen={modalIsOpen} setModalIsOpen={setModalIsOpen} />
 
         </div>
     );
