@@ -3,6 +3,7 @@ import Leftvar from '../componentes/leftVar';
 import Buscador from '../componentes/buscador';
 import FiltroEstados from '../componentes/filtroEstados';
 import CoruselEventos from '../componentes/coruselEventos.jsx';
+import ScripBuscar from "../api/buscador.js"
 const App = () => {
     const eventosEjemplo = [
         {
@@ -54,10 +55,12 @@ const App = () => {
         },
     ];
 
+ /*    const infoBuscador= ScripBuscar(); */
+
     return (
         <div>
             <Leftvar />
-            <Buscador />
+            <Buscador /* infoBovinos={infoBuscador} *//>
             <div>
                 <FiltroEstados />
                 <CoruselEventos eventos={eventosEjemplo} />
