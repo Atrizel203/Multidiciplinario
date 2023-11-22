@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../css/buscador.css';
 import Icons from '../atomos/icons';
 import { useNavigate } from 'react-router-dom';
-import ObtenerDatosApi from "../api/buscador.js" // Ajusta la ruta según tu estructura
+import ObtenerDatosApi from "../api/peticionesGet/buscador.js" // Ajusta la ruta según tu estructura
 
 function Buscador() {
     const navigate = useNavigate();
