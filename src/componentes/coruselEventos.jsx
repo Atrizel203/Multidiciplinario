@@ -1,10 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import '../css/coruselEventos.css';
 import BotonBorrar from '../atomos/botonBorrar';
+import PrincipalEventos from '../api/principalEventos';
+import {terminarEvento, borrarEventoLogico} from '../api/borrarEntidades/borrarEvento.js';
 
-const CoruselEventos = ({ eventos }) => {
+const CoruselEventos = () => {
+    const [eventos, setEventos] = useState([]);
     const eventosPorPagina = 4;
     const [currentPage, setCurrentPage] = useState(1);
+
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const data = await PrincipalEventos();
+                setEventos(data);
+            } catch (error) {
+                console.error('Error al obtener datos de la API:', error.message);
+            }
+        }
+
+        fetchData();
+    }, []); // El segundo argumento es un array vacío para que se ejecute solo una vez al montar el componente
+
     const totalPages = Math.ceil(eventos.length / eventosPorPagina);
     const startIndex = (currentPage - 1) * eventosPorPagina;
     const endIndex = startIndex + eventosPorPagina;
@@ -28,11 +45,14 @@ const CoruselEventos = ({ eventos }) => {
                 {eventosActuales.map((evento, index) => (
                     <CardEvento
                         key={index}
+                        idEvento={evento.idEvento}
                         titulo={evento.titulo}
                         asunto={evento.asunto}
                         fecha_Reporte={evento.fecha_Reporte}
                         descripcion={evento.descripcion}
                         fecha_Reinsidio={evento.fecha_Reinsidio}
+                        areteBovino={evento.areteBovino}
+                        nombreBovino={evento.nombreBovino}
                     />
                 ))}
             </div>
@@ -47,14 +67,18 @@ const CoruselEventos = ({ eventos }) => {
     );
 };
 
-const CardEvento = ({ titulo, asunto, fecha_Reporte, descripcion, fecha_Reinsidio }) => {
+const CardEvento = ({ idEvento ,titulo, asunto, fecha_Reporte, descripcion, fecha_Reinsidio , areteBovino, nombreBovino}) => {
     const [countdown, setCountdown] = useState('');
 
     const handleTerminarEvento = () => {
+        console.log(idEvento);
+        terminarEvento(idEvento);
+        /* pante una alerta insana */
     };
 
     const handleBorrarEvento = () => {
-        alert('Evento borrado');
+        borrarEventoLogico(idEvento);
+        /* pante una alerta insana */
     };
 
     const showCountdown = () => {
@@ -89,6 +113,8 @@ const CardEvento = ({ titulo, asunto, fecha_Reporte, descripcion, fecha_Reinsidi
     return (
         <div className="card">
             <h5>{titulo}</h5>
+            <p><strong>Arete</strong> {areteBovino}</p>
+            <p><strong>Nombre</strong> {nombreBovino}</p>
             <p><strong>Asunto:</strong> {asunto}</p>
             <p><strong>Fecha de Reporte:</strong> {fecha_Reporte}</p>
             <p><strong>Descripción:</strong> {descripcion}</p>

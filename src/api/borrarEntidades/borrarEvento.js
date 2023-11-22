@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const PrincipalEventos = async () => {
+const realizarOperacion = async (idEvento, endpoint) => {
     try {
         const token = localStorage.getItem('token');
         const config = {
@@ -9,7 +9,7 @@ const PrincipalEventos = async () => {
             }
         };
 
-        const response = await axios.get(`http://localhost:3003/eventos/Importantes`, config);
+        const response = await axios.patch(`http://localhost:3003/eventos/${endpoint}/${idEvento}`, null, config);
 
         if (response.status === 200) {
             console.log(response.data.eventos);
@@ -33,4 +33,14 @@ const PrincipalEventos = async () => {
     }
 };
 
-export default PrincipalEventos;
+export const terminarEvento = async (idEvento) => {
+    return realizarOperacion(idEvento, 'eventoTerminado');
+};
+
+export const borrarEventoLogico = async (idEvento) => {
+    return realizarOperacion(idEvento, 'logicalDelete');
+};
+
+export const borrarEvento = async (idEvento) => {
+    return realizarOperacion(idEvento, 'Delete');
+};
