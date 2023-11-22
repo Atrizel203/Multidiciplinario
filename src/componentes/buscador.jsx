@@ -52,11 +52,12 @@ function Buscador() {
 
     return (
         <div className='NavComp'>
+    
             <form className="form">
                 <button>
                     <Icons iconName="buscar" />
                 </button>
-                <input className="input" placeholder="Escribe el Nombre o el Arete" required type="text" onChange={handleChange} />
+                <input className="input" placeholder="Escribe el Nombre o el Arete" required type="text" onChange={handleChange} list='x' />
                 <button className="reset" type="reset">
                     <Icons iconName="cerrar" />
                 </button>
