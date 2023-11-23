@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import '../css/buscador.css';
+import '../css/buscador.css'; // Asegúrate de tener un archivo CSS con los estilos necesarios
 import Icons from '../atomos/icons';
 import { useNavigate } from 'react-router-dom';
 import NotificacionesModal from './modalNotificacion';
-import ObtenerDatosApi from "../api/peticionesGet/buscador.js" // Ajusta la ruta según tu estructura
-function Buscador() {
+import ObtenerDatosApi from "../api/peticionesGet/buscador.js"; // Ajusta la ruta según tu estructura
 
+function Buscador() {
     const navigate = useNavigate();
     const [infoBovinos, setInfoBovinos] = useState([]);
     const [filtradoDatos, setFiltrado] = useState([]);
@@ -42,8 +42,6 @@ function Buscador() {
                 bovino.areteBovino.toLowerCase().includes(searchTerm)
         ).slice(0, 5);
         setFiltrado(filteredData);
-
-        console.log("filtrmos", filteredData);
     };
 
     const Salir = () => {
@@ -52,31 +50,49 @@ function Buscador() {
         navigate('/');
     };
 
-    const handleSelectBovino = (idBovino) => {
-        localStorage.setItem('PagBovino', idBovino);
-        navigate('/vista-datos');
+    const handleSelectBovino = (IdBovino) => {
+        localStorage.setItem("idBovino", IdBovino);
+        const currentLocation = window.location.pathname;
+        if (currentLocation === '/vista-datos') {
+            window.location.reload();
+        } else {
+            navigate('/vista-datos');
+        }
     };
+
 
     return (
         <div className='NavComp'>
-
             <form className="form">
                 <button>
-                    <Icons iconName="buscar"/>
+                    <Icons iconName="buscar" />
                 </button>
-                    <input className="input" placeholder="Escribe el Nombre o el Arete" required type="text" onChange={handleChange} list='x' />
-                    <button className="reset" type="reset">
-                        <Icons iconName="cerrar" />
-                    </button>
-                    <datalist id='x'>
-                    {filtradoDatos.map((bovino, index) => (
-                        <option
-                            key={index}
-                            value={`${bovino.nombre} - ${bovino.areteBovino}`}
-                            onClick={() => handleSelectBovino(bovino.idBovino)}
-                        />
-                    ))}
-                </datalist>
+                <input
+                    className="input"
+                    placeholder="Escribe el Nombre o el Arete"
+                    required
+                    type="text"
+                    onChange={handleChange}
+                    list='x'
+                />
+                <button className="reset" type="reset">
+                    <Icons iconName="cerrar" />
+                </button>
+                {filtradoDatos.length > 0 && (
+                    <div id='x'>
+                        {filtradoDatos.map((bovino, index) => (
+                            /* darle estilo */
+                            <div
+                                style={{ background: "#ccc" }}
+                                key={index}
+                                className={"option"}
+                                onClick={() => handleSelectBovino(bovino.idBovino)}>
+                                <span> nombre: {bovino.nombre} </span>
+                                <span>arete:{bovino.areteBovino}</span>
+                            </div>
+                        ))}
+                    </div>
+                )}
             </form>
 
             <div className="dropdown">
@@ -96,12 +112,11 @@ function Buscador() {
                 )}
             </div>
 
-
             <div className="salirBoton" onClick={() => setModalIsOpen(true)}>
-    <Icons iconName="notificacion" />
-</div>
+                <Icons iconName="notificacion" />
+            </div>
 
-<NotificacionesModal modalIsOpen={modalIsOpen} setModalIsOpen={setModalIsOpen} />
+            <NotificacionesModal modalIsOpen={modalIsOpen} setModalIsOpen={setModalIsOpen} />
         </div>
     );
 }

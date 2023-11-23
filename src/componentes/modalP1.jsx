@@ -11,21 +11,23 @@ const App = (InfoPerfilMini) => {
         localStorage.setItem("idBovino", idBovino);
         navigate('/vista-datos');
     };
-
-    let { arete,nombreDeVaca, idBovino} = InfoPerfilMini;
+    
+    console.log("Datos Info Perfi");
+    console.log(InfoPerfilMini)
+    let {nombreDeVaca, idBovino} = InfoPerfilMini;
 
     const [shouldAnimateArete, setShouldAnimateArete] = useState(false);
     const [shouldAnimateNombre, setShouldAnimateNombre] = useState(false);
 
     useEffect(() => {
-        if (arete.length > 15) {
+        if (InfoPerfilMini.arete.length > 15) {
             setShouldAnimateArete(true);
         }
 
-        if (nombreDeVaca.length > 12) {
+        if (InfoPerfilMini.arete > 12) {
             setShouldAnimateNombre(true);
         }
-    }, [arete, nombreDeVaca]);
+    }, [InfoPerfilMini.arete, nombreDeVaca]);
 
 
 
@@ -37,7 +39,7 @@ const App = (InfoPerfilMini) => {
 
                 <div className="perfil-details">
                     <div className="perfil-detailNomr">
-                        <span className={`text-container ${shouldAnimateArete ? 'animate' : ''}`}>Arete: {arete}</span>
+                        <span className={`text-container ${shouldAnimateArete ? 'animate' : ''}`}>Arete: {InfoPerfilMini.arete}</span>
                     </div>
                     <div className="perfil-detailImp">
                         <span className={`text-container ${shouldAnimateNombre ? 'animate' : ''}`}>Nombre: {nombreDeVaca}</span>

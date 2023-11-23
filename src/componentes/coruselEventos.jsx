@@ -58,9 +58,9 @@ const CoruselEventos = () => {
             </div>
             <div className="paginationButtons">
                 <div className='paginationButtons-colors' onClick={goToFirstPage} disabled={currentPage === 1}>« Primera</div>
-                <div className='paginationButtons-colors' onClick={() => goToPage(currentPage - 1)} disabled={currentPage === 1}>‹ Anterior</div>
+                <div className='paginationButtons-colors' onClick={() => goToPage(currentPage - 1)} disabled={currentPage === 1}>Anterior</div>
                 <span>{`${currentPage} de ${totalPages}`}</span>
-                <div className='paginationButtons-colors' onClick={() => goToPage(currentPage + 1)} disabled={currentPage === totalPages}>Siguiente ›</div>
+                <div className='paginationButtons-colors' onClick={() => goToPage(currentPage + 1)} disabled={currentPage === totalPages}>Siguiente </div>
                 <div className='paginationButtons-colors' onClick={goToLastPage} disabled={currentPage === totalPages}>Última »</div>
             </div>
         </div>
@@ -107,6 +107,7 @@ const CardEvento = ({ idEvento ,titulo, asunto, fecha_Reporte, descripcion, fech
         return () => {
             clearInterval(interval);
         };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     
