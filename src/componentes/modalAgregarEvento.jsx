@@ -7,7 +7,6 @@ import swal from 'sweetalert';
 import crearEventos from '../api/crearEntidades/crearEvento.js';
 
 function ModalAgregarEvento({ onClose }) {
-    const [modalIsOpen, setModalIsOpen] = useState(true);
     const [tituloEvento, setTituloEvento] = useState("");
     const [asunto, setAsunto] = useState("");
     const [descripcion, setDescripcion] = useState("");
@@ -42,7 +41,7 @@ function ModalAgregarEvento({ onClose }) {
             if (asunto === "") {
                 setAsuntoFeedback("¡Se requiere seleccionar un asunto!");
             }
-            if (fechaNacimiento === "") {
+            if (fechaTerminar === "") {
                 setFechaFeedback("¡Se requiere seleccionar una fecha!");
             }
             swal({

@@ -20,7 +20,7 @@ const CoruselEventos = () => {
         }
 
         fetchData();
-    }, []); // El segundo argumento es un array vacío para que se ejecute solo una vez al montar el componente
+    }, []);
 
     const totalPages = Math.ceil(eventos.length / eventosPorPagina);
     const startIndex = (currentPage - 1) * eventosPorPagina;

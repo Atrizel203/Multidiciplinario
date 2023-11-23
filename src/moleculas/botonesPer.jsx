@@ -58,7 +58,7 @@ function BotonesPerfil(props) {
                 swal("La informacion del bovino fue borrada", {
                     icon: "success",
                 });
-                navigator("/bovinosOpciones");
+                navigator("/bovinos-opciones");
             } else {
                 swal("¡La información sigue donde siempre!");
             }

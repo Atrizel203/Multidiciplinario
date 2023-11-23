@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import NuevaImagenVaca from '../img/Vaca2.jpg';
 import '../css/perfilChico.css';
-import Icons from '../atomos/icons';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -43,12 +42,7 @@ const App = (InfoPerfilMini) => {
                     <div className="perfil-detailImp">
                         <span className={`text-container ${shouldAnimateNombre ? 'animate' : ''}`}>Nombre: {nombreDeVaca}</span>
                     </div>
-
                 </div>
-{/*                 <div className="perfil-icons">
-                    <Icons iconName="heart" />
-                    <Icons iconName="benda" />
-                </div> */}
 
             </div>
 
