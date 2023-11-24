@@ -1,54 +1,29 @@
 import React from 'react';
-import { PDFDownloadLink, Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer';
+import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
 
 const styles = StyleSheet.create({
-    page: {
-        flexDirection: 'column',
-        backgroundColor: '#ffffff',
-        padding: 20,
-    },
-    section: {
-        marginBottom: 10,
-    },
-    title: {
-        fontSize: 24,
-        marginBottom: 10,
-    },
-    label: {
-        fontSize: 16,
-        marginBottom: 5,
-    },
-    value: {
-        fontSize: 14,
-    },
+  page: {
+    flexDirection: 'row',
+    backgroundColor: '#E4E4E4'
+  },
+  section: {
+    margin: 10,
+    padding: 10,
+    flexGrow: 1
+  }
 });
 
-const PdfDescarga = ({ nombre, arete, fechaNacimiento }) => {
-    const MyDocument = () => (
-        <Document>
-            <Page size="A4" style={styles.page}>
-                <View style={styles.section}>
-                    <Text style={styles.title}>Información del Bovino</Text>
-                    <Text style={styles.label}>Nombre:</Text>
-                    <Text style={styles.value}>{nombre}</Text>
-                    <Text style={styles.label}>Arete:</Text>
-                    <Text style={styles.value}>{arete}</Text>
-                    <Text style={styles.label}>Fecha de Nacimiento:</Text>
-                    <Text style={styles.value}>{fechaNacimiento}</Text>
-                </View>
-            </Page>
-        </Document>
-    );
 
-    return (
-        <div>
-            <PDFDownloadLink document={<MyDocument />} fileName="informacion_bovino.pdf">
-                {({ blob, url, loading, error }) =>
-                    loading ? 'Cargando documento...' : 'Descargar PDF'
-                }
-            </PDFDownloadLink>
-        </div>
-    );
-};
+const DocuPDF = ({ vaca }) => (
+  <Document>
+    <Page size="A4" style={styles.page}>
+      <View style={styles.section}>
+        <Text>Nombre: {vaca.nombre}</Text>
+        <Text>Arete: {vaca.arete}</Text>
+        <Text>Fecha de Nacimiento: {vaca.fechaNacimiento}</Text>
+      </View>
+    </Page>
+  </Document>
+);
 
-export default PdfDescarga;
+export default DocuPDF;

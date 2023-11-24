@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Document,Page,pdfjs, PDFDownloadLink } from 'react-pdf';
 import "../css/botonesPer.css";
 import Borrar from "../atomos/botonBorrar";
 import Descargar from "../atomos/botonDescarga";
@@ -8,6 +9,8 @@ import ModalEditar from "../componentes/modalModificarPerfil";
 import ModalEvento from "../componentes/modalAgregarEvento";
 import ModalCalendario from '../componentes/modalCalendar';
 import swal from 'sweetalert';
+import { pdf } from '@react-pdf/renderer';
+import DocuPDF from '../api/pdfDescarga';
 
 function BotonesPerfil(props) {
     const [showModalEditar, setShowModalEditar] = useState(false);
@@ -60,7 +63,21 @@ function BotonesPerfil(props) {
         });
     };
 
-    const handleDescargar = () => {
+    const handleDescargar = async () => {
+        
+        const vaca = {
+            nombre: 'Manuela',
+            arete: 'abcd1234',
+            fechaNacimiento: '2023-11-20'
+          };
+
+        const blob = await pdf(<DocuPDF vaca={vaca} />).toBlob();
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'informacion_bovino.pdf';
+        link.click();
+      
         swal({
             title: "El archivo se ha descargado correctamente.",
             icon: "success",
