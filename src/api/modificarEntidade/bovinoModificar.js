@@ -8,7 +8,6 @@ const modificarBovino = async (bovino) => {
                 Authorization: `Bearer ${token}`
             }
         };
-        console.log(bovino);
         await axios.patch(`http://localhost:3003/bovinos/${localStorage.getItem("idBovino")}`, bovino, config);
     } catch (error) {
         if (axios.isAxiosError(error)) {
