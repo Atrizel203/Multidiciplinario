@@ -29,7 +29,7 @@ function Vistadatos() {
                         <div style={{ marginTop: "20px"}}> 
                             <CardPadres />
                         </div>
-                        <div style={{ marginTop: "18px", width:"85%"}}>
+                        <div style={{ marginTop: "20px", width:"85%"}}>
                             <Acordion />
                         </div>
                     </Grid>

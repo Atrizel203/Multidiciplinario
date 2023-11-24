@@ -27,7 +27,7 @@ function CardDatos() {
                 <div className='Datos'>
                     <img className='imag' src={Vaca} alt="Perfil de la vaca" />
                     <LabelTexto texto={`Nombre: ${bovinoData.nombre}`} />
-                    <LabelTexto texto={`Genero: ${bovinoData.genero}`} iconName="genero" />
+                    <LabelTexto texto={`Genero: ${bovinoData.genero}`} iconName={bovinoData.genero} />
                     <LabelTexto texto={`Arete: ${bovinoData.areteBovino}`} iconName="tag" />
                     <LabelTexto texto={`Fecha de nacimiento: ${new Date(bovinoData.fechaNacimiento).toLocaleDateString()}`} iconName="calendario" />
                     <LabelTexto texto={`Raza: ${bovinoData.raza}`} iconName="tag" />
