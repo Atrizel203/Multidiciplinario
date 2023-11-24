@@ -32,11 +32,8 @@
     text-align: start;
     font-family: "Almarai";
     font-size: 3vh;
-    border-radius: 15px;
     overflow: hidden;
     white-space: nowrap;
-    width: 15ch;
-
 }
 
 .perfil-detailImp {
@@ -44,35 +41,14 @@
     text-align: start;
     font-family: "Almarai";
     font-size: 2vh;
-    border-radius: 15px;
     overflow: hidden;
     white-space: nowrap;
-    width: 12ch;
 }
-
-
 
 
 .text-container {
     display: inline-block;
-    transform: translateX(0);
-    transition: transform 5s ease;
 }
-
-.text-container.animate {
-    animation: swing 9s linear infinite;
-}
-
-@keyframes swing {
-    0%, 100% {
-        transform: translateX(0);
-    }
-
-    50% {
-        transform: translateX(-50%);
-    }
-}
-
 
 
 .perfil-icons {
@@ -95,11 +71,11 @@
     width: 60%;
     flex-direction: column;
     align-items: center;
-    margin-left: 15px;
 }
 
 .infoEspPerfil {
     display: flex;
+    flex-direction: column;
     align-items: center;
     width: 100%;
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import NuevaImagenVaca from '../img/Vaca2.jpg';
 import '../css/perfilChico.css';
 import { useNavigate } from 'react-router-dom';
@@ -13,21 +13,6 @@ const App = (InfoPerfilMini) => {
     };
     let {nombreDeVaca, idBovino} = InfoPerfilMini;
 
-    const [shouldAnimateArete, setShouldAnimateArete] = useState(false);
-    const [shouldAnimateNombre, setShouldAnimateNombre] = useState(false);
-
-    useEffect(() => {
-        if (InfoPerfilMini.arete.length > 15) {
-            setShouldAnimateArete(true);
-        }
-
-        if (InfoPerfilMini.arete > 12) {
-            setShouldAnimateNombre(true);
-        }
-    }, [InfoPerfilMini.arete, nombreDeVaca]);
-
-
-
     return (
         <div className="perfil-container" onClick={VistaDatos}>
             <img src={NuevaImagenVaca} alt="vaca" className="perfil-image" />
@@ -36,10 +21,10 @@ const App = (InfoPerfilMini) => {
 
                 <div className="perfil-details">
                     <div className="perfil-detailNomr">
-                        <span className={`text-container ${shouldAnimateArete ? 'animate' : ''}`}>Arete: {InfoPerfilMini.arete}</span>
+                        <span className={`text-container`}>Arete: {InfoPerfilMini.arete}</span>
                     </div>
                     <div className="perfil-detailImp">
-                        <span className={`text-container ${shouldAnimateNombre ? 'animate' : ''}`}>Nombre: {nombreDeVaca}</span>
+                        <span className={`text-container`}>Nombre: {nombreDeVaca}</span>
                     </div>
                 </div>
 
