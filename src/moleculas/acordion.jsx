@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
@@ -11,7 +11,29 @@ import Box from '@mui/material/Box';
 import Vaca from "../img/VacaPerfil.jpg";
 import Icons from "../atomos/icons";
 
+import HijosBovino from '../api/peticionesGet/hijosBovino';
+
 export default function BasicAccordion() {
+  const [bovinoData, setBovinoData] = useState(null);
+
+  useEffect(() => {
+      const fetchBovinoData = async () => {
+          try {
+              const data = await HijosBovino(localStorage.getItem("idBovino"));
+              setBovinoData(data);
+          } catch (error) {
+              console.error('Error al obtener datos del bovino:', error);
+          }
+      };
+
+      fetchBovinoData();
+  }, []);
+
+  const handleCardClick = (idBovino) => {
+    localStorage.setItem("idBovino", idBovino);
+    window.location.reload();
+  };
+
   return (
     <div>
      <Accordion sx={{ backgroundColor: '#f5f5f5', borderRadius: 2, mt: 2 }}>
@@ -21,80 +43,37 @@ export default function BasicAccordion() {
           id="panel1a-header"
           sx={{ backgroundColor: '#8FD182', borderRadius: 2, mt: 2 , height:10 }}
         >
-          <Typography sx={{ color: '#FFFFFF',fontFamily: 'Almarai', fontSize: 17 }}> Hijos</Typography>
+          <Typography sx={{ color: '#FFFFFF',fontFamily: 'Almarai', fontSize: 17 }}>Hijos</Typography>
         </AccordionSummary>
         <AccordionDetails>
           {/* Contenedor con altura limitada y desbordamiento vertical */}
           <Box sx={{ maxHeight: '200px', overflowY: 'auto', width: '100%' }}>
             <Grid container spacing={2}>
-              <Grid item xs={6}>
-                <Card sx={{ marginBottom: '10px', backgroundColor: '#ffffff',height: '90%' }}>
-                <CardContent sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop:"-7px" }}>
-                  <Box sx={{ display: 'flex', textAlign: 'center', justifyContent: 'center', justifyContent: 'space-around', mt: 1 }}>
-                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    <Typography sx={{ wordSpacing: 2, fontFamily: 'Almarai', bgcolor: '#8FD182', borderRadius: 2, color: '#FFFFFF', fontSize: 19, width: 240, height: 30}}>Nombre Arete</Typography>
-                    <Box sx={{ mt: -4, ml: '68%', color: '#FFFFFF' }}>
-                        <Icons iconName="hembra" />
-                    </Box>
-                    <Box sx={{ mt: 1 }}>
-                        <img style={{ display: 'block', width: 210, borderRadius: 3, marginTop:"8px" }} src={Vaca} alt="Perfil de la vaca" />
-                    </Box>
-                </Box>
-                </Box>
-                  </CardContent>
-                </Card>
-              </Grid>
-              <Grid item xs={6}>
-              <Card sx={{ marginBottom: '10px', backgroundColor: '#ffffff',height: '90%' }}>
-                <CardContent sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop:"-7px"}}>
-                  <Box sx={{ display: 'flex', textAlign: 'center', justifyContent: 'center', justifyContent: 'space-around', mt: 1 }}>
-                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    <Typography sx={{ wordSpacing: 2, fontFamily: 'Almarai', bgcolor: '#8FD182', borderRadius: 2, color: '#FFFFFF', fontSize: 19, width: 240, height: 30}}>Nombre Arete</Typography>
-                    <Box sx={{ mt: -4, ml: '68%', color: '#FFFFFF' }}>
-                        <Icons iconName="hembra" />
-                    </Box>
-                    <Box sx={{ mt: 1 }}>
-                        <img style={{ display: 'block', width: 210, borderRadius: 3, marginTop:"8px" }} src={Vaca} alt="Perfil de la vaca" />
-                    </Box>
-                </Box>
-                </Box>
-                  </CardContent>
-                </Card>
-              </Grid>
-              <Grid item xs={6}>
-              <Card sx={{ marginBottom: '10px', backgroundColor: '#ffffff',height: '90%' }}>
-                <CardContent sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' , marginTop:"-7px"}}>
-                  <Box sx={{ display: 'flex', textAlign: 'center', justifyContent: 'center', justifyContent: 'space-around', mt: 1 }}>
-                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    <Typography sx={{ wordSpacing: 2, fontFamily: 'Almarai', bgcolor: '#8FD182', borderRadius: 2, color: '#FFFFFF', fontSize: 19, width: 240, height: 30}}>Nombre Arete</Typography>
-                    <Box sx={{ mt: -4, ml: '68%', color: '#FFFFFF' }}>
-                        <Icons iconName="hembra" />
-                    </Box>
-                    <Box sx={{ mt: 1 }}>
-                        <img style={{ display: 'block', width: 210, borderRadius: 3, marginTop:"8px" }} src={Vaca} alt="Perfil de la vaca" />
-                    </Box>
-                </Box>
-                </Box>
-                  </CardContent>
-                </Card>
-              </Grid>
-              <Grid item xs={6}>
-              <Card sx={{ marginBottom: '10px', backgroundColor: '#ffffff',height: '90%' }}>
-                <CardContent sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop:"-7px" }}>
-                  <Box sx={{ display: 'flex', textAlign: 'center', justifyContent: 'center', justifyContent: 'space-around', mt: 1 }}>
-                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    <Typography sx={{ wordSpacing: 2, fontFamily: 'Almarai', bgcolor: '#8FD182', borderRadius: 2, color: '#FFFFFF', fontSize: 19, width: 240, height: 30}}>Nombre Arete</Typography>
-                    <Box sx={{ mt: -4, ml: '68%', color: '#FFFFFF' }}>
-                        <Icons iconName="hembra" />
-                    </Box>
-                    <Box sx={{ mt: 1 }}>
-                        <img style={{ display: 'block', width: 210, borderRadius: 3, marginTop:"8px" }} src={Vaca} alt="Perfil de la vaca" />
-                    </Box>
-                </Box>
-                </Box>
-                  </CardContent>
-                </Card>
-              </Grid>
+              {/* mapea empezando aqui */}
+              {bovinoData && bovinoData.length > 0 ? (
+                bovinoData.map((bovino) => (
+                  <Grid item xs={6} key={bovino.idBovino}>
+                    <Card sx={{ marginBottom: '10px', backgroundColor: '#ffffff',height: '90%' }} onClick={() => handleCardClick(bovino.idBovino)}>
+                      <CardContent sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop:"-7px" }}>
+                        <Box sx={{ display: 'flex', textAlign: 'center', justifyContent: 'center', mt: 1 }}>
+                          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                            <Typography sx={{ wordSpacing: 2, fontFamily: 'Almarai', bgcolor: '#8FD182', borderRadius: 2, color: '#FFFFFF', fontSize: 19, width: 240, height: 30}}>{bovino.nombre} - {bovino.areteBovino}</Typography>
+                            <Box sx={{ mt: -4, ml: '68%', color: '#FFFFFF' }}>
+                              <Icons iconName={bovino.genero}/>
+                            </Box>
+                            <Box sx={{ mt: 1 }}>
+                              <img style={{ display: 'block', width: 210, borderRadius: 3, marginTop:"8px" }} src={Vaca} alt="Perfil de la vaca" />
+                            </Box>
+                          </Box>
+                        </Box>
+                      </CardContent>
+                    </Card>
+                  </Grid>
+                ))
+              ) : (
+                <Typography sx={{ color: '#000000', fontFamily: 'Almarai', fontSize: 17 }}>No tiene ningún hijo relacionado</Typography>
+              )}
+              {/* hasta aqui */}
             </Grid>
           </Box>
         </AccordionDetails>
@@ -102,4 +81,3 @@ export default function BasicAccordion() {
     </div>
   );
 }
-
