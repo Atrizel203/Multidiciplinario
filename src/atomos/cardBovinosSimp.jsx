@@ -92,4 +92,4 @@ const CardBovinosSimp = () => {
             );
 };
 
-            export default CardBovinosSimp;
+export default CardBovinosSimp;

@@ -63,8 +63,21 @@ function AgregarBovino() {
                 title: "Los datos se han guardado correctamente.",
                 icon: "success",
             });
+    
+            setNombre("");
+            setRaza("");
+            setFechaNacimiento("");
+            setTipoNacimiento("");
+            setGenero("");
+            setAreteBovino("");
+            setAreteToro("");
+            setAreteVaca("");
+            setSiniiga("");
+            /* setFotoBovino("");
+            setFotoPedigri(""); */
         }
     };
+    
     
     let razas = [
         { value: '', label: '' },

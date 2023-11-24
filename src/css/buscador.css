@@ -6,7 +6,6 @@
 .NavComp {
     display: flex;
     justify-content: center;
-
     align-items: center;
 }
 
@@ -47,11 +46,12 @@
 
     margin-top: .5%;
     margin-left: 25%;
-    /* para centrar aunque no se necesita aqui */
     border: 1px solid var(--secondary-color);
+
+    /* Nuevos estilos para ajustar la posición de la lista desplegable */
+    margin-bottom: 2rem;
 }
 
-/* styling of Input */
 .input {
     font-size: 0.9rem;
     font-family: 'Almarai';
@@ -63,7 +63,6 @@
     border: none;
 }
 
-/* styling of animated border */
 .form:before {
     content: "";
     position: absolute;
@@ -78,7 +77,6 @@
     transition: transform var(--timing) ease;
 }
 
-/* Hover on Input */
 .form:focus-within {
     border-radius: var(--after-border-radius);
 }
@@ -88,13 +86,10 @@ input:focus {
     user-select: none;
 }
 
-/* here is code of animated border */
 .form:focus-within:before {
     transform: scale(1);
 }
 
-/* styling of close button */
-/* == you can click the close button to remove text == */
 .reset {
     border: none;
     background: none;
@@ -102,21 +97,16 @@ input:focus {
     visibility: hidden;
 }
 
-/* close button shown when typing */
 input:not(:placeholder-shown)~.reset {
     opacity: 1;
     visibility: visible;
 }
 
-/* sizing svg icons */
 .form svg {
     margin-top: 5px;
     width: 17px;
     height: 17px;
 }
-
-
-
 
 .dropdown {
     position: relative;
@@ -152,7 +142,6 @@ input:not(:placeholder-shown)~.reset {
     cursor: pointer;
     display: flex;
     align-items: center;
-
 }
 
 .dropdown-content ul li svg {
@@ -167,35 +156,51 @@ input:not(:placeholder-shown)~.reset {
 .autocomplete {
     position: absolute;
     width: 100%;
-    display: flex;
-    flex-direction: column;
     max-height: 200px;
     overflow-y: auto;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
-    margin-top:15rem;
     z-index: 1000;
-  }
-  
-  .option {
+}
+
+.optionL{
+    display: inline;
+    position: absolute;
+    top: 102%;
+    width: 90%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border: 1px solid rgba(90, 162, 87, 0.5);
+    border-radius: 8px;
+    z-index: 1000;
+}
+
+.option {
     padding: 8px;
     cursor: pointer;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .option:last-child {
+    border-bottom: 1px solid rgba(90, 162, 87, 0.5);
+    width: 100%;
+}
+
+.option span{
+color: var(--primary-color);
+margin-left: 5px;
+margin-right: 5px;
+}
+
+.option:last-child {
     border-bottom: none;
-  }
-  
-  .option img {
+}
+
+.option img {
     width: 50px;
     height: 30px;
     object-fit: cover;
     border-radius: 50%;
     margin-left: 8px;
-  }
+}

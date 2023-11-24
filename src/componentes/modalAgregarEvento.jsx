@@ -67,6 +67,11 @@ function ModalAgregarEvento({ onClose }) {
                 title: "Los datos se han guardado correctamente.",
                 icon: "success",
             });
+
+            setTituloEvento("");
+            setAsunto("");
+            setDescripcion("");
+            setFechaTerminar("");
         }
     };
 

@@ -71,7 +71,22 @@ export default function BasicAccordion() {
                   </Grid>
                 ))
               ) : (
-                <Typography sx={{ color: '#000000', fontFamily: 'Almarai', fontSize: 17 }}>No tiene ningún hijo relacionado</Typography>
+                <Typography sx={{ 
+                    display: 'flex', 
+                    alignItems: 'center', 
+                    justifyContent: 'center', 
+                    backgroundColor: 'var(--tercer-color)', 
+                    fontFamily: 'Almarai', 
+                    marginTop:"20px",
+                    marginLeft:"30px",
+                    width: '90%',  
+                    height: '100%', 
+                    borderRadius: '5px', 
+                    border: '2px solid var(--cuarto-color)', 
+                    color: 'var(--primary-color)'
+                }}>
+                    No tiene ningún hijo relacionado
+                </Typography>
               )}
               {/* hasta aqui */}
             </Grid>
@@ -79,5 +94,6 @@ export default function BasicAccordion() {
         </AccordionDetails>
       </Accordion>
     </div>
-  );
+);
+
 }

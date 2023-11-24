@@ -14,6 +14,7 @@ import {BsCalendar2EventFill} from "react-icons/bs";
 import { PiUserCircleThin } from "react-icons/pi";
 import { CiBellOn } from "react-icons/ci";
 import { BsArrowReturnLeft } from "react-icons/bs";
+import { BiSad } from "react-icons/bi";
 import "./svg.css"
 function Icons(props) {
     const {iconName}=props;
@@ -45,7 +46,9 @@ function Icons(props) {
         "heart": <BsFillHeartFill/>,
         "usuario": <PiUserCircleThin/>,
         "notificacion": <CiBellOn/>,
-        "regresar": <BsArrowReturnLeft/>
+        "regresar": <BsArrowReturnLeft/>,
+        "Nada":<BiSad/>
+
     }
 
     return(

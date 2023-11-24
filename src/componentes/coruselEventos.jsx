@@ -3,6 +3,7 @@ import '../css/coruselEventos.css';
 import BotonBorrar from '../atomos/botonBorrar';
 import PrincipalEventos from '../api/peticionesGet/principalEventos.js';
 import {terminarEvento, borrarEventoLogico} from '../api/borrarEntidades/borrarEvento.js';
+import swal from 'sweetalert';
 
 const CoruselEventos = () => {
     const [eventos, setEventos] = useState([]);
@@ -28,44 +29,57 @@ const CoruselEventos = () => {
     const eventosActuales = eventos.slice(startIndex, endIndex);
 
     const goToPage = (page) => {
-        setCurrentPage(page);
+        if (page >= 1 && page <= totalPages && eventos.length > 0) {
+            setCurrentPage(page);
+        }
     };
-
+    
     const goToFirstPage = () => {
-        setCurrentPage(1);
+        if (eventos.length > 0) {
+            setCurrentPage(1);
+        }
     };
-
+    
     const goToLastPage = () => {
-        setCurrentPage(totalPages);
+        if (eventos.length > 0) {
+            setCurrentPage(totalPages);
+        }
     };
+    
 
     return (
         <div>
             <div className='cardsEventos'>
-                {eventosActuales.map((evento, index) => (
-                    <CardEvento
-                        key={index}
-                        idEvento={evento.idEvento}
-                        titulo={evento.titulo}
-                        asunto={evento.asunto}
-                        fecha_Reporte={evento.fecha_Reporte}
-                        descripcion={evento.descripcion}
-                        fecha_Reinsidio={evento.fecha_Reinsidio}
-                        areteBovino={evento.areteBovino}
-                        nombreBovino={evento.nombreBovino}
-                    />
-                ))}
+                {eventosActuales.length > 0 ? (
+                    eventosActuales.map((evento, index) => (
+                        <CardEvento
+                            key={index}
+                            idEvento={evento.idEvento}
+                            titulo={evento.titulo}
+                            asunto={evento.asunto}
+                            fecha_Reporte={evento.fecha_Reporte}
+                            descripcion={evento.descripcion}
+                            fecha_Reinsidio={evento.fecha_Reinsidio}
+                            areteBovino={evento.areteBovino}
+                            nombreBovino={evento.nombreBovino}
+                        />
+                    ))
+                ) : (
+                    <div className='Message_carrusel'>No hay eventos que ver por el momento</div>
+                )}
             </div>
-            <div className="paginationButtons">
-                <div className='paginationButtons-colors' onClick={goToFirstPage} disabled={currentPage === 1}>« Primera</div>
-                <div className='paginationButtons-colors' onClick={() => goToPage(currentPage - 1)} disabled={currentPage === 1}>Anterior</div>
-                <span>{`${currentPage} de ${totalPages}`}</span>
-                <div className='paginationButtons-colors' onClick={() => goToPage(currentPage + 1)} disabled={currentPage === totalPages}>Siguiente </div>
-                <div className='paginationButtons-colors' onClick={goToLastPage} disabled={currentPage === totalPages}>Última »</div>
-            </div>
+            {eventosActuales.length > 0 && (
+                <div className="paginationButtons">
+                    <div className='paginationButtons-colors' onClick={goToFirstPage} disabled={currentPage === 1}>« Primera</div>
+                    <div className='paginationButtons-colors' onClick={() => goToPage(currentPage - 1)} disabled={currentPage === 1}>Anterior</div>
+                    <span>{`${currentPage} de ${totalPages}`}</span>
+                    <div className='paginationButtons-colors' onClick={() => goToPage(currentPage + 1)} disabled={currentPage === totalPages}>Siguiente </div>
+                    <div className='paginationButtons-colors' onClick={goToLastPage} disabled={currentPage === totalPages}>Última »</div>
+                </div>
+            )}
         </div>
     );
-};
+};    
 
 const CardEvento = ({ idEvento ,titulo, asunto, fecha_Reporte, descripcion, fecha_Reinsidio , areteBovino, nombreBovino}) => {
     const [countdown, setCountdown] = useState('');
@@ -73,12 +87,29 @@ const CardEvento = ({ idEvento ,titulo, asunto, fecha_Reporte, descripcion, fech
     const handleTerminarEvento = () => {
         console.log(idEvento);
         terminarEvento(idEvento);
-        /* pante una alerta insana */
+        swal({
+            title: "El evento se termino correctamente.",
+            icon: "success",
+        });
     };
 
     const handleBorrarEvento = () => {
         borrarEventoLogico(idEvento);
-        /* pante una alerta insana */
+        swal({
+            title: "¿Estás seguro de borrar el evento?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+        .then((willDelete) => {
+            if (willDelete) {
+                swal("El vento fue borrado exitosamente", {
+                    icon: "success",
+                });
+            } else {
+                swal("¡La información sigue donde siempre!");
+            }
+        });
     };
 
     const showCountdown = () => {
