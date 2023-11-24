@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
@@ -7,37 +7,13 @@ import Modal from 'react-modal';
 import esLocale from '@fullcalendar/core/locales/es'; 
 import Style from '../css/modalCalendario.module.css';
 import Icons from '../atomos/icons';
+import ObetnerCalendario from '../api/peticionesGet/obtenerCalendario.js';
 
 Modal.setAppElement('#root'); 
 
-const eventosEjemplo = [
-  {
-    titulo: 'Parto de vaca lucky',
-    asunto: 'Preparación para la posible asistencia en dificultades del parto',
-    fecha_Reporte: '2023-11-20',
-    descripcion: 'Hay que estar preparados dias antes por si el parto llega a ser prematuro.',
-    fecha_Reinsidio: '2023-11-25',
-  },
-  
-  {
-    titulo: 'Webinar de Ganadería Sostenible',
-    asunto: 'Aprende sobre prácticas de ganadería sostenible',
-    fecha_Reporte: '2023-11-21',
-    descripcion: 'Participa en nuestro webinar donde expertos en ganadería sostenible compartirán consejos y mejores prácticas para mejorar la productividad y reducir el impacto ambiental.',
-    fecha_Reinsidio: '2023-11-24',
-  },
-
-  {
-    titulo: 'Exposición de Maquinaria Agrícola',
-    asunto: 'Descubre las últimas innovaciones en maquinaria agrícola',
-    fecha_Reporte: '2023-11-22',
-    descripcion: 'Ven a nuestra exposición y descubre las últimas innovaciones en maquinaria agrícola. Podrás ver de cerca los equipos más avanzados y hablar con los fabricantes.',
-    fecha_Reinsidio: '2023-11-26',
-  }
-];
-
 function ModalCalendario() {
   const [selectedEvent, setSelectedEvent] = useState(null);
+  const [eventosEjemplo, setInfoBovinos] = useState([]);
 
   const handleEventClick = ({ event }) => {
     setSelectedEvent(event);
@@ -46,6 +22,19 @@ function ModalCalendario() {
   const backToCalendar = () => {
     setSelectedEvent(null);
   };
+
+  useEffect(() => {
+    async function fetchData() {
+        try {
+            const data = await ObetnerCalendario(localStorage.getItem('idBovino'));
+            setInfoBovinos(data);
+        } catch (error) {
+            console.error('Error al obtener datos de la API:', error.message);
+        }
+    }
+
+    fetchData();
+}, []); 
 
   return (
     <div>
@@ -94,9 +83,9 @@ function ModalCalendario() {
               }}
               plugins={[ dayGridPlugin, timeGridPlugin, interactionPlugin ]}
               events={eventosEjemplo.map(e => ({
-                title: e.titulo,
-                start: e.fecha_Reporte,
-                end: e.fecha_Reinsidio,
+                title: e.titulo ,
+                start: new Date(e.fecha_Reporte),
+                end: new Date(e.fecha_Reinsidio),
                 extendedProps: e 
               }))}
               eventClick={handleEventClick}
