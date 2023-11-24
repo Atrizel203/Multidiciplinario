@@ -25,7 +25,7 @@ function Buscador() {
         fetchData();
     }, []); // El segundo argumento es un array vacío para que se ejecute solo una vez al montar el componente
 
-    const node = useRef(); 
+    const node = useRef();
 
     useEffect(() => {
         // Función para manejar los clics fuera del componente
@@ -53,7 +53,7 @@ function Buscador() {
 
     const handleChange = ({ target }) => {
         const searchTerm = target.value ? target.value.toLowerCase() : '';
-    
+
         if (!Array.isArray(infoBovinos)) {
             setFiltrado([]);
             return;
@@ -108,35 +108,33 @@ function Buscador() {
                                 key={index}
                                 className={"option"}
                                 onClick={() => handleSelectBovino(bovino.idBovino)}>
-                               <span>Nombre:{bovino.nombre} </span>
+                                <span>Nombre:{bovino.nombre} </span>
                                 <span>Arete:{bovino.areteBovino}</span>
                             </div>
                         ))}
                     </div>
                 )}
             </form>
-
-            <div className="dropdown">
-                <div className="salirBoton" onClick={toggleMenu}>
-                    <Icons iconName="usuario" />
-                </div>
-                {showMenu && (
-                    <div className="dropdown-content">
-                        <ul>
-                            <li onClick={Salir}>
-                                <Icons iconName="salir" />
-                                Cerrar sesión
-                            </li>
-                            <li>Ver correo electrónico</li>
-                        </ul>
+                <div className="dropdown">
+                    <div className="salirBoton" onClick={toggleMenu}>
+                        <Icons iconName="usuario" />
                     </div>
-                )}
-            </div>
+                    {showMenu && (
+                        <div className="dropdown-content">
+                            <ul>
+                                <li onClick={Salir}>
+                                    <Icons iconName="salir" />
+                                    Cerrar sesión
+                                </li>
+                                <li>Ver correo electrónico</li>
+                            </ul>
+                        </div>
+                    )}
+                </div>
 
-            <div className="salirBoton" onClick={() => setModalIsOpen(true)}>
-                <Icons iconName="notificacion" />
-            </div>
-
+                <div className="salirBoton" onClick={() => setModalIsOpen(true)}>
+                    <Icons iconName="notificacion" />
+                </div>
             <NotificacionesModal modalIsOpen={modalIsOpen} setModalIsOpen={setModalIsOpen} />
         </div>
     );

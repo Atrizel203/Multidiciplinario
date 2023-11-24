@@ -13,7 +13,7 @@
     width: 30px;
     height: 30px;
     margin-left: 15px;
-    margin-top: 15px;
+    margin-bottom: 15px;
     cursor: pointer;
     color: var(--secondary-color);
 }
@@ -44,7 +44,7 @@
     transition: border-radius 0.5s ease;
     background: var(--input-bg, --primary-color);
 
-    margin-top: .5%;
+    margin-top: .5%; /* necesario */
     margin-left: 25%;
     border: 1px solid var(--secondary-color);
 
@@ -103,7 +103,7 @@ input:not(:placeholder-shown)~.reset {
 }
 
 .form svg {
-    margin-top: 5px;
+    margin-top: 5px;/* necesario */
     width: 17px;
     height: 17px;
 }
@@ -168,7 +168,7 @@ input:not(:placeholder-shown)~.reset {
 .optionL{
     display: inline;
     position: absolute;
-    top: 102%;
+    top: 102%; /* necesario */
     width: 90%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: #fff;
