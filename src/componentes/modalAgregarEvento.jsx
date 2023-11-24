@@ -88,7 +88,7 @@ function ModalAgregarEvento({ onClose }) {
             <ImputAgregar texto="Asunto" tipo="select" options={opcionesEvento} value={asunto} onChange={setAsunto} />
             {!asunto && <div className="feedback">{asuntoFeedback}</div>}
             <ImputAgregar texto="Descripcion" tipo="textarea" className={Style.descripcion} value={descripcion} onChange={setDescripcion} />
-            <ImputAgregar texto="Fecha A Terminar" tipo="date" value={fechaTerminar} onChange={setFechaTerminar} />
+            <ImputAgregar texto="Fecha A Terminar" tipo="datetime-local" value={fechaTerminar} onChange={setFechaTerminar} />
             {!fechaTerminar && <div className="feedback">{fechaFeedback}</div>}
             <div className={Style.guardar} onClick={handleGuardar}>
                 <BotonGuardar />

@@ -12,11 +12,25 @@
     width: 70px;
     height: 45px;
     position: relative;
-    margin-left: 30%;
     background-color: var(--cuarto-color);
     border-color: var(--cuarto-color);
     color: var(--primary-color);
     border-radius: 15px;
     font-size: 20px;
+    transition: 300ms;
+    border: 1px solid var(--cuarto-color);
+
 }
-    
+
+.button-Editar:hover{
+    transition: 300ms;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+
+.button-Editar svg{
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+}

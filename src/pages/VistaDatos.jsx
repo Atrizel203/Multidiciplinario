@@ -20,7 +20,7 @@ function Vistadatos() {
                     <Grid item lg={6} xs={12}>
                         <div style={{marginTop: "-10px" ,marginLeft: "45%"}}>
                             <CardDatos />
-                            <div style={{ marginTop: "20px" , marginLeft: "2%" }}>
+                            <div style={{ marginTop: "20px" }}>
                             <Botones />
                             </div>
                         </div>
