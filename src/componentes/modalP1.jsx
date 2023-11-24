@@ -11,9 +11,6 @@ const App = (InfoPerfilMini) => {
         localStorage.setItem("idBovino", idBovino);
         navigate('/vista-datos');
     };
-    
-    console.log("Datos Info Perfi");
-    console.log(InfoPerfilMini)
     let {nombreDeVaca, idBovino} = InfoPerfilMini;
 
     const [shouldAnimateArete, setShouldAnimateArete] = useState(false);
