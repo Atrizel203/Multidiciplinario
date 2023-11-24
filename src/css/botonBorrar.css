@@ -26,3 +26,9 @@
     color: var(--tertiary-color);
     cursor: pointer;
 }
+
+.button-borrar svg{
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+}

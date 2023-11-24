@@ -4,11 +4,11 @@ import Borrar from "../atomos/botonBorrar";
 import Descargar from "../atomos/botonDescarga";
 import Calendario from "../atomos/botonCalendario";
 import Editar from "../atomos/botonEditar";
-import ModalEditar from "../componentes/modalModificarPerfil"; 
+import ModalEditar from "../componentes/modalModificarPerfil";
 import ModalEvento from "../componentes/modalAgregarEvento";
 import ModalCalendario from '../componentes/modalCalendar';
 import swal from 'sweetalert';
-import {borradoLogico} from "../api/borrarEntidades/borrarBovino";
+import { borradoLogico } from "../api/borrarEntidades/borrarBovino";
 import { useNavigate } from "react-router-dom";
 
 function BotonesPerfil() {
@@ -27,22 +27,22 @@ function BotonesPerfil() {
 
     const openModalEvento = () => {
         setShowModalEvento(true);
-        setShowModalCalendario(true); 
+        setShowModalCalendario(true);
     };
 
     const closeModalEvento = () => {
-        setShowModalEvento(false); 
-        setShowModalCalendario(false); 
+        setShowModalEvento(false);
+        setShowModalCalendario(false);
     }
-    
+
     const openModalCalendario = () => {
         setShowModalEvento(true);
-        setShowModalCalendario(true); 
+        setShowModalCalendario(true);
     };
 
     const closeModalCalendario = () => {
-        setShowModalEvento(false); 
-        setShowModalCalendario(false); 
+        setShowModalEvento(false);
+        setShowModalCalendario(false);
     };
 
     const handleBorrar = () => {
@@ -52,17 +52,17 @@ function BotonesPerfil() {
             buttons: true,
             dangerMode: true,
         })
-        .then((willDelete) => {
-            if (willDelete) {
-                borradoLogico(localStorage.getItem("idBovino"));
-                swal("La informacion del bovino fue borrada", {
-                    icon: "success",
-                });
-                navigator("/bovinos-opciones");
-            } else {
-                swal("¡La información sigue donde siempre!");
-            }
-        });
+            .then((willDelete) => {
+                if (willDelete) {
+                    borradoLogico(localStorage.getItem("idBovino"));
+                    swal("La informacion del bovino fue borrada", {
+                        icon: "success",
+                    });
+                    navigator("/bovinos-opciones");
+                } else {
+                    swal("¡La información sigue donde siempre!");
+                }
+            });
     };
 
     const handleDescargar = () => {
@@ -76,11 +76,10 @@ function BotonesPerfil() {
     return (
         <div className="Botones-contenedor">
             <div onClick={handleBorrar}>
-            <Borrar/>
+                <Borrar />
             </div>
-            
             <div onClick={handleDescargar}>
-            <Descargar />
+                <Descargar />
             </div>
             <div onClick={openModalEvento}>
                 <Calendario />
