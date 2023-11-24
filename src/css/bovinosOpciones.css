@@ -83,7 +83,7 @@
     fill: var(--primary-color);
 }
 
-.icon {
+.iconA {
     --size: 40px;
     margin-left: -25px;
     width: var(--size);
