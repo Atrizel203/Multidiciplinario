@@ -22,7 +22,6 @@ root.render(
         <Route path="/agregar-bovino" element={<AgregarBovino/>} />
         <Route path="/bovinos-opciones" element={<BovinosOpciones/>} />  
         <Route path="/graficos" element={<Graficos />} />
-
       </Routes>
     </Router>
 );

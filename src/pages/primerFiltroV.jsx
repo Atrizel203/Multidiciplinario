@@ -4,6 +4,7 @@ import MiniPerfiles from "../componentes/modalP1.jsx";
 import BotonCirculo from "../atomos/botonCirculo.jsx";
 import realizarOperacionBovinos from "../api/peticionesGet/bovinosOpcions4.js";
 import Buscador from "../componentes/buscador.jsx";
+import Icons from '../atomos/icons.jsx';
 
 import './css/primerFiltro.css';
 
@@ -36,11 +37,17 @@ const PerfilVaca = () => {
             <div className="contenedor-principal">
                 <div className="organismVacas">
                     <div className="contenido-derecho">
-                        {(profiles || [])
-                            .slice((currentPage - 1) * perPage, currentPage * perPage)
-                            .map((profile, index) => (
-                                <MiniPerfiles key={index} arete={profile.areteBovino} nombreDeVaca={profile.nombre} idBovino={profile.idBovino}/>
-                            ))}
+                        {(profiles || []).length > 0 ? (
+                            (profiles || [])
+                                .slice((currentPage - 1) * perPage, currentPage * perPage)
+                                .map((profile, index) => (
+                                    <MiniPerfiles key={index} arete={profile.areteBovino} nombreDeVaca={profile.nombre} idBovino={profile.idBovino}/>
+                                ))
+                        ) : (
+                            <div className="Message">No hay información de bovinos por el momento.
+                            <div className="sad" ><Icons iconName="Nada" /></div>
+                            </div>
+                        )}
                     </div>
                     <div className="pagination">
                         {[...Array(totalPages).keys()].map((page) => (

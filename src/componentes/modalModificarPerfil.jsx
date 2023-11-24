@@ -30,6 +30,10 @@ function ModalModificarPerfil(props) {
                 title: "Los datos se han actualizado correctamente.",
                 icon: "success",
               });
+              setAreteBovino("");
+              setAreteToro("");
+              setAreteVaca("");
+              setSiniiga("");
         }
     };
 

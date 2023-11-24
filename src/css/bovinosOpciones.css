@@ -75,7 +75,6 @@
 
 .cardBovinos-icon {
     opacity: 0;
-    left: 15px;
     transform: translateX(-20%);
     width: 3rem;
     height: 3em;
@@ -85,6 +84,7 @@
 
 .icon {
     --size: 30px;
+    margin-left: -25px;
     width: var(--size);
     height: var(--size);
 }

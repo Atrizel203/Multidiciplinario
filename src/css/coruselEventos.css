@@ -86,6 +86,7 @@
     display: flex;
     justify-content: center;
     margin-left: 18.5%;
+    margin-top: 5px;
 }
 
 .paginationButtons span {
@@ -108,4 +109,18 @@
     transition: all 0.3s ease;
     border: 1px solid var(--secondary-color);
     margin: 5px;
+}
+
+.Message_carrusel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--tercer-color);
+    font-family: 'Almarai';
+    width: 50%;  
+    height: 150px; 
+    margin-left: 220px;
+    border-radius: 5px;
+    border: 2px solid var(--cuarto-color);
+    color: var(--primary-color);
 }
