@@ -11,7 +11,7 @@ import swal from 'sweetalert';
 import {borradoLogico} from "../api/borrarEntidades/borrarBovino";
 import { useNavigate } from "react-router-dom";
 
-function BotonesPerfil(props) {
+function BotonesPerfil() {
     const [showModalEditar, setShowModalEditar] = useState(false);
     const [showModalEvento, setShowModalEvento] = useState(false);
     const [showModalCalendario, setShowModalCalendario] = useState(false);
