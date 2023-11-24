@@ -23,8 +23,8 @@ function AgregarBovino() {
     const [areteToro, setAreteToro] = useState("");
     const [areteVaca, setAreteVaca] = useState("");
     const [siniiga, setSiniiga] = useState("");
-/*     const [fotoBovino, setFotoBovino] = useState("");
-    const [fotoPedigri, setFotoPedigri] = useState(""); */
+    const [fotoBovino, setFotoBovino] = useState("");
+    const [fotoPedigri, setFotoPedigri] = useState("");
 
     const handleGuardar = () => {
         if (Nombre === "" || Raza === "" || fechaNacimiento === "" || TipoNacimiento === "" || Genero === "") {
@@ -54,8 +54,8 @@ function AgregarBovino() {
                 "areteToro": areteToro,
                 "areteVaca": areteVaca,
                 "siniiga": siniiga,
-                /* "fotoBovino": fotoBovino,
-                "fotoPedigri": fotoPedigri */
+                "fotoBovino": fotoBovino,
+                "fotoPedigri": fotoPedigri,
                 "idAdminResult": localStorage.getItem("correo"),
             }
             crearBovino(bovino);

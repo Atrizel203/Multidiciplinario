@@ -2,6 +2,7 @@
     --primary-color: #FFFFFF;
     --secondary-color: #5AA257;
     --tertiary-color: #F44336;
+    --cuarto-color:rgb(1, 35, 225);
 }
 
 .button-calendario{
@@ -11,11 +12,24 @@
     width: 70px;
     height: 45px;
     position: relative;
-    margin-left: 17%;
     background-color: var(--secondary-color);
     border-color: var(--secondary-color);
     color: var(--primary-color);
     border-radius: 15px;
     font-size: 20px;
+    transition: 300ms;
+    border: 1px solid var(--secondary-color);
 }
-    
+
+.button-calendario:hover{
+    transition: 300ms;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+
+.button-calendario svg{
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+}

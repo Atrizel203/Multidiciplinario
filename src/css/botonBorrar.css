@@ -17,11 +17,18 @@
     border-radius: 15px;
     font-size: 20px;
     transition: 300ms;
+    border: 1px solid var(--tertiary-color);
+    cursor: pointer;
 }
 .button-borrar:hover{
     transition: 300ms;
     background-color: var(--primary-color);
-    border: 1px solid var(--tertiary-color);
     color: var(--tertiary-color);
     cursor: pointer;
+}
+
+.button-borrar svg{
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
 }

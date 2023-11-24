@@ -79,6 +79,29 @@
 
 
 
+.input[type="datetime-local"]::-webkit-datetime-edit {
+    color: var(--primary-color);
+    font-size: 0px;
+    transform: 300ms; 
+}
+
+.input[type="datetime-local"]:focus::-webkit-datetime-edit {
+    color: var(--secondary-color);
+    font-size: 15px;
+    transform: 300ms; 
+}
+
+.input[type="datetime-local"]:valid::-webkit-datetime-edit {
+    color: var(--secondary-color);
+    font-size: 15px;
+    transform: 300ms; 
+}
+
+.input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 .input[type="date"]::-webkit-datetime-edit {
     color: var(--primary-color);
     font-size: 0px;
@@ -104,8 +127,8 @@
 
  textarea{
     font-family: "Almarai";
-    max-width:100%;
-    min-width: 100%;
+    max-width:90%;
+    min-width: 90%;
     max-height: 90px;
     min-height: 90px;
 }
