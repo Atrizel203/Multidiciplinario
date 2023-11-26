@@ -9,6 +9,7 @@ import AgregarBovino from "./pages/agregerBovinoVista.jsx";
 import Login from "./pages/loginVista.jsx"
 import BovinosOpciones from "./pages/bovinosOpciones.jsx";
 import Graficos from './pages/vistaGrafica.jsx';
+import Tareas from './pages/taskPage.jsx';
 import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -22,6 +23,7 @@ root.render(
         <Route path="/agregar-bovino" element={<AgregarBovino/>} />
         <Route path="/bovinos-opciones" element={<BovinosOpciones/>} />  
         <Route path="/graficos" element={<Graficos />} />
+        <Route path="/Tareas" element={<Tareas />} />
       </Routes>
     </Router>
 );
