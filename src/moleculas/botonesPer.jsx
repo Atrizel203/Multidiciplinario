@@ -10,6 +10,8 @@ import ModalCalendario from '../componentes/modalCalendar';
 import swal from 'sweetalert';
 import { borradoLogico } from "../api/borrarEntidades/borrarBovino";
 import { useNavigate } from "react-router-dom";
+import { pdf } from '@react-pdf/renderer';
+import PdfDescarga from '../api/pdfDescarga';
 
 function BotonesPerfil() {
     const [showModalEditar, setShowModalEditar] = useState(false);
@@ -65,7 +67,16 @@ function BotonesPerfil() {
             });
     };
 
-    const handleDescargar = () => {
+    const handleDescargar = async () => {
+        const id = 'tu-id-aqui'; // Reemplaza esto con tu ID
+    const blob = await pdf(<PdfDescarga id={id} />).toBlob();
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'informacion_bovino.pdf';
+    link.click();
+
+
         swal({
             title: "El archivo se ha descargado correctamente.",
             icon: "success",

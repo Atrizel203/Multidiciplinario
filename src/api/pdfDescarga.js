@@ -1,54 +1,52 @@
-import React from 'react';
-import { PDFDownloadLink, Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer';
+import React, { useEffect, useState } from 'react';
+import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
+import bovinoEspCard from './peticionesGet/bovinoEspCard';
+import HijosBovino from './peticionesGet/hijosBovino';
+import PadresBovino from './peticionesGet/padresBovino';
 
+// Crea estilos
 const styles = StyleSheet.create({
-    page: {
-        flexDirection: 'column',
-        backgroundColor: '#ffffff',
-        padding: 20,
-    },
-    section: {
-        marginBottom: 10,
-    },
-    title: {
-        fontSize: 24,
-        marginBottom: 10,
-    },
-    label: {
-        fontSize: 16,
-        marginBottom: 5,
-    },
-    value: {
-        fontSize: 14,
-    },
+  page: {
+    flexDirection: 'row',
+    backgroundColor: '#E4E4E4'
+  },
+  section: {
+    margin: 10,
+    padding: 10,
+    flexGrow: 1
+  }
 });
 
-const PdfDescarga = ({ nombre, arete, fechaNacimiento }) => {
-    const MyDocument = () => (
-        <Document>
-            <Page size="A4" style={styles.page}>
-                <View style={styles.section}>
-                    <Text style={styles.title}>Información del Bovino</Text>
-                    <Text style={styles.label}>Nombre:</Text>
-                    <Text style={styles.value}>{nombre}</Text>
-                    <Text style={styles.label}>Arete:</Text>
-                    <Text style={styles.value}>{arete}</Text>
-                    <Text style={styles.label}>Fecha de Nacimiento:</Text>
-                    <Text style={styles.value}>{fechaNacimiento}</Text>
-                </View>
-            </Page>
-        </Document>
-    );
+const PdfDescarga = ({ id }) => {
+  const [datosVaca, setDatosVaca] = useState(null);
+  const [hijos, setHijos] = useState(null);
+  const [padres, setPadres] = useState(null);
 
-    return (
-        <div>
-            <PDFDownloadLink document={<MyDocument />} fileName="informacion_bovino.pdf">
-                {({ blob, url, loading, error }) =>
-                    loading ? 'Cargando documento...' : 'Descargar PDF'
-                }
-            </PDFDownloadLink>
-        </div>
-    );
+  useEffect(() => {
+    const fetchData = async () => {
+      const datosVaca = await bovinoEspCard(id);
+      const hijos = await HijosBovino(id);
+      const padres = await PadresBovino(id);
+      setDatosVaca(datosVaca);
+      setHijos(hijos);
+      setPadres(padres);
+    };
+
+    fetchData();
+  }, [id]);
+
+  return (
+    <Document>
+      <Page size="A4" style={styles.page}>
+        <View style={styles.section}>
+          <Text>Nombre: {datosVaca?.nombre}</Text>
+          <Text>Arete: {datosVaca?.arete}</Text>
+          <Text>Fecha de Nacimiento: {datosVaca?.fechaNacimiento}</Text>
+          {/* Aquí puedes agregar más información sobre la vaca, sus hijos y padres */}
+        </View>
+      </Page>
+    </Document>
+  );
 };
 
 export default PdfDescarga;
