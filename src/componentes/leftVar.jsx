@@ -20,6 +20,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import AddIcon from '@mui/icons-material/Add';
 import LocalCattleIcon from '@mui/icons-material/Tag';
+import Eventos from "@mui/icons-material/EventNote";
 
 import Logo from '../img/logoNuevo.png';
 
@@ -70,6 +71,7 @@ function Leftvar(props) {
         { text: 'Agregar', icon: <AddIcon />, onClick: () => navigateTo('/agregar-bovino') },
         { text: 'Bovinos', icon: <LocalCattleIcon />, onClick: () => navigateTo('/bovinos-opciones') },
         { text: 'Estados Bovinos', icon: <LocalCattleIcon />, onClick: toggleModal },
+        { text: 'Eventos sin Terminar', icon: <Eventos />, onClick: () => navigateTo('/Tareas')}
     ];
 
     return (

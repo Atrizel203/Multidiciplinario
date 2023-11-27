@@ -8,6 +8,7 @@ import {
     terminarEvento,
     borrarEventoLogico,
 } from '../api/borrarEntidades/borrarEvento';
+import Buscador from '../componentes/buscador';
 
 const ContenedorEstilizado = styled('div')({
     marginLeft: '18.5%',
@@ -95,6 +96,7 @@ const MyDataGrid = () => {
     return (
         <div>
             <Leftvar />
+            <Buscador />
             <div>
                 <ContenedorEstilizado>
                     <Box sx={{ height: 400, width: '100%', marginTop: "5%", marginRight: "50%" }}>
