@@ -1,6 +1,7 @@
 :root {
     --primary-color: #FFFFFF;
     --secondary-color: #5AA257;
+    --tercer-color:#8FD182
 }
 .ContenedorOpcionesImg{
     
@@ -11,6 +12,7 @@
     margin-top: 2rem;
     margin-left: 16%;
 }
+
 .cardBovinos {
     font-family: "Almarai";
     margin-left: 25px;
@@ -21,11 +23,13 @@
     transition: box-shadow .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     overflow: hidden;
     cursor: pointer;
+    background-color: var(--tercer-color);
+    border: 1px solid var(--primary-color);
 }
 
 .cardBovinos-imgToro {
     position: absolute;
-    height: 100%;
+    height: 50%;
     width: 100%;
     background-image: url(../img/toroPrincipal.jpg);
     background-size: cover; 
@@ -34,7 +38,7 @@
 
 .cardBovinos-imgVaca {
     position: absolute;
-    height: 100%;
+    height: 50%;
     width: 100%;
     background-image: url(../img/vacaPrincipal.jpg);
     background-size: cover;
@@ -44,7 +48,7 @@
 
 .cardBovinos-imgTorito {
     position: absolute;
-    height: 100%;
+    height: 50%;
     width: 100%;
     background-image: url(../img/toritoPrincipal.jpg);
     background-size: cover; 
@@ -54,7 +58,7 @@
 
 .cardBovinos-imgBecerrito {
     position: absolute;
-    height: 100%;
+    height: 50%;
     width: 100%;
     background-image: url(../img/becerritoPrincipal.jpg);
     background-size: cover; 
@@ -97,7 +101,7 @@
 
 .text-title {
     font-weight: 900;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: var(--primary-color);
 
 }
