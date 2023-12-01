@@ -15,7 +15,7 @@ const App = (InfoPerfilMini) => {
 
     return (
         <div className="perfil-container" onClick={VistaDatos}>
-            <img src={NuevaImagenVaca} alt="vaca" className="perfil-image" />
+            <img src={InfoPerfilMini.imagen || NuevaImagenVaca} alt="vaca" className="perfil-image" />
 
             <div className='infoEspPerfil'>
 

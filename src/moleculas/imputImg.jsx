@@ -1,15 +1,58 @@
-import React, { useRef } from "react"; 
+import React, { useRef, useState } from "react";
 import Icons from "../atomos/icons";
 import "../css/imputImg.css";
+import axios from 'axios';
 
-function ImputImg(props) {
+function ImputImg({ texto }) {
     const fileInputRef = useRef(null);
-    const { texto } = props;
+    const [isLoading, setIsLoading] = useState(false);
 
-    const handleFileChange = (e) => {
-        const selectedFile = e.target.files[0]; // Obtiene el primer archivo seleccionado
-        // Puedes realizar acciones con el archivo seleccionado aquí, como subirlo a un servidor o mostrar una vista previa.
-        console.log("Archivo seleccionado:", selectedFile);
+    const handleFileChange = async (e) => {
+        try {
+            const selectedFile = e.target.files[0];
+
+            if (!selectedFile) {
+                return;
+            }
+
+            setIsLoading(true);
+            const imageUrl = await subirImagen(selectedFile);
+            setIsLoading(false);
+
+            const lowerCaseText = texto.toLowerCase();
+
+            if (lowerCaseText === "foto del bovino") {
+                localStorage.setItem('fotoPerfil', imageUrl);
+            } else if (lowerCaseText === "foto del pedigri") {
+                localStorage.setItem('fotoPedigre', imageUrl);
+            }
+
+        } catch (error) {
+            setIsLoading(false);
+            console.error("Error al subir la imagen:", error.message);
+        }
+    };
+
+    const subirImagen = async (file) => {
+        const data = new FormData();
+        data.append("file", file);
+
+        const uploadPreset = "bovino";
+        const response = await axios.post(
+            `https://api.cloudinary.com/v1_1/dbznph6hj/image/upload?upload_preset=${uploadPreset}`,
+            data,
+            {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                },
+            }
+        );
+
+        if (response.data && response.data.secure_url) {
+            return response.data.secure_url;
+        } else {
+            throw new Error(`Error al subir la imagen: ${JSON.stringify(response.data)}`);
+        }
     };
 
     return (
@@ -22,11 +65,13 @@ function ImputImg(props) {
             <input
                 id="fileInput"
                 type="file"
-                accept="image/*" 
-                style={{ display: "none"}}
+                accept="image/*"
+                style={{ display: "none" }}
                 ref={fileInputRef}
                 onChange={handleFileChange}
             />
+
+            {isLoading && <div className="loader">Cargando...</div>}
         </div>
     );
 }

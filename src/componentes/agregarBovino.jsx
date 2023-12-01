@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import BotonGuardar from "../atomos/botonGuardar.jsx";
 import ImputAgregarEspecial from "../moleculas/impustEspeciales.jsx";
-import ImputAgregarNormal from "../moleculas/imputTexto.jsx"
+import ImputAgregarNormal from "../moleculas/imputTexto.jsx";
 import ImputImg from "../moleculas/imputImg.jsx";
 import "../css/agregarBovino.css";
 import swal from 'sweetalert';
@@ -23,10 +23,8 @@ function AgregarBovino() {
     const [areteToro, setAreteToro] = useState("");
     const [areteVaca, setAreteVaca] = useState("");
     const [siniiga, setSiniiga] = useState("");
-    const [fotoBovino, setFotoBovino] = useState("");
-    const [fotoPedigri, setFotoPedigri] = useState("");
 
-    const handleGuardar = () => {
+    const handleGuardar = async () => {
         if (Nombre === "" || Raza === "" || fechaNacimiento === "" || TipoNacimiento === "" || Genero === "") {
             if (Nombre === "") {
                 setNombreFeedback("¡Requiere poner un nombre!");
@@ -44,40 +42,51 @@ function AgregarBovino() {
                 setGeneroFeedback("¡Requiere seleccionar un Genero!");
             }
         } else {
-            let bovino = {
-                "nombre": Nombre,
-                "raza": Raza,
-                "fechaNacimiento": fechaNacimiento,
-                "tipoNacimiento": TipoNacimiento,
-                "genero": Genero,
-                "areteBovino": areteBovino,
-                "areteToro": areteToro,
-                "areteVaca": areteVaca,
-                "siniiga": siniiga,
-                "fotoBovino": fotoBovino,
-                "fotoPedigri": fotoPedigri,
-                "idAdminResult": localStorage.getItem("correo"),
-            }
-            crearBovino(bovino);
-            swal({
-                title: "Los datos se han guardado correctamente.",
-                icon: "success",
-            });
+            try {
+                const bovino = {
+                    "nombre": Nombre,
+                    "raza": Raza,
+                    "fechaNacimiento": fechaNacimiento,
+                    "tipoNacimiento": TipoNacimiento,
+                    "genero": Genero,
+                    "fotoBovino": localStorage.getItem("fotoPerfil"),
+                    "areteBovino": areteBovino,
+                    "areteToro": areteToro,
+                    "areteVaca": areteVaca,
+                    "siniiga": siniiga,
+                    "fotoPedigri": localStorage.getItem("fotoPedigre"),
+                    "adminCorreo": localStorage.getItem("correo")
+                };
     
-            setNombre("");
-            setRaza("");
-            setFechaNacimiento("");
-            setTipoNacimiento("");
-            setGenero("");
-            setAreteBovino("");
-            setAreteToro("");
-            setAreteVaca("");
-            setSiniiga("");
-            /* setFotoBovino("");
-            setFotoPedigri(""); */
+                try {
+                    await crearBovino(bovino);
+                    swal({
+                        title: "Los datos se han guardado correctamente.",
+                        icon: "success",
+                    });
+                } catch (error) {
+                    swal({
+                        title: "Hubo un problema con la red. No se pudo guardar los datos.",
+                        icon: "error",
+                    });
+                }
+                setNombre("");
+                setRaza("");
+                setFechaNacimiento("");
+                setTipoNacimiento("");
+                setGenero("");
+                setAreteBovino("");
+                setAreteToro("");
+                setAreteVaca("");
+                setSiniiga("");
+                localStorage.removeItem("fotoPerfil");
+                localStorage.removeItem("fotoPedigre");
+            } catch (error) {
+                console.error("Error al subir la imagen a Cloudinary:", error);
+            }
         }
     };
-    
+ 
     
     let razas = [
         { value: '', label: '' },

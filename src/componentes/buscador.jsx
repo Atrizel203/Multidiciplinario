@@ -126,7 +126,6 @@ function Buscador() {
                                     <Icons iconName="salir" />
                                     Cerrar sesión
                                 </li>
-                                <li>Ver correo electrónico</li>
                             </ul>
                         </div>
                     )}
