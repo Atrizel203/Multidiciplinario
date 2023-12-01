@@ -19,10 +19,11 @@ import MenuIcon from '@mui/icons-material/Menu';
 import HomeIcon from '@mui/icons-material/Home';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import AddIcon from '@mui/icons-material/Add';
-import LocalCattleIcon from '@mui/icons-material/Tag';
 import Eventos from "@mui/icons-material/EventNote";
-
+import LocalOfferIcon from '@mui/icons-material/LocalOffer';
+import BookmarkIcon from '@mui/icons-material/Bookmark';
 import Logo from '../img/logoNuevo.png';
+
 
 function Leftvar(props) {
     const navigate = useNavigate();
@@ -68,9 +69,9 @@ function Leftvar(props) {
     const menuItems = [
         { text: 'Inicio', icon: <HomeIcon />, onClick: () => navigateTo('/principal') },
         { text: 'Graficas', icon: <BarChartIcon />, onClick: () => navigateTo('/graficos') },
-        { text: 'Agregar', icon: <AddIcon />, onClick: () => navigateTo('/agregar-bovino') },
-        { text: 'Bovinos', icon: <LocalCattleIcon />, onClick: () => navigateTo('/bovinos-opciones') },
-        { text: 'Estados Bovinos', icon: <LocalCattleIcon />, onClick: toggleModal },
+        { text: 'Agregar Bovino', icon: <AddIcon />, onClick: () => navigateTo('/agregar-bovino') },
+        { text: 'Bovinos', icon: <LocalOfferIcon />, onClick: () => navigateTo('/bovinos-opciones') },
+        { text: 'Estados Bovinos', icon: <BookmarkIcon />, onClick: toggleModal },
         { text: 'Eventos sin Terminar', icon: <Eventos />, onClick: () => navigateTo('/Tareas')}
     ];
 
@@ -169,8 +170,8 @@ function Leftvar(props) {
                         label="Nacimiento Esp"
                     />
                     <FormControlLabel
-                        control={<Switch checked={bovineStates.lecionada} onChange={() => handleSwitchChange('lecionada')} />}
-                        label="Lecionada"
+                        control={<Switch checked={bovineStates.lecionada} onChange={() => handleSwitchChange('lesionada')} />}
+                        label="Lesionada"
                     />
                     <FormControlLabel
                         control={<Switch checked={bovineStates.fueraFinca} onChange={() => handleSwitchChange('fueraFinca')} />}
@@ -189,7 +190,7 @@ function Leftvar(props) {
                         label="Muerta"
                     />
                     <Button variant="contained" onClick={saveBovineStates}>
-                        Guardar
+                        Buscar
                     </Button>
                 </Box>
             </Modal>

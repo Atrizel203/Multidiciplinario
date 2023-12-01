@@ -25,7 +25,7 @@ function CardDatos() {
         <div className="Card-contenedor">
             {bovinoData && (
                 <div className='Datos'>
-                    <img className='imag' src={Vaca} alt="Perfil de la vaca" />
+                    <img className='imag' src={bovinoData.foto_perfil || Vaca} alt="Perfil de la vaca" />
                     <LabelTexto texto={`Nombre: ${bovinoData.nombre}`} />
                     <LabelTexto texto={`Genero: ${bovinoData.genero}`} iconName={bovinoData.genero} />
                     <LabelTexto texto={`Arete: ${bovinoData.areteBovino}`} iconName="tag" />
