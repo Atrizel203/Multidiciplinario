@@ -17,6 +17,7 @@ function ImputTexto(props) {
       setIsValid(valid);
     };
     
+    
     return (
         <div className={Style.input_group}>
             <input 

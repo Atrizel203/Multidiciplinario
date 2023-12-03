@@ -3,6 +3,8 @@ import Modal from 'react-modal';
 import Style from "../css/modalNotificacion.module.css";
 import Icons from '../atomos/icons';
 
+
+
 function NotificacionesModal({ modalIsOpen, setModalIsOpen }) {
     const eventosEjemplo = [
         {
