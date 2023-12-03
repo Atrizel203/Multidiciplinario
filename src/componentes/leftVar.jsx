@@ -11,7 +11,6 @@ import {
     Hidden,
     IconButton,
     Modal,
-    Switch,
     FormControlLabel,
     Button,
 } from '@mui/material';

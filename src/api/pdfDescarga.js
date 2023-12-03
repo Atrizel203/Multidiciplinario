@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
+import { Page, Text, View, Document, StyleSheet , Image} from '@react-pdf/renderer';
 import bovinoEspCard from './peticionesGet/bovinoEspCard';
 import HijosBovino from './peticionesGet/hijosBovino';
 import PadresBovino from './peticionesGet/padresBovino';
@@ -85,16 +85,17 @@ const PdfDescarga = () => {
 
   return (
     <Document>
-      <Page size="A4" style={styles.page}>
+      <Page size="A4" style={styles.page} >
+      <Image src={datosVaca?.foto_perfil} border="0" width="100" height="100" />
         <Section
           title="Información del Bovino"
           content={
             <>
               <Text style={styles.text}>Nombre: {datosVaca?.nombre}</Text>
               <Text style={styles.text}>Género: {datosVaca?.genero}</Text>
-              <Text style={styles.text}>Arete: {datosVaca?.areteBovino}</Text>
+              <Text style={styles.text}>Arete: {datosVaca?.arete_bovino}</Text>
               <Text style={styles.text}>
-                Fecha de Nacimiento: {formatDate(datosVaca?.fechaNacimiento)}
+                Fecha de Nacimiento: {formatDate(datosVaca?.fecha_nacimiento)}
               </Text>
               <Text style={styles.text}>Raza: {datosVaca?.raza}</Text>
               <Text style={styles.text}> {textoSiniiga()}{datosVaca?.siniiga}</Text>
@@ -118,8 +119,8 @@ const PdfDescarga = () => {
             <>
               <Text style={styles.subHeading}>{textoHijos()}</Text>
               {hijos?.map((hijo) => (
-                <Text key={hijo?.idBovino} style={styles.text}>
-                  Arete: {hijo?.areteBovino}
+                <Text key={hijo?.id_bovino} style={styles.text}>
+                  Arete: {hijo?.arete_bovino}
                 </Text>
               ))}
             </>
