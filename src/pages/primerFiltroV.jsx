@@ -41,7 +41,7 @@ const PerfilVaca = () => {
                             (profiles || [])
                                 .slice((currentPage - 1) * perPage, currentPage * perPage)
                                 .map((profile, index) => (
-                                    <MiniPerfiles key={index} arete={profile.arete_bovino} nombreDeVaca={profile.nombre} idBovino={profile.id_bovino} imagen={profile.foto_perfil}/>
+                                    <MiniPerfiles key={index} arete={profile.arete_bovino} nombreDeVaca={profile.nombre} id_bovino={profile.id_bovino} imagen={profile.foto_perfil}/>
                                 ))
                         ) : (
                             <div className="Message">No hay información de bovinos por el momento.

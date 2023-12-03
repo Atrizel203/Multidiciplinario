@@ -21,10 +21,10 @@ function ImputImg({ texto }) {
 
             const lowerCaseText = texto.toLowerCase();
 
-            if (lowerCaseText === "foto del bovino") {
+            if (lowerCaseText === "Foto del Bovino") {
                 localStorage.setItem('fotoPerfil', imageUrl);
-            } else if (lowerCaseText === "foto del pedigri") {
-                localStorage.setItem('fotoPedigre', imageUrl);
+            } else if (lowerCaseText === "Foto del Pedigri") {
+                localStorage.setItem('fotoPedigri', imageUrl);
             }
 
         } catch (error) {

@@ -8,20 +8,21 @@ const App = (InfoPerfilMini) => {
     const navigate = useNavigate();
 
     const VistaDatos = () => {
-        localStorage.setItem("idBovino", idBovino);
+        localStorage.setItem("idBovino", id_bovino);
         navigate('/vista-datos');
     };
-    let {nombreDeVaca, idBovino} = InfoPerfilMini;
+
+    const {nombreDeVaca, id_bovino, imagen, arete} = InfoPerfilMini;
 
     return (
         <div className="perfil-container" onClick={VistaDatos}>
-            <img src={InfoPerfilMini.imagen || NuevaImagenVaca} alt="vaca" className="perfil-image" />
+            <img src={imagen || NuevaImagenVaca} alt="vaca" className="perfil-image" />
 
             <div className='infoEspPerfil'>
 
                 <div className="perfil-details">
                     <div className="perfil-detailNomr">
-                        <span className={`text-container`}>Arete: {InfoPerfilMini.arete}</span>
+                        <span className={`text-container`}>Arete: {arete}</span>
                     </div>
                     <div className="perfil-detailImp">
                         <span className={`text-container`}>Nombre: {nombreDeVaca}</span>

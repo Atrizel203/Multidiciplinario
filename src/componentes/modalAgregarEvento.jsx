@@ -62,7 +62,7 @@ function ModalAgregarEvento({ onClose }) {
 
             crearEventos(eventoObetnido);
 
-            console.log(eventoObetnido);
+/*             console.log(eventoObetnido); */
             swal({
                 title: "Los datos se han guardado correctamente.",
                 icon: "success",

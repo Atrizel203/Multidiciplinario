@@ -54,7 +54,7 @@ const CoruselEventos = () => {
                     eventosActuales.map((evento, index) => (
                         <CardEvento
                             key={index}
-                            idEvento={evento.idEvento}
+                            idEvento={evento.id_evento}
                             titulo={evento.titulo}
                             asunto={evento.asunto}
                             fecha_Reporte={evento.fecha_Reporte}

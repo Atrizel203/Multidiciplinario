@@ -43,6 +43,9 @@ function ModalModificarPerfil(props) {
             setAreteToro("");
             setAreteVaca("");
             setSiniiga("");
+            localStorage.removeItem("InfoBovino");
+            localStorage.removeItem("fotoPedigre");
+            handleClose();
         }
     };
 
@@ -66,7 +69,7 @@ function ModalModificarPerfil(props) {
 
             <div className="fotosA">
                 <ImputImg texto="Foto del Bovino" />
-                <ImputImg texto="Foto del Pedigrí" />
+                <ImputImg texto="Foto del pedigri" />
             </div>
 
             <div className="guardarBotonModalA" onClick={handleGuardar}>

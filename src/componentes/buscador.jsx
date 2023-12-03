@@ -61,7 +61,7 @@ function Buscador() {
         const filteredData = infoBovinos.filter(
             (bovino) =>
                 bovino.nombre.toLowerCase().includes(searchTerm) ||
-                bovino.areteBovino.toLowerCase().includes(searchTerm)
+                bovino.arete_bovino.toLowerCase().includes(searchTerm)
         ).slice(0, 5);
         setFiltrado(filteredData);
     };
@@ -107,9 +107,9 @@ function Buscador() {
                                 style={{ background: "#8FD182" }}
                                 key={index}
                                 className={"option"}
-                                onClick={() => handleSelectBovino(bovino.idBovino)}>
+                                onClick={() => handleSelectBovino(bovino.id_bovino)}>
                                 <span>Nombre:{bovino.nombre} </span>
-                                <span>Arete:{bovino.areteBovino}</span>
+                                <span>Arete:{bovino.arete_bovino}</span>
                             </div>
                         ))}
                     </div>

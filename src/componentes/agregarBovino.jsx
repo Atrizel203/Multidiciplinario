@@ -54,7 +54,7 @@ function AgregarBovino() {
                     "areteToro": areteToro,
                     "areteVaca": areteVaca,
                     "siniiga": siniiga,
-                    "fotoPedigri": localStorage.getItem("fotoPedigre"),
+                    "fotoPedigri": localStorage.getItem("fotoPedigri"),
                     "adminCorreo": localStorage.getItem("correo")
                 };
     
@@ -80,7 +80,7 @@ function AgregarBovino() {
                 setAreteVaca("");
                 setSiniiga("");
                 localStorage.removeItem("fotoPerfil");
-                localStorage.removeItem("fotoPedigre");
+                localStorage.removeItem("fotoPedigri");
             } catch (error) {
                 console.error("Error al subir la imagen a Cloudinary:", error);
             }

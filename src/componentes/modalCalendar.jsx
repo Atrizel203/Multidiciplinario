@@ -57,7 +57,7 @@ function ModalCalendario() {
               </label>
               <label>
                 Fecha de Reporte:
-                <input type="text" value={selectedEvent.extendedProps.fecha_Reporte} readOnly />
+                <input type="text" value={selectedEvent.extendedProps.fecha_reporte} readOnly />
               </label>
               <label>
                 Descripción:
@@ -65,7 +65,7 @@ function ModalCalendario() {
               </label>
               <label>
                 Fecha de Reinsidio:
-                <input type="text" value={selectedEvent.extendedProps.fecha_Reinsidio} readOnly />
+                <input type="text" value={selectedEvent.extendedProps.fecha_reinsidio} readOnly />
               </label>
             </form>
             <button onClick={backToCalendar}>
@@ -84,8 +84,8 @@ function ModalCalendario() {
               plugins={[ dayGridPlugin, timeGridPlugin, interactionPlugin ]}
               events={eventosEjemplo.map(e => ({
                 title: e.titulo ,
-                start: new Date(e.fecha_Reporte),
-                end: new Date(e.fecha_Reinsidio),
+                start: new Date(e.fecha_reporte),
+                end: new Date(e.fecha_reinsidio),
                 extendedProps: e 
               }))}
               eventClick={handleEventClick}
