@@ -57,10 +57,10 @@ const CoruselEventos = () => {
                             idEvento={evento.id_evento}
                             titulo={evento.titulo}
                             asunto={evento.asunto}
-                            fecha_Reporte={evento.fecha_Reporte}
+                            fecha_Reporte={evento.fecha_reporte}
                             descripcion={evento.descripcion}
-                            fecha_Reinsidio={evento.fecha_Reinsidio}
-                            areteBovino={evento.areteBovino}
+                            fecha_Reinsidio={evento.fecha_reinsidio}
+                            areteBovino={evento.arete_bovino}
                             nombreBovino={evento.nombreBovino}
                         />
                     ))
