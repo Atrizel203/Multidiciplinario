@@ -1,54 +1,133 @@
-import React from 'react';
-import { PDFDownloadLink, Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer';
+import React, { useState, useEffect } from 'react';
+import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
+import bovinoEspCard from './peticionesGet/bovinoEspCard';
+import HijosBovino from './peticionesGet/hijosBovino';
+import PadresBovino from './peticionesGet/padresBovino';
 
 const styles = StyleSheet.create({
-    page: {
-        flexDirection: 'column',
-        backgroundColor: '#ffffff',
-        padding: 20,
-    },
-    section: {
-        marginBottom: 10,
-    },
-    title: {
-        fontSize: 24,
-        marginBottom: 10,
-    },
-    label: {
-        fontSize: 16,
-        marginBottom: 5,
-    },
-    value: {
-        fontSize: 14,
-    },
+  page: {
+    flexDirection: 'row',
+    backgroundColor: '#E4E4E4'
+  },
+  section: {
+    margin: 10,
+    padding: 10,
+    flexGrow: 1
+  },
+  heading: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 10,
+    textAlign: 'center',
+  },
+  subHeading: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginBottom: 8
+  },
+  text: {
+    fontSize: 14,
+    marginBottom: 6
+  }
 });
 
-const PdfDescarga = ({ nombre, arete, fechaNacimiento }) => {
-    const MyDocument = () => (
-        <Document>
-            <Page size="A4" style={styles.page}>
-                <View style={styles.section}>
-                    <Text style={styles.title}>Información del Bovino</Text>
-                    <Text style={styles.label}>Nombre:</Text>
-                    <Text style={styles.value}>{nombre}</Text>
-                    <Text style={styles.label}>Arete:</Text>
-                    <Text style={styles.value}>{arete}</Text>
-                    <Text style={styles.label}>Fecha de Nacimiento:</Text>
-                    <Text style={styles.value}>{fechaNacimiento}</Text>
-                </View>
-            </Page>
-        </Document>
-    );
+const PdfDescarga = () => {
+  const [datosVaca, setDatosVaca] = useState(null);
+  const [hijos, setHijos] = useState(null);
+  const [padres, setPadres] = useState(null);
+  const id = localStorage.getItem('idBovino');
 
-    return (
-        <div>
-            <PDFDownloadLink document={<MyDocument />} fileName="informacion_bovino.pdf">
-                {({ blob, url, loading, error }) =>
-                    loading ? 'Cargando documento...' : 'Descargar PDF'
-                }
-            </PDFDownloadLink>
-        </div>
-    );
+  async function fetchData() {
+    try {
+      const data = await bovinoEspCard(id);
+      const data2 = await PadresBovino(id);
+      const data3 = await HijosBovino(id);
+      setDatosVaca(data);
+      setPadres(data2);
+      setHijos(data3);
+    } catch (error) {
+      console.error('Error al obtener datos de la API:', error.message);
+    }
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const Section = ({ title, content }) => (
+    <View style={styles.section}>
+      <Text style={styles.heading}>{title}</Text>
+      {content}
+    </View>
+  );
+
+  function textoHijos() {
+    return hijos?.length === 0 ? 'Este bovino no tiene hijos' : 'Hijos:';
+  }
+
+  function textoPadre() {
+    return padres?.padre ? 'Padre:' : 'Este bovino no tiene padre';
+  }
+
+  function textoSiniiga() {
+    return datosVaca?.siniiga === null ? 'Siniiga: Este bovino no tiene siniiga' : 'Siniiga:';
+  }
+
+  function textoMadre() {
+    return padres?.madre ? 'Madre:' : 'Este bovino no tiene madre';
+  }
+
+
+  function formatDate(dateString) {
+    const options = { year: 'numeric', month: 'numeric', day: 'numeric' };
+    return new Date(dateString).toLocaleDateString(undefined, options);
+  }
+
+  return (
+    <Document>
+      <Page size="A4" style={styles.page}>
+        <Section
+          title="Información del Bovino"
+          content={
+            <>
+              <Text style={styles.text}>Nombre: {datosVaca?.nombre}</Text>
+              <Text style={styles.text}>Género: {datosVaca?.genero}</Text>
+              <Text style={styles.text}>Arete: {datosVaca?.areteBovino}</Text>
+              <Text style={styles.text}>
+                Fecha de Nacimiento: {formatDate(datosVaca?.fechaNacimiento)}
+              </Text>
+              <Text style={styles.text}>Raza: {datosVaca?.raza}</Text>
+              <Text style={styles.text}> {textoSiniiga()}{datosVaca?.siniiga}</Text>
+            </>
+          }
+        />
+        <Section
+          title="Padres del Bovino"
+          content={
+            <>
+              <Text style={styles.subHeading}>{textoPadre()}</Text>
+              <Text style={styles.text}>{padres?.padre?.areteBovino}</Text>
+              <Text style={styles.subHeading}>{textoMadre()}</Text>
+              <Text style={styles.text}>{padres?.madre?.areteBovino}</Text>
+            </>
+          } 
+        />
+        <Section
+          title="Hijos del Bovino"
+          content={
+            <>
+              <Text style={styles.subHeading}>{textoHijos()}</Text>
+              {hijos?.map((hijo) => (
+                <Text key={hijo?.idBovino} style={styles.text}>
+                  Arete: {hijo?.areteBovino}
+                </Text>
+              ))}
+            </>
+          }
+        />
+      </Page>
+    </Document>
+  );
 };
 
 export default PdfDescarga;

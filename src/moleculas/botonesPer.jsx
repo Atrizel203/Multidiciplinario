@@ -78,7 +78,7 @@ function BotonesPerfil() {
             <div onClick={handleBorrar}>
                 <Borrar />
             </div>
-            <div onClick={handleDescargar}>
+            <div>
                 <Descargar />
             </div>
             <div onClick={openModalEvento}>
